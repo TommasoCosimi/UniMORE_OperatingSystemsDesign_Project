@@ -1,0 +1,72 @@
+\documentclass[a4paper, 11pt]{book}
+
+% Pacchetti
+\usepackage[italian]{babel}
+\usepackage[]{frontespizio}
+\usepackage{hyperref}
+\usepackage[skip=5pt]{parskip}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+% Comandi
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage
+}
+\newenvironment{abstract}{
+    \small
+    \begin{center}
+        \bfseries{Sommario}
+    \end{center}
+}
+
+% Struttura Documento
+\begin{document}
+
+    % Frontespizio
+    \begin{frontespizio}
+
+        \Istituzione{Università degli Studi di Modena e Reggio Emilia}
+        \Divisione{Dipartimento di Ingegneria ``Enzo Ferrari"}
+        \Corso{Ingegneria Informatica, Curriculum ``Cloud and Cybersecurity"}
+        \Titoletto{Tesi finale di Progettazione di Sistemi Operativi}
+        \Titolo{Titolo della Tesina\\
+                Su più righe}
+        \Sottotitolo{Eventuale sottotitolo}
+        \NCandidato{Studente}
+        \Candidato[191739]{Tommaso Cosimi}
+        \NRelatore{Docente}{Docenti}
+        \Relatore{Prof.ssa Letizia Leonardi}
+        \NCorrelatore{Codocente}{Codocenti}
+        \Correlatore{Dott.ssa Silvia Cascianelli}
+        \Annoaccademico{2023-2024}
+
+    \end{frontespizio}
+
+    \onehalfspacing
+
+    \blankpage
+    
+    % Sommario
+    \input{chapters/0.Abstract.tex}
+
+    \blankpage
+
+    % Indici
+    \tableofcontents
+    \listoffigures
+    \listoftables
+
+    % Capitoli
+    \chapter{Introduzione}
+        \input{chapters/1.Introduzione.tex}
+
+    % Bibliografia
+    \bibliographystyle{plain}
+    \bibliography{references}
+
+\end{document}
