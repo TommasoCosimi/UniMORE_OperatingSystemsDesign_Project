@@ -1,7 +1,7 @@
-PWD /home/tcosimi/OneDriveUniMORE/Materiale/A1 S1/Progettazione di Sistemi Operativi/Tesina
+PWD /mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/tcosimi/OneDriveUniMORE/Materiale/A1 S1/Progettazione di Sistemi Operativi/Tesina/Cosimi_Tommaso_191739-frn.tex
+INPUT /mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report/Cosimi_Tommaso_191739-frn.tex
 OUTPUT Cosimi_Tommaso_191739-frn.log
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
@@ -261,6 +261,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -278,3 +279,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb

@@ -1,7 +1,7 @@
-PWD /home/tcosimi/OneDriveUniMORE/Materiale/A1 S1/Progettazione di Sistemi Operativi/Tesina
+PWD /mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/tcosimi/OneDriveUniMORE/Materiale/A1 S1/Progettazione di Sistemi Operativi/Tesina/Cosimi_Tommaso_191739.tex
+INPUT /mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report/Cosimi_Tommaso_191739.tex
 OUTPUT Cosimi_Tommaso_191739.log
 INPUT /usr/share/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/book.cls
@@ -654,3 +654,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
