@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{book}
+\documentclass[a4paper,11pt,twoside,openright]{book}
 
 % Pacchetti
 \usepackage[italian]{babel}
@@ -13,8 +13,8 @@
 % Comandi
 \newcommand\blankpage{
     \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
+    \addtocounter{page}{-2}
+    \thispagestyle{empty}
     \newpage
 }
 \newenvironment{abstract}{
@@ -52,8 +52,6 @@
     
     % Sommario
     \input{chapters/0.Abstract.tex}
-
-    \blankpage
 
     % Indici
     \tableofcontents
