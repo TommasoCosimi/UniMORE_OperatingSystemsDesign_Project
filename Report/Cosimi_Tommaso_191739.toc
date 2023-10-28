@@ -1,4 +1,4 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Sez. 1}{9}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Algoritmo, Programma, Processo}{9}{section.1.1}%

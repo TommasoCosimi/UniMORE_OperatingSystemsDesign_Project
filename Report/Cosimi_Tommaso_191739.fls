@@ -640,10 +640,12 @@ INPUT ./chapters/1.Introduzione.tex
 INPUT chapters/1.Introduzione.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT ./Cosimi_Tommaso_191739.bbl
 INPUT Cosimi_Tommaso_191739.bbl
 INPUT ./Cosimi_Tommaso_191739.bbl
 INPUT Cosimi_Tommaso_191739.bbl
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT Cosimi_Tommaso_191739.aux
 INPUT ./Cosimi_Tommaso_191739.out
 INPUT ./Cosimi_Tommaso_191739.out
@@ -654,4 +656,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
