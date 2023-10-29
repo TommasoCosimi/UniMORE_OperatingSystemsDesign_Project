@@ -10,7 +10,7 @@ public class BubbleSort {
             System.out.println("Il programma ha bisogno di un vettore di numeri interi per essere utilizzato. Il processo attuale terminera'.");
             System.exit(-1);
         } else if(numberOfArguments == 1) {
-            // Se il vettore e' banale, esso non verre' processato
+            // Se il vettore e' banale, esso non verra' processato
             System.out.println("E' stato fornito in input un vettore di valori interi banale, il risultato dell'ordinamento e' pari all'input, cioe' " + args[0]);
             System.exit(0);
         } else {
