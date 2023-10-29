@@ -2,6 +2,59 @@ Il seguente Capitolo fornirà un'introduzione teorica al concetto di esecuzione 
 
 \section[Algoritmo, Programma, Processo]{Algoritmo, Programma, Processo}
 Nella definizione della singola unità di esecuzione si ritiene opportuno effettuare una leggera digressione. \par
-Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. Nella letteratura sono rintracciabili moltissimi Algoritmi, per brevità vengono nominati a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} od il \textit{Radix Sort}\cite{RadixSort}, e Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
-Un Programma è invece la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{QuickSort}''\cite{QuickSort} implementato tramite il Linguaggio di Programmazione Java.
-% TODO: QuickSort in Java e Descrizione di Processo.
+\subsection*{Algoritmo}
+Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. Nella letteratura sono rintracciabili moltissimi Algoritmi, per brevità vengono nominati a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} - di cui viene fornito lo pseudocodice a seguire - od il \textit{Radix Sort}\cite{RadixSort}, e Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
+\begin{algorithm}[H]
+    \caption[\textit{Bubble Sort}]{Ordinamento per confronti ``\textit{Bubble Sort}''}
+    \label{BubbleSortPsuedo}
+    \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
+    $partizioneNonOrdinata \gets A.length$\;
+    \While{$partizioneNonOrdinata > 1$}{
+        \For{$i = 2$ to $k$}{
+            \If{$A[i] < A[i-1]$}{
+                Scambia $A[i]$ ed $A[i-1]$\;
+            }
+        }
+        $partizioneNonOrdinata \gets (ultimoScambio-1)$
+    } 
+    \Return{A\tcp*{Vettore di numeri interi ordinati}}
+\end{algorithm}
+\subsection*{Programma}
+Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore, è un'entità statica. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
+\begin{lstlisting}
+public class BubbleSort {
+
+    public static void BubbleSort(int[] A) {
+        
+        // Definizione della dimensione della partizione del vettore non ordinata
+        int unorderedPartition = A.length;
+        
+        // Ordinamento
+        while(unorderedPartition > 1) {
+            // Scorro la parte non ordinata
+            for(int i=2; i<unorderedPartition; i++) {
+                // Se non e' ordinato, scambia
+                if(A[i] < A[i-1]) {
+                    int buf = A[i];
+                    A[i] = A[i-1];
+                    A[i-1] = buf;
+                }
+            }
+            // Dopo lo scambio, riduco la dimensione della partizione del vettore non ordinata
+            unorderedPartition = unorderedPartition - 1;
+        }
+
+    }
+
+}
+\end{lstlisting}
+\subsection*{Processo}
+Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma, è un'entità dinamica: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
+\begin{lstlisting}
+[tcosimi@VivoBook-Arch]:$ java BubbleSort 1 2 3 6 5 2
+Il vettore non ordinato e': [1, 2, 3, 6, 5, 2]
+Il vettore ordinato e': [1, 2, 2, 3, 5, 6]
+[tcosimi@VivoBook-Arch]:$ java BubbleSort 1 9 8 3 6 7
+Il vettore non ordinato e': [1, 9, 8, 3, 6, 7]
+Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
+\end{lstlisting}
