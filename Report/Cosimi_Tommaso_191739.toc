@@ -2,3 +2,4 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione}{11}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Algoritmo, Programma, Processo}{11}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Esecuzione Sequenziale ed Esecuzione non Sequenziale}{13}{section.1.2}%

@@ -10,12 +10,12 @@ Un Algoritmo è un procedimento puramente logico studiato appositamente per la r
     \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
     $partizioneNonOrdinata \gets A.length$\;
     \While{$partizioneNonOrdinata > 1$}{
-        \For{$i = 2$ to $k$}{
+        \For{$i = 2$ fino a $k$}{
             \If{$A[i] < A[i-1]$}{
                 Scambia $A[i]$ ed $A[i-1]$\;
             }
         }
-        $partizioneNonOrdinata \gets (ultimoScambio-1)$
+        $partizioneNonOrdinata \gets (ultimoScambio-1)$\;
     } 
     \Return{A\tcp*{Vettore di numeri interi ordinati}}
 \end{algorithm}
@@ -58,3 +58,5 @@ Il vettore ordinato e': [1, 2, 2, 3, 5, 6]
 Il vettore non ordinato e': [1, 9, 8, 3, 6, 7]
 Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
 \end{lstlisting}
+
+\section{Esecuzione Sequenziale ed Esecuzione non Sequenziale}
