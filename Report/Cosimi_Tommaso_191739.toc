@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {1.2}Esecuzione Sequenziale e non Sequenziale}{13}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Processi Sequenziali}{14}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Processi non Sequenziali}{14}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Processi Pesanti e Processi Leggeri}{15}{section.1.3}%

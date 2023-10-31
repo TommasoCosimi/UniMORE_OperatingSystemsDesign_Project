@@ -7,6 +7,7 @@
 \usepackage[skip=5pt]{parskip}
 \usepackage{setspace}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage[ruled, longend, linesnumbered, italiano, onelanguage]{algorithm2e}
 \usepackage{listings}
 
@@ -17,13 +18,14 @@
     \thispagestyle{empty}
     \newpage
 }
+    
 \newenvironment{abstract}{
     \small
     \begin{center}
         \bfseries{Sommario}
     \end{center}
 }
-
+        
 \lstset{
     language=Java,
     basicstyle=\ttfamily,
@@ -36,6 +38,8 @@
     showstringspaces=false,
     tabsize=2,
 }
+
+\usetikzlibrary{positioning}
 
 % Struttura Documento
 \begin{document}

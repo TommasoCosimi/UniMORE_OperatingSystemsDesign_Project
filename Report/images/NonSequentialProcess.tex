@@ -1,0 +1,24 @@
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+
+        % Vertices
+        \node[rectangle, draw](eqComplete){(5 + 8) + (6 - 3) * (9 + 2)};
+        \node[rectangle, draw](63)[below=of eqComplete]{(6 - 3)};
+        \node[rectangle, draw](58)[left=of 63]{(5 + 8)};
+        \node[rectangle, draw](92)[right=of 63]{(9 + 2)};
+        \node[rectangle, draw](311)[below=of 63]{3 * 11};
+        \node[rectangle, draw](1333)[below left=of 311]{13 + 33};
+        % Edges
+        \draw[->](eqComplete.south) -- (58.north);
+        \draw[->](eqComplete.south) -- (63.north);
+        \draw[->](eqComplete.south) -- (92.north);
+        \draw[->](58.south) -- (1333.north);
+        \draw[->](63.south) -- (311.north);
+        \draw[->](92.south) -- (311.east);
+        \draw[->](311.south) -- (1333.east);
+
+    \end{tikzpicture}
+    \caption{Grafo delle Precedenze di un Processo non Sequenziale.}
+    \label{fig.GrafoOrdinamentoParziale}
+\end{figure}

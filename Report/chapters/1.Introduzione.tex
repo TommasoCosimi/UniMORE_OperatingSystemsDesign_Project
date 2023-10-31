@@ -60,10 +60,34 @@ Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
 \end{lstlisting}
 
 \section[Esecuzione Sequenziale e non Sequenziale]{Esecuzione Sequenziale ed Esecuzione non Sequenziale}
-La sequenza di operazioni eseguite da un processo può essere rappresentata attraverso un Grafo Orientato che indichi la precedenza delle une sulle altre. In questa rappresentazione i nodi indentificano il singolo evento da verificarsi, mentre gli archi l'ordinamento temporale tra i nodi. \par
+La sequenza di operazioni eseguite da un processo può essere rappresentata attraverso un Grafo Orientato che indichi la precedenza delle une sulle altre. In questa visualizzazione i nodi indentificano il singolo evento da verificarsi, mentre gli archi l'ordinamento temporale tra i nodi. \par
 \subsection{Processi Sequenziali}
 Facendo riferimento alla rappresentazione descritta in precedenza, un Processo Sequenziale è tale da poter essere schematizzato tramite l'ausilio di un Grafo ad Ordinamento Totale: una particolare tipologia di Grafo ove ogni nodo - e quindi ogni evento - fatta eccezione per il nodo di inizio ed il nodo di fine, possiede un solo predecessore ed un solo successore. \par
-A seguire si riporta un esempio di Processo Sequenziale. \par
+A seguire viene effettuato un esempio di Processo Sequenziale. \par
 \subsubsection*{Esempio di Rappresentazione di un Processo Sequenziale}
-% TODO: Scrivi la parte testuale dell'esempio
+Si riporta a titolo di esempio un Processo che richiede all'utente due numeri interi e ne restituisce la somma. Esso è rappresentabile come una sequenza ordinata di operazioni atomiche come esplicitato a seguire.
+\input{images/SequentialProcess.tex}
 \subsection{Processi non Sequenziali}
+Al contrario della controparte, un Processo non Sequenziale può essere rappresentato tramite l'ausilio di un Grafo ad Ordinamento Parziale: ogni nodo interno potrà avere più predecessori e più successori. Questo è possibile in quanto alcune operazioni eseguite dal Processo sono indipendenti tra loro o non è interessante il loro ordine di terminazione per l'utente finale. \par
+A seguire viene effettuato un esempio di Processo non Sequenziale.
+\subsubsection*{Esempio di Rappresentazione di un Processo non Sequenziale}
+Si supponga di dover valutare l'espressione matematica:
+$$(5 + 8) + (6 - 3) * (9 + 2)$$
+Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. \par
+La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano per giunta indipendenti da un punto di vista computazionale: è possibile in effetti calcolare in ordine indifferente o addirittura delegare la valutazione a differenti agenti di calcolo le espressioni elementari all'interno delle parentesi.
+\input{images/NonSequentialProcess.tex}
+
+\section{Processi Pesanti e Processi Leggeri}
+All'interno di un Sistema Operativo è possibile individuare due tipologie di Processi in esecuzione, ognuna di esse con caratteristiche distintive:
+\begin{itemize}
+    \item Processi Pesanti;
+    \item Processi Leggeri.
+\end{itemize}
+\subsection*{Processi Pesanti}
+I Processi Pesanti sono identificati tramite la ennupla
+$$\{\textit{Program Counter}, Registri, \textit{Stack}, Codice, Dati\}$$
+Processi Pesanti distinti eseguono codice distinto ed accedono a dati distinti, non condividendo memoria ed ispirandosi quindi al Modello ad Ambiente Locale.
+\subsection*{Processi Leggeri}
+I Processi Leggeri - o \textit{Thread} - sono invece identificati dalla ennupla
+$$\{\textit{Program Counter}, Registri, \textit{Stack}\}$$
+% TODO: Definisci processi leggeri
