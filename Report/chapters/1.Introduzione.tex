@@ -50,7 +50,7 @@ public class BubbleSort {
 \end{lstlisting}
 \subsection*{Processo}
 Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma, è un'entità dinamica: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
-\begin{lstlisting}
+\begin{lstlisting}[language=Bash]
 [tcosimi@VivoBook-Arch]:$ java BubbleSort 1 2 3 6 5 2
 Il vettore non ordinato e': [1, 2, 3, 6, 5, 2]
 Il vettore ordinato e': [1, 2, 2, 3, 5, 6]
@@ -84,10 +84,14 @@ All'interno di un Sistema Operativo è possibile individuare due tipologie di Pr
     \item Processi Leggeri.
 \end{itemize}
 \subsection*{Processi Pesanti}
-I Processi Pesanti sono identificati tramite la ennupla
+I Processi Pesanti sono identificati tramite la ennupla:
 $$\{\textit{Program Counter}, Registri, \textit{Stack}, Codice, Dati\}$$
 Processi Pesanti distinti eseguono codice distinto ed accedono a dati distinti, non condividendo memoria ed ispirandosi quindi al Modello ad Ambiente Locale.
 \subsection*{Processi Leggeri}
-I Processi Leggeri - o \textit{Thread} - sono invece identificati dalla ennupla
+I Processi Leggeri - o \textit{Thread} - sono invece identificati dalla ennupla:
 $$\{\textit{Program Counter}, Registri, \textit{Stack}\}$$
-% TODO: Definisci processi leggeri
+Più \textit{Thread} correlati da un punto di vista logico condividono un'area di dati e codice tra loro, formando un \textit{Task}. Ciascun Processo Leggero rappresenta differenti contesti di esecuzione che risultano indipendenti all'interno di uno stesso \textit{Task}. Da tutto ciò segue che i \textit{Task} sono invece identificati da una ennupla del tipo:
+$$\{\emph{Thread}\textunderscore 1, \emph{Thread}\textunderscore 2, ..., \emph{Thread}\textunderscore n, Codice, Dati\}$$
+Alla luce di quanto illustrato è possibile immaginare un Processo Pesante come un \textit{Task} composto da un solo \textit{Thread}. \par
+Si noti come sia comunque necessario, ai fini del \textit{Context Switching}, mantenere un Descrittore di Processo (\textit{Process Control Block - PCB}) per ogni Processo Leggero, rendendo più complesso il \textit{PCB} del \textit{Task} che va ad incorporare anche quelli dei suoi relativi \textit{Thread}. \par
+In termini implementativi, i \textit{Thread} di uno stesso \textit{Task} condividono lo spazio di indirizzamento, le variabili globali e la tabella dei File aperti proprie del \textit{Task}, ispirandosi quindi al Modello ad Ambiente Globale. Questa somiglianza con tale ambiente implica l'insorgenza di problematiche quali le cosiddette ``\textit{Race Conditions}'' date da interazioni di tipo sia competitivo che cooperativo: vanno di conseguenza implementate misure atte alla sincronizzazione tra i vari Processi Leggeri del \textit{Task}.
