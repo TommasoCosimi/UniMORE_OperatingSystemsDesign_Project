@@ -5,4 +5,13 @@
 \contentsline {section}{\numberline {1.2}Esecuzione Sequenziale e non Sequenziale}{13}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Processi Sequenziali}{14}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Processi non Sequenziali}{14}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Processi Pesanti e Processi Leggeri}{15}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Processi Interagenti e loro Sincronizzazione}{15}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Interazione Indiretta (Competizione)}{15}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Interazione Diretta (Cooperazione)}{16}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Interazione Indesiderata (Interferenza)}{16}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Modelli Logici per la Concorrenza}{17}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Modello ad Ambiente Globale}{17}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Modello ad Ambiente Locale}{17}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Processi Pesanti e Processi Leggeri}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Processi Pesanti}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Processi Leggeri}{18}{subsection.1.5.2}%

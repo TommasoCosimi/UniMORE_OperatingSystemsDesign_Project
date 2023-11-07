@@ -21,7 +21,7 @@ Un Algoritmo è un procedimento puramente logico studiato appositamente per la r
 \end{algorithm}
 \subsection*{Programma}
 Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore, è un'entità statica. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
-\begin{lstlisting}
+\begin{lstlisting}[numbers=left, stepnumber=1]
 public class BubbleSort {
 
     public static void BubbleSort(int[] A) {
@@ -51,10 +51,10 @@ public class BubbleSort {
 \subsection*{Processo}
 Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma, è un'entità dinamica: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
 \begin{lstlisting}[language=Bash]
-[tcosimi@VivoBook-Arch]:$ java BubbleSort 1 2 3 6 5 2
+[tcosimi@VivoBook-Arch]:~$ java BubbleSort 1 2 3 6 5 2
 Il vettore non ordinato e': [1, 2, 3, 6, 5, 2]
 Il vettore ordinato e': [1, 2, 2, 3, 5, 6]
-[tcosimi@VivoBook-Arch]:$ java BubbleSort 1 9 8 3 6 7
+[tcosimi@VivoBook-Arch]:~$ java BubbleSort 1 9 8 3 6 7
 Il vettore non ordinato e': [1, 9, 8, 3, 6, 7]
 Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
 \end{lstlisting}
@@ -73,9 +73,49 @@ A seguire viene effettuato un esempio di Processo non Sequenziale.
 \subsubsection*{Esempio di Rappresentazione di un Processo non Sequenziale}
 Si supponga di dover valutare l'espressione matematica:
 $$(5 + 8) + (6 - 3) * (9 + 2)$$
-Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. \par
-La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano per giunta indipendenti da un punto di vista computazionale: è possibile in effetti calcolare in ordine indifferente o addirittura delegare la valutazione a differenti agenti di calcolo le espressioni elementari all'interno delle parentesi.
+Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti calcolare in ordine arbitrario o addirittura delegare la valutazione a differenti agenti di calcolo le espressioni elementari all'interno delle parentesi.
 \input{images/NonSequentialProcess.tex}
+
+\section{Processi Interagenti e loro Sincronizzazione}
+Dall'esecuzione non sequenziale è possibile ottenere situazioni ove due o più Processi devono interagire tra loro per il completamento delle rispettive operazioni. È possibile individuare tre possibili tipi di interazione.
+\subsection{Interazione Indiretta (Competizione)}
+In questo caso i suddetti Processi competono per l'utilizzo di risorse comuni come variabili o dispositivi di Input/Output. Un esempio lampante potrebbe essere la condivisione di una variabile numerica per due Processi P1 e P2.
+\begin{lstlisting}
+// Variabile Globale
+int x = 10;
+\end{lstlisting}
+\begin{multicols}{2}
+    Esecuzione di P1:
+    \begin{lstlisting}
+...
+x = x + 5;
+...
+    \end{lstlisting}
+    \columnbreak
+    Esecuzione di P2:
+    \begin{lstlisting}
+...
+x = x + 10;
+...
+    \end{lstlisting}    
+\end{multicols}
+La modifica contemporanea della Variabile Globale ``\texttt{x}'' da parte di P1 e P2 potrebbe risultare problematica in quanto la lascerebbero in uno stato inconsistente. \par
+Alla base di questa interazione si trova dunque il problema della Mutua Esclusione: una risorsa può essere utilizzata da uno e un solo Processo alla volta. Al fine di una corretta esecuzione bisognerà impossibilitare l'esecuzione contemporanea di Operazioni che facciano utilizzo di risorse comuni.
+\subsection{Interazione Diretta (Cooperazione)}
+La Cooperazione prevede invece lo scambio delle informazioni da un Processo ad un altro. Si prenda in esame la \autoref{fig.GrafoOrdinamentoParziale}: il Processo che andrà a valutare l'espressione finale dovrà sicuramente ottenere i risultati del Processo che ha calcolato la prima parentesi e di quello che ha calcolato la moltiplicazione immediatamente successiva. \par
+Al fine di preservare la correttezza dell'Operazione si renderà necessario far iniziare le Operazioni del Processo finale successivamente al termine delle Operazioni degli altri due Processi.
+\subsection{Interazione Indesiderata (Interferenza)}
+Quest'ultima è un effetto indesiderato dato da errori di sincronizzazione tra i processi. \par
+L'Interferenza viene risolta tramite l'utilizzo dei costrutti di sincronizzazione atti alla risoluzione dei problemi nati dalla Competizione e dalla Cooperazione citati in precedenza.
+
+\section{Modelli Logici per la Concorrenza}
+Nel tempo sono stati definiti due Modelli Logici di riferimento per la gestione concorrenziale dei Processi: il Modello ad Ambiente Globale ed il Modello ad Ambiente Locale.
+\subsection{Modello ad Ambiente Globale}
+In tale contesto un'applicazione viene descritta come un insieme di Processi e Risorse, ove queste ultime sono una qualsiasi entità fisica o logica di cui uno o più Processi dell'applicazione stessa necessitano per portare a termine la loro esecuzione. \par
+Data la natura condivisiva di questo Ambiente sono possibili interazioni sia competitive che cooperative per l'utilizzo e lo scambio di risorse tra i Processi.
+\subsection{Modello ad Ambiente Locale}
+Definito successivamente, in questo Modello un'applicazione viene descritta come un insieme di Processi, ognuno dei quali va ad operare nel proprio ambiente utilizzando le proprie risorse, inaccessibili agli altri Processi della stessa applicazione. \par
+La diversa concezione porta alla semplificazione delle interazioni tra i processi, rendendo possibili unicamente quelle di tipo cooperativo.
 
 \section{Processi Pesanti e Processi Leggeri}
 All'interno di un Sistema Operativo è possibile individuare due tipologie di Processi in esecuzione, ognuna di esse con caratteristiche distintive:
@@ -83,15 +123,15 @@ All'interno di un Sistema Operativo è possibile individuare due tipologie di Pr
     \item Processi Pesanti;
     \item Processi Leggeri.
 \end{itemize}
-\subsection*{Processi Pesanti}
+\subsection{Processi Pesanti}
 I Processi Pesanti sono identificati tramite la ennupla:
 $$\{\textit{Program Counter}, Registri, \textit{Stack}, Codice, Dati\}$$
 Processi Pesanti distinti eseguono codice distinto ed accedono a dati distinti, non condividendo memoria ed ispirandosi quindi al Modello ad Ambiente Locale.
-\subsection*{Processi Leggeri}
+\subsection{Processi Leggeri}
 I Processi Leggeri - o \textit{Thread} - sono invece identificati dalla ennupla:
 $$\{\textit{Program Counter}, Registri, \textit{Stack}\}$$
-Più \textit{Thread} correlati da un punto di vista logico condividono un'area di dati e codice tra loro, formando un \textit{Task}. Ciascun Processo Leggero rappresenta differenti contesti di esecuzione che risultano indipendenti all'interno di uno stesso \textit{Task}. Da tutto ciò segue che i \textit{Task} sono invece identificati da una ennupla del tipo:
-$$\{\emph{Thread}\textunderscore 1, \emph{Thread}\textunderscore 2, ..., \emph{Thread}\textunderscore n, Codice, Dati\}$$
+Più \textit{Thread} correlati da un punto di vista logico condividono un'area di dati e codice tra loro formando un \textit{Task} e ciascuno di essi rappresenta differenti contesti di esecuzione che risultano indipendenti all'interno di uno stesso \textit{Task}. Da ciò segue che i \textit{Task} sono invece identificati da una ennupla del tipo:
+$$\{\emph{Thread}\textunderscore 1, \emph{Thread}\textunderscore 2, \dots, \emph{Thread}\textunderscore n, Codice, Dati\}$$
 Alla luce di quanto illustrato è possibile immaginare un Processo Pesante come un \textit{Task} composto da un solo \textit{Thread}. \par
 Si noti come sia comunque necessario, ai fini del \textit{Context Switching}, mantenere un Descrittore di Processo (\textit{Process Control Block - PCB}) per ogni Processo Leggero, rendendo più complesso il \textit{PCB} del \textit{Task} che va ad incorporare anche quelli dei suoi relativi \textit{Thread}. \par
-In termini implementativi, i \textit{Thread} di uno stesso \textit{Task} condividono lo spazio di indirizzamento, le variabili globali e la tabella dei File aperti proprie del \textit{Task}, ispirandosi quindi al Modello ad Ambiente Globale. Questa somiglianza con tale ambiente implica l'insorgenza di problematiche quali le cosiddette ``\textit{Race Conditions}'' date da interazioni di tipo sia competitivo che cooperativo: vanno di conseguenza implementate misure atte alla sincronizzazione tra i vari Processi Leggeri del \textit{Task}.
+In termini implementativi, i \textit{Thread} di uno stesso \textit{Task} condividono lo spazio di indirizzamento, le variabili globali e la tabella dei File aperti proprie del \textit{Task}, ispirandosi quindi al Modello ad Ambiente Globale. Questa somiglianza con tale ambiente implica l'insorgenza di problematiche quali le cosiddette ``\textit{Race Conditions}'' date da interazioni di tipo sia Competitivo che Cooperativo: analogamente a quanto anticipato in precedenza, andranno di conseguenza implementate misure atte alla sincronizzazione tra i vari Processi Leggeri del \textit{Task}.
