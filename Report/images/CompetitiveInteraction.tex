@@ -1,0 +1,24 @@
+\begin{figure}[h]   
+    \centering
+    \begin{lstlisting}
+// Variabile Globale
+int x = 10;
+    \end{lstlisting}
+    \begin{multicols}{2}
+        Esecuzione di P1:
+        \begin{lstlisting}
+...
+x = x + 5;
+...
+        \end{lstlisting}
+        \columnbreak
+        Esecuzione di P2:
+        \begin{lstlisting}
+...
+x = x + 10;
+...
+        \end{lstlisting}    
+    \end{multicols}
+    \caption[Esempio di Interazione Competitiva tra due Processi P1 e P2.]{Esempio di Interazione Competitiva tra due Processi P1 e P2. Entrambi i Processi illustrati vanno ad operare sulla Variabile Globale ``\texttt{x}''.}
+    \label{fig.InterazioneConcorrente}
+\end{figure}

@@ -951,6 +951,10 @@ INPUT ./images/NonSequentialProcess.tex
 INPUT images/NonSequentialProcess.tex
 INPUT ./images/NonSequentialProcess.tex
 INPUT images/NonSequentialProcess.tex
+INPUT ./images/CompetitiveInteraction.tex
+INPUT images/CompetitiveInteraction.tex
+INPUT ./images/CompetitiveInteraction.tex
+INPUT images/CompetitiveInteraction.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT ./Cosimi_Tommaso_191739.bbl
 INPUT Cosimi_Tommaso_191739.bbl
@@ -966,6 +970,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb

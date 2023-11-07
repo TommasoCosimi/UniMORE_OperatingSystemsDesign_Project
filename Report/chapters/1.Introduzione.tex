@@ -6,12 +6,12 @@ Nella definizione della singola unità di esecuzione si ritiene opportuno effett
 Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. In letteratura sono rintracciabili moltissimi Algoritmi, per brevità vengono nominati a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} - di cui viene fornito lo pseudocodice a seguire - od il \textit{Radix Sort}\cite{RadixSort}, e Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
 \begin{algorithm}[H]
     \caption[\textit{Bubble Sort}]{Ordinamento per confronti ``\textit{Bubble Sort}''}
-    \label{BubbleSortPsuedo}
+    \label{alg.BubbleSortPsuedo}
     \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
     $partizioneNonOrdinata \gets A.length$\;
     \While{$partizioneNonOrdinata > 1$}{
-        \For{$i = 2$ fino a $k$}{
-            \If{$A[i] < A[i-1]$}{
+        \For{$i = 2$ fino a $k$} {
+            \If{$A[i] < A[i-1]$} {
                 Scambia $A[i]$ ed $A[i-1]$\;
             }
         }
@@ -76,29 +76,11 @@ $$(5 + 8) + (6 - 3) * (9 + 2)$$
 Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti calcolare in ordine arbitrario o addirittura delegare la valutazione a differenti agenti di calcolo le espressioni elementari all'interno delle parentesi.
 \input{images/NonSequentialProcess.tex}
 
-\section{Processi Interagenti e loro Sincronizzazione}
+\section{Processi Interagenti}
 Dall'esecuzione non sequenziale è possibile ottenere situazioni ove due o più Processi devono interagire tra loro per il completamento delle rispettive operazioni. È possibile individuare tre possibili tipi di interazione.
 \subsection{Interazione Indiretta (Competizione)}
 In questo caso i suddetti Processi competono per l'utilizzo di risorse comuni come variabili o dispositivi di Input/Output. Un esempio lampante potrebbe essere la condivisione di una variabile numerica per due Processi P1 e P2.
-\begin{lstlisting}
-// Variabile Globale
-int x = 10;
-\end{lstlisting}
-\begin{multicols}{2}
-    Esecuzione di P1:
-    \begin{lstlisting}
-...
-x = x + 5;
-...
-    \end{lstlisting}
-    \columnbreak
-    Esecuzione di P2:
-    \begin{lstlisting}
-...
-x = x + 10;
-...
-    \end{lstlisting}    
-\end{multicols}
+\input{images/CompetitiveInteraction.tex}
 La modifica contemporanea della Variabile Globale ``\texttt{x}'' da parte di P1 e P2 potrebbe risultare problematica in quanto la lascerebbero in uno stato inconsistente. \par
 Alla base di questa interazione si trova dunque il problema della Mutua Esclusione: una risorsa può essere utilizzata da uno e un solo Processo alla volta. Al fine di una corretta esecuzione bisognerà impossibilitare l'esecuzione contemporanea di Operazioni che facciano utilizzo di risorse comuni.
 \subsection{Interazione Diretta (Cooperazione)}
@@ -108,12 +90,76 @@ Al fine di preservare la correttezza dell'Operazione si renderà necessario far 
 Quest'ultima è un effetto indesiderato dato da errori di sincronizzazione tra i processi. \par
 L'Interferenza viene risolta tramite l'utilizzo dei costrutti di sincronizzazione atti alla risoluzione dei problemi nati dalla Competizione e dalla Cooperazione citati in precedenza.
 
-\section{Modelli Logici per la Concorrenza}
+\section{Sincronizzazione tra Processi}
+Alla luce di quanto esposto risulta importante esplicitare quali siano gli strumenti e le tecniche di sincronizzazione utilizzate per garantire la correttezza dei risultati di Processi Concorrenti. Prima di passare ad una loro descrizione è comunque necessario introdurre il concetto di Sezione Critica.
+\subsection{Sezione Critica}
+La Sezione Critica viene definita come una serie di Operazioni nelle quali un Processo accede e/o modifica risorse comuni a più Processi. \par
+Diverse Sezioni Critiche che accedano a gruppi differenti di Risorse possono essere scisse in altrettante categorie.
+\subsection{Strumenti di Sincronizzazione}
+Lo scopo degli Strumenti di Sincronizzazione che si andranno a presentare sarà quello di permettere al più ad un processo di accedere ad ogni categoria di Sezione Critica. Per ottenere questo risultato, la Sezione Critica va incapsulata da un Prologo che la preceda ed un Epilogo che la segua. In maniera intuitiva si può pensare al Prologo e all'Epilogo come l'operazione di acquisire un lucchetto per bloccare una risorsa e poi rilasciarlo al prossimo Processo che ne necessita rispettivamente. \par
+A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi.
+\subsubsection{Semaforo}
+Il Semaforo\cite{Semaforo}, introdotto dall'informatico olandese Edsger Wybe Dijkstra, è un tipo di dato astratto atto alla sincronizzazione che si compone di:
+\begin{itemize}
+    \item Valore Intero $S_v \geq 0$;
+    \item Coda di Descrittori $Q_s$.
+\end{itemize}
+E sul quale è possibile effetturare le operazioni di:
+\begin{itemize}
+    \item \texttt{wait(S)};
+    \item \texttt{signal(S)}.
+\end{itemize}
+Il Semaforo va ad incapsulare la Sezione Critica al fine di rendere possibile ad un solo processo alla volta l'accesso ad essa. \par
+La variabile $S_v$ mantiene come informazione quanti processi possono accedere alla loro Sezione Critica (se vale zero il processo si sospende sul Semaforo), mentre $Q_s$ è una Coda di Descrittori dei Processi che non sono riusciti ad accedere alla loro Sezione Critica a causa del Semaforo. \par
+Le Operazioni \texttt{wait(S)} e \texttt{signal(S)} vanno invece a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
+L'utilizzo di un Semaforo per la protezione di una Sezione Critica avviene secondo il seguente schema: \par
+\begin{algorithm}[H]
+    \caption{Esempio di utilizzo di un Semaforo}
+    \label{alg.SemaphoreUsageExample}
+    \SetKwFunction{FWait}{Wait}
+    \SetKwFunction{FSignal}{Signal}
+    \KwData{S\tcp*{Semaforo}}
+    \FWait{$S$}\;
+    Esecuzione della Sezione Critica\;
+    \FSignal{$S$}\;
+\end{algorithm}
+Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazione di un Semaforo. \par
+\begin{algorithm}[H]
+    \caption{Pseudocodice di un Semaforo}
+    \label{alg.SemaphorePseudo}
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwFunction{FConstructor}{Costruttore}
+    \SetKwFunction{FWait}{Wait}
+    \SetKwFunction{FSignal}{Signal}
+    \Fn{\FConstructor{int valoreIniziale}}{
+        \tcp{Si richiede un valore iniziale da assegnare al Semaforo}
+        this.$S_v$ = valoreIniziale\; 
+    }
+    \Fn{\FWait{Semaphore S}}{
+        \tcp{Verifica che il valore di $S_v$ sia $> 0$ e decrementalo, altrimenti inserisci il processo nella coda $Q_s$}
+        \eIf{$S.S_v > 0$} {
+            $S.S_v \gets (S.S_v - 1)$\;
+        } {
+            Sospendi il Processo ed inserisci il suo descrittore in $S.Q_s$\;
+        }
+    }
+    \Fn{\FSignal{Semaphore S}}{
+        \tcp{Verifica che la coda $Q_s$ non sia vuota e libera l'ultimo processo per poterne riprendere l'esecuzione, altrimenti inncrementa il valore di $S_v$}
+        \eIf{$\exists$ Processo nella Coda $S.Q_s$}{
+            Rimuovi il suo descrittore da $S.Q_s$ ed imposta il suo stato su \textit{Ready}\;
+        }{
+           $S.S_v \gets (S.S_v + 1)$\;
+        }
+    }
+\end{algorithm}
+\subsubsection{Monitor}
+\subsubsection{Scambio di Messaggi}
+\subsection{Modelli Logici per la Concorrenza}
 Nel tempo sono stati definiti due Modelli Logici di riferimento per la gestione concorrenziale dei Processi: il Modello ad Ambiente Globale ed il Modello ad Ambiente Locale.
-\subsection{Modello ad Ambiente Globale}
+\subsubsection{Modello ad Ambiente Globale}
 In tale contesto un'applicazione viene descritta come un insieme di Processi e Risorse, ove queste ultime sono una qualsiasi entità fisica o logica di cui uno o più Processi dell'applicazione stessa necessitano per portare a termine la loro esecuzione. \par
 Data la natura condivisiva di questo Ambiente sono possibili interazioni sia competitive che cooperative per l'utilizzo e lo scambio di risorse tra i Processi.
-\subsection{Modello ad Ambiente Locale}
+\subsubsection{Modello ad Ambiente Locale}
 Definito successivamente, in questo Modello un'applicazione viene descritta come un insieme di Processi, ognuno dei quali va ad operare nel proprio ambiente utilizzando le proprie risorse, inaccessibili agli altri Processi della stessa applicazione. \par
 La diversa concezione porta alla semplificazione delle interazioni tra i processi, rendendo possibili unicamente quelle di tipo cooperativo.
 
