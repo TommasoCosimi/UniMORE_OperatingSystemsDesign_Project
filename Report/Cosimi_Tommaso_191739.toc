@@ -12,12 +12,12 @@
 \contentsline {section}{\numberline {1.4}Sincronizzazione tra Processi}{17}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Sezione Critica}{17}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Strumenti di Sincronizzazione}{17}{subsection.1.4.2}%
-\contentsline {subsubsection}{Semaforo}{17}{section*.10}%
+\contentsline {subsubsection}{Semaforo}{18}{section*.10}%
 \contentsline {subsubsection}{Monitor}{19}{section*.11}%
-\contentsline {subsubsection}{Scambio di Messaggi}{19}{section*.12}%
-\contentsline {subsection}{\numberline {1.4.3}Modelli Logici per la Concorrenza}{19}{subsection.1.4.3}%
-\contentsline {subsubsection}{Modello ad Ambiente Globale}{20}{section*.13}%
-\contentsline {subsubsection}{Modello ad Ambiente Locale}{20}{section*.14}%
-\contentsline {section}{\numberline {1.5}Processi Pesanti e Processi Leggeri}{20}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Processi Pesanti}{20}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Processi Leggeri}{21}{subsection.1.5.2}%
+\contentsline {subsubsection}{Scambio di Messaggi}{21}{section*.12}%
+\contentsline {subsection}{\numberline {1.4.3}Modelli Logici per la Concorrenza}{21}{subsection.1.4.3}%
+\contentsline {subsubsection}{Modello ad Ambiente Globale}{21}{section*.13}%
+\contentsline {subsubsection}{Modello ad Ambiente Locale}{21}{section*.14}%
+\contentsline {section}{\numberline {1.5}Processi Pesanti e Processi Leggeri}{22}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Processi Pesanti}{22}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Processi Leggeri}{22}{subsection.1.5.2}%

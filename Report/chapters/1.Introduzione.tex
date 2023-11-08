@@ -97,10 +97,11 @@ Alla luce di quanto esposto risulta importante esplicitare quali siano gli strum
 La Sezione Critica viene definita come una serie di Operazioni nelle quali un Processo accede e/o modifica risorse comuni a più Processi. \par
 Diverse Sezioni Critiche che accedano a gruppi differenti di Risorse possono essere scisse in altrettante categorie.
 \subsection{Strumenti di Sincronizzazione}
-Lo scopo degli Strumenti di Sincronizzazione che si andranno a presentare sarà quello di permettere al più ad un processo di accedere ad ogni categoria di Sezione Critica. Per ottenere questo risultato, la Sezione Critica va incapsulata da un Prologo che la preceda ed un Epilogo che la segua. In maniera intuitiva si può pensare al Prologo e all'Epilogo come l'operazione di acquisire un lucchetto per bloccare una risorsa e poi rilasciarlo al prossimo Processo che ne necessita rispettivamente. \par
-A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi.
+Gli Strumenti illustrati di seguito non rappresentano l'interezza delle metodologie di Sincronizzazione studiate in letteratura, ma sono stati scelti in maniera tale da essere il più possibile utili al fine di introdurre i concetti alla base del \textit{Multi-Threading} nel Linguaggio Java ed inoltre chiarificare alcune metodologie utilizzate anche al di fuori di quest'ultimo (si veda lo Scambio di Messaggi). \par
+Lo scopo di tali Strumenti di Sincronizzazione sarà quello di permettere al più ad un processo di accedere ad ogni categoria di Sezione Critica. Per ottenere questo risultato, la Sezione Critica va incapsulata da un Prologo che la preceda ed un Epilogo che la segua. In maniera intuitiva si può pensare al Prologo e all'Epilogo come l'operazione di acquisizione di un lucchetto per bloccare una risorsa per poi rilasciarlo al prossimo Processo che ne necessita rispettivamente. \par
+A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente Strumenti quali Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi. Si riportano a seguire i tre Meccanismi citati.
 \subsubsection{Semaforo}
-Il Semaforo\cite{Semaforo}, introdotto dall'informatico olandese Edsger Wybe Dijkstra, è un tipo di dato astratto atto alla sincronizzazione che si compone di:
+Il Semaforo\cite{Semaforo}, introdotto dall'informatico olandese Edsger Wybe Dijkstra, è un tipo di dato astratto (ADT) atto alla sincronizzazione che si compone di:
 \begin{itemize}
     \item Valore Intero $S_v \geq 0$;
     \item Coda di Descrittori $Q_s$.
@@ -155,6 +156,52 @@ Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazi
     }
 \end{algorithm}
 \subsubsection{Monitor}
+Il Monitor\cite{Monitor} è anch'esso un ADT che tiene conto dei Vincoli di Sincronizzazione: esso implementa infatti da sé meccanismi di Mutua Esclusione per cui al suo interno potrà esserci al più uno e un solo Processo attivo. Una peculiarità nell'utilizzo del Monitor rispetto a quello di un più semplice Semaforo è quella di poter nascondere lo stato interno delle risorse condivise tra i vari processi, lasciando loro visibili unicamente le operazioni effettuabili su di esse. \par
+In maniera più precisa un Monitor ``è un costrutto che associa un insieme di procedure ad una struttura dati comune a più Processi''\cite{MonitorDispense}. Esso è composto dai seguenti elementi:
+\begin{itemize}
+    \item Costruttore, che genera un'entità di tipo Monitor;
+    \item Variabili Locali, le quali vanno a definire lo stato di un'istanza del tipo Monitor;
+    \item Procedure, per l'interfacciamento con le risorse condivise dai Processi.
+\end{itemize}
+Un possibile pseudocodice per un Monitor potrebbe essere simile a quanto segue: \par
+\begin{algorithm}[H]
+    \caption{Pseudocodice di un Monitor}
+    \label{alg.MonitorPseudo}
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwProg{Prc}{Procedure}{:}{}
+    \SetKwFunction{FConstructor}{Costruttore}
+    \SetKwFunction{FProcA}{Procedura1}
+    \SetKwFunction{FProcB}{Procedura2}
+    \SetKwFunction{FProcN}{ProceduraN}
+    \tcp{Variabili di Condizione}
+    \textbf{Condition} variabileCondizione1\;
+    \textbf{Condition} variabileCondizione2\;
+    \dots\;
+    \textbf{Condition} variabileCondizioneN\;
+    \tcp{Costruttore}
+    \Fn{\FConstructor{}}{
+        \tcp{Codice del Costruttore}
+    }
+    \tcp{Procedure}
+    \Prc{\FProcA{Parametro1, Parametro2, \dots, ParametroJ}}{
+        \tcp{Codice della Procedura 1}
+    }
+    \Prc{\FProcB{Parametro1, Parametro2, \dots, ParametroK}}{
+        \tcp{Codice della Procedura 2}
+    }
+    \dots\;
+    \Prc{\FProcN{Parametro1, Parametro2, \dots, ParametroL}}{
+        \tcp{Codice della Procedura N}
+    }
+\end{algorithm}
+Un Monitor dispone di due livelli di Controllo per l'esecuzione esclusiva di operazioni sulle Risorse condivise:
+\begin{enumerate}
+    \item \textbf{Primo Livello di Controllo}: \par
+    Le procedure di un Monitor sono eseguite in maniera Mutualmente Esclusiva, per cui qualora nel Monitor fosse presente un Processo in esecuzione ed un qualsiasi altro processo esterno volesse accedervi, quest'ultimo verrebbe posto in stato ``\textit{Blocked}'' e si ``addormenterebbe'' all'esterno di esso.
+    \item \textbf{Secondo Livello di Controllo}: \par
+    È possibile per un Processo all'interno di un Monitor di ``addormentarsi'' su una Variabile di Condizione in quanto potrebbe non rispettare i requisiti imposti. In questo caso ques'utlimo passerà allo stato ``\textit{Blocked}'' e posto in coda ad essa, così da lasciare spazio ad un altro Processo dall'esterno per poter eseguire.
+\end{enumerate}
+Le variabili di Condizione di un Monitor dispongono di due primitive ``\texttt{Wait}'' e ``\texttt{Signal}'' che, seppur molto simili a quelle di un Semaforo, godono di leggere differenze: in questo caso infatti la ``\texttt{Wait}'' ha sempre un significato bloccante, mentre la ``\texttt{Signal}'' non produce effetti qualora non ci siano processi in coda.
 \subsubsection{Scambio di Messaggi}
 \subsection{Modelli Logici per la Concorrenza}
 Nel tempo sono stati definiti due Modelli Logici di riferimento per la gestione concorrenziale dei Processi: il Modello ad Ambiente Globale ed il Modello ad Ambiente Locale.

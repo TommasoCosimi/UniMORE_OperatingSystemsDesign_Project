@@ -25,4 +25,14 @@ Wikipedia.
 \newblock {Semaforo}, Agosto 2023.
 \newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Semaforo_(informatica)}. Pagina visitata il \today.
 
+\bibitem{Monitor}
+Wikipedia.
+\newblock {Monitor}, Marzo 2022.
+\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Monitor_(sincronizzazione)}. Pagina visitata il \today.
+
+\bibitem{MonitorDispense}
+{Prof. Letizia Leonardi}.
+\newblock {Costrutti di Sincronizzazione}, Ottobre 2022.
+\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/CostruttiDISincronizzazione-3bis.pdf}. Documento Protetto da Password.
+
 \end{thebibliography}
