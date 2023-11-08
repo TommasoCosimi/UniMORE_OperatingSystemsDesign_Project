@@ -8,6 +8,7 @@ Un Algoritmo è un procedimento puramente logico studiato appositamente per la r
     \caption[\textit{Bubble Sort}]{Ordinamento per confronti ``\textit{Bubble Sort}''}
     \label{alg.BubbleSortPsuedo}
     \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
+    \KwResult{A\tcp*{Vettore di numeri interi ordinati}}
     $partizioneNonOrdinata \gets A.length$\;
     \While{$partizioneNonOrdinata > 1$}{
         \For{$i = 2$ fino a $k$} {
@@ -17,7 +18,7 @@ Un Algoritmo è un procedimento puramente logico studiato appositamente per la r
         }
         $partizioneNonOrdinata \gets (ultimoScambio-1)$\;
     } 
-    \Return{A\tcp*{Vettore di numeri interi ordinati}}
+    \Return{A}
 \end{algorithm}
 \subsection*{Programma}
 Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore, è un'entità statica. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
@@ -132,6 +133,7 @@ Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazi
     \SetKwFunction{FWait}{Wait}
     \SetKwFunction{FSignal}{Signal}
     \Fn{\FConstructor{int valoreIniziale}}{
+        this.$Q_s$ = Nuova Coda di Descrittori di Processo vuota\;
         \tcp{Si richiede un valore iniziale da assegnare al Semaforo}
         this.$S_v$ = valoreIniziale\; 
     }
@@ -140,13 +142,13 @@ Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazi
         \eIf{$S.S_v > 0$} {
             $S.S_v \gets (S.S_v - 1)$\;
         } {
-            Sospendi il Processo ed inserisci il suo descrittore in $S.Q_s$\;
+            Imposta lo stato del Processo su ``\textit{Blocked}'' ed inserisci il suo descrittore in $S.Q_s$\;
         }
     }
     \Fn{\FSignal{Semaphore S}}{
         \tcp{Verifica che la coda $Q_s$ non sia vuota e libera l'ultimo processo per poterne riprendere l'esecuzione, altrimenti inncrementa il valore di $S_v$}
         \eIf{$\exists$ Processo nella Coda $S.Q_s$}{
-            Rimuovi il suo descrittore da $S.Q_s$ ed imposta il suo stato su \textit{Ready}\;
+            Rimuovi il descrittore del Processo da $S.Q_s$ ed imposta il suo stato su ``\textit{Ready}''\;
         }{
            $S.S_v \gets (S.S_v + 1)$\;
         }
