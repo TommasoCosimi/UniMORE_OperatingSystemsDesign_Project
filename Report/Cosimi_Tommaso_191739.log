@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.10.15)  8 NOV 2023 14:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.10.15)  11 NOV 2023 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -662,19 +662,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [18] [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20] [21]
+ [20] [21] [22] [23]
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 229.
-
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 229.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 262.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 229.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 262.
 
-[22]) (./Cosimi_Tommaso_191739.bbl [23] [24
 
-]
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 262.
+
+) (./Cosimi_Tommaso_191739.bbl [24]
 Underfull \hbox (badness 1173) in paragraph at lines 19--22
 []\OT1/cmr/m/n/10.95 Wikipedia.  Al-go-rit-mo di Bellman-Ford, Mag-gio 2023.  Ar-ti-co-lo
  []
@@ -699,23 +697,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--37
 \OT1/cmtt/m/n/10.95 CostruttiDISincronizzazione-[]3bis . pdf$[]\OT1/cmr/m/n/10.95 . Do-cu-men-to Pro-tet-to
  []
 
-) [25] (./Cosimi_Tommaso_191739.aux)
+) [25
+
+] (./Cosimi_Tommaso_191739.aux)
 Package rerunfilecheck Info: File `Cosimi_Tommaso_191739.out' has not changed.
 (rerunfilecheck)             Checksum: 2BE6A20D39680CE06878372D89C025DC;3181.
  ) 
 Here is how much of TeX's memory you used:
- 23971 strings out of 477933
- 438726 string characters out of 5838678
+ 23997 strings out of 477933
+ 439064 string characters out of 5838678
  1995388 words of memory out of 5000000
- 43603 multiletter control sequences out of 15000+600000
- 520047 words of font info for 58 fonts, out of 8000000 for 9000
+ 43611 multiletter control sequences out of 15000+600000
+ 520406 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 84i,18n,89p,820b,2016s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on Cosimi_Tommaso_191739.pdf (27 pages, 257691 bytes).
+ 84i,18n,89p,788b,2029s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on Cosimi_Tommaso_191739.pdf (27 pages, 275492 bytes).
 PDF statistics:
- 491 PDF objects out of 1000 (max. 8388607)
- 420 compressed objects within 5 object streams
- 159 named destinations out of 1000 (max. 500000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 443 compressed objects within 5 object streams
+ 176 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
