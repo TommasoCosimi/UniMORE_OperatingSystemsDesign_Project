@@ -1,0 +1,23 @@
+@startuml
+
+class Object
+
+interface Runnable {
+  + run()
+}
+
+class Thread {
+  + String Name
+  + int Priority
+  + ...
+  + run()
+  + start()
+  + stop()
+  + join()
+  + ...()
+}
+
+Object <|-down- "Extends " Thread
+Runnable <|-down[dashed]- " Implements" Thread
+
+@enduml

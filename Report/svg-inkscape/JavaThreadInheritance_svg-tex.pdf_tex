@@ -1,0 +1,80 @@
+%% Creator: Inkscape 1.3.2 (091e20ef0f, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'JavaThreadInheritance_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{237.51750183bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.90233421)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(-0.00397865,0.86847144){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Ereditarietà della Classe Thread in Java}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.27117845,0.71011943){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Object\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.63904605,0.73538072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{Runnable}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.61062709,0.62123629){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}run()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.4685323,0.34383063){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Thread\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.44011334,0.22968618){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}run()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.44011334,0.17822611){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}start()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.44011334,0.12676627){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}stop()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.44011334,0.07530625){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}join()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.44011334,0.02384613){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}...()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.22888598,0.44466646){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Extends\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{JavaThreadInheritance_svg-tex.pdf}}%
+    \put(0.62395561,0.44478552){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Implements\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

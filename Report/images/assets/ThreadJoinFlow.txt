@@ -1,0 +1,25 @@
+@startuml
+
+start
+
+:Avvio del //Thread// A;
+
+:Creazione del //Thread// B;
+
+:Chiamata del Metodo ""start()"" sul //Thread// B;
+fork
+  :Continuazione dell'esecuzione del //Thread// A;
+  :Chiamata del Metodo ""join()"" sul //Thread// B e temporanea \n interruzione del Flusso di Esecuzione del //Thread// A;
+fork again
+  :Avvio del //Thread// B;
+  :Esecuzione del codice del //Thread// B;
+  :Terminazione del //Thread// B;
+end fork
+
+:Ripresa del Flusso di Esecuzione di A;
+
+:Terminazione;
+
+stop
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+
+digraph StateTransition {
+    Running -> Blocked
+    Blocked -> Ready
+    Ready -> Running
+    Running -> Ready
+}
+
+@enduml

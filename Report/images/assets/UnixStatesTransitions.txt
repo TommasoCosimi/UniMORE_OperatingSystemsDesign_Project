@@ -1,0 +1,17 @@
+@startuml
+
+digraph UnixStateTransition {
+    Idle -> Ready
+    Ready -> Running
+    Ready -> Swapped
+    Running -> Ready
+    Running -> Sleeping
+    Running -> Terminated
+    Swapped -> Ready
+    Swapped -> Sleeping
+    Sleeping -> Swapped
+    Sleeping -> Ready
+    Terminated -> Zombie
+}
+
+@enduml
