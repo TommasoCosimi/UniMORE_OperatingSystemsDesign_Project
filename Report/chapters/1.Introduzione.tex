@@ -225,7 +225,7 @@ Vista la natura autoesplicativa delle Primitive, si pone ora enfasi sulla defini
 Le scelte implementative sopracitate vengono analizzate a seguire:
 \begin{itemize}
     \item \textbf{Tecnica di Identificazione dei Processi Comunicanti} \par
-        L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire direttamente che non. \par
+        L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire sia direttamente che indirettamente. \par
         Nel primo caso si va ad utilizzare l'identificativo dei processi come parametro delle primitive, come sotto riportato.
         \begin{lstlisting}[language=Java]
 /*
@@ -235,7 +235,7 @@ Le scelte implementative sopracitate vengono analizzate a seguire:
 send(R, message);
 receive(S, message);
         \end{lstlisting}
-        È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{send}'' e ``\texttt{receive}''.
+        È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{Send}'' e ``\texttt{Receive}''.
         \begin{lstlisting}[language=Java]
 // Molti a Uno
 send(R, message); // Invia ad uno specifico Ricevitore
@@ -251,8 +251,8 @@ receive(ID, message); // Riceve da qualsiasi Mittente
     \item \textbf{Utilizzo della tecnica di ``\textit{Bufferizzazione}''} \par
         L'utilizzo di tale funzionalità permette una comunicazione asincrona che consente un maggiore parallelismo all'applicativo. Il ``\textit{Buffer}'' può essere di dimensione limitata o infinita. È possibile l'utilizzo di Messaggi di ``\textit{Acknowledgement}'' - o ACK - da parte del Processo ``\textit{Receiver}'' per confermare la ricezione del Messaggio. La corretta sequenza di ricezione potrebbe non essere garantita in caso di \textit{Routing} Dinamico dei Messaggi, per cui si rende necessario l'utilizzo di una numerazione per l'ordinamento.
     \item \textbf{Scelta della lunghezza dei Messaggi} \par
-        È infine possibile scegliere se implementare dei Messaggi a lunghezza fissa, rendendo l'implementazione semplice ma sprecando memoria; o utilizzare Messaggi di lunghezza variabile, che risolvono il problema dei primi al costo di una più complessa realizzazione.
-\end{itemize}  
+        È infine possibile scegliere se implementare dei Messaggi a lunghezza fissa, rendendo l'implementazione semplice ma sprecando memoria; o utilizzare Messaggi di lunghezza variabile, che risolvono il problema dei primi al costo di una più complessa realizzazione. Nei Sistemi Operativi moderni viene in linea generale adottato questo secondo approccio: ad esempio in UNIX vengono utilizzati messaggi di lunghezza variabile con dimensione minima di 1 Byte.
+\end{itemize}
 \subsection{Modelli Logici per la Concorrenza}
 Nel tempo sono stati definiti due Modelli Logici di riferimento per la gestione concorrenziale dei Processi: il Modello ad Ambiente Globale ed il Modello ad Ambiente Locale.
 \subsubsection{Modello ad Ambiente Globale}
