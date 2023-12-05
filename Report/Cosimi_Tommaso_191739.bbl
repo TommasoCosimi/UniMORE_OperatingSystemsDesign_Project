@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{BubbleSort}
 Wikipedia.
@@ -20,6 +20,11 @@ Wikipedia.
 \newblock {Algoritmo di Bellman-Ford}, Maggio 2023.
 \newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Algoritmo_di_Bellman-Ford}. Pagina visitata il \today.
 
+\bibitem{PlantText}
+{PlantUML, Graphviz, Ace Editor, Johan Sundström, Steven Nichols e Arwen Vaughan}.
+\newblock {PlantText UML Editor}.
+\newblock Editor disponibile all'url: \url{https://www.planttext.com/}. Pagina visitata il \today.
+
 \bibitem{Semaforo}
 Wikipedia.
 \newblock {Semaforo}, Agosto 2023.
@@ -34,5 +39,20 @@ Wikipedia.
 {Prof. Letizia Leonardi}.
 \newblock {Costrutti di Sincronizzazione}, Ottobre 2022.
 \newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/CostruttiDISincronizzazione-3bis.pdf}. Documento Protetto da Password. Pagina visitata il \today.
+
+\bibitem{Thread_JavaDocs}
+{Oracle Corp.}
+\newblock {\textit{Class \texttt{Thread}}}.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html}. Pagina visitata il \today.
+
+\bibitem{Runnable_JavaDocs}
+{Oracle Corp.}
+\newblock {\textit{Interface \texttt{Runnable}}}.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html}. Pagina visitata il \today.
+
+\bibitem{SeminarioJavaDispense}
+{Prof. Letizia Leonardi, PhD Mariachiara Puviani}.
+\newblock {Programmazione Concorrente in Java}, Ottobre 2014.
+\newblock Dispensa disponibile all'url: \url{https://didattica.agentgroup.unimore.it/wiki/images/5/5e/SeminarioJava2014.pdf}. Pagina visitata il \today.
 
 \end{thebibliography}

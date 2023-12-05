@@ -8,6 +8,9 @@
 \usepackage{setspace}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{svg}
 \usepackage{tikz}
 \usepackage[ruled, longend, linesnumbered, italiano]{algorithm2e}
 \usepackage{listings}
@@ -28,7 +31,6 @@
 }
         
 \lstset{
-    language=Java,
     basicstyle=\ttfamily,
     columns=flexible,
     frame=single,
@@ -38,6 +40,9 @@
     tabsize=2,
 }
 
+\svgsetup{inkscapelatex=false}
+
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary{positioning}
 
 % Struttura Documento
@@ -77,9 +82,11 @@
 
     % Capitoli
     \chapter{Introduzione}
+        \label{Chap:Introduzione}
         \input{chapters/1.Introduzione.tex}
     
     \chapter{\textit{Multi-Threading} in Java}
+        \label{Chap:JavaMultiThreading}
         \input{chapters/2.MultiThreadingInJava.tex}
 
     % Bibliografia

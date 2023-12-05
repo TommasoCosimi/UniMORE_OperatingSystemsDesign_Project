@@ -1,4 +1,4 @@
-Il seguente Capitolo fornirà un'introduzione teorica al concetto di esecuzione non sequenziale di un processo, ponendo enfasi sui vantaggi portati e sulle nuove necessità richieste da tale implementazione. 
+Il seguente Capitolo fornirà un'introduzione teorica al concetto di esecuzione non sequenziale di un processo, ponendo enfasi sui vantaggi da essa portati e sulle nuove necessità richieste da tale implementazione.
 
 \section[Algoritmo, Programma, Processo]{Algoritmo, Programma, Processo}
 Nella definizione della singola unità di esecuzione si ritiene opportuno effettuare una leggera digressione. \par
@@ -21,8 +21,8 @@ Un Algoritmo è un procedimento puramente logico studiato appositamente per la r
     \Return{A}
 \end{algorithm}
 \subsection*{Programma}
-Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore, è un'entità statica. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
-\begin{lstlisting}[numbers=left, stepnumber=1]
+Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
+\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
 public class BubbleSort {
 
     public static void BubbleSort(int[] A) {
@@ -50,7 +50,7 @@ public class BubbleSort {
 }
 \end{lstlisting}
 \subsection*{Processo}
-Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma, è un'entità dinamica: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
+Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
 \begin{lstlisting}[language=Bash]
 [tcosimi@VivoBook-Arch]:~$ java BubbleSort 1 2 3 6 5 2
 Il vettore non ordinato e': [1, 2, 3, 6, 5, 2]
@@ -60,25 +60,41 @@ Il vettore non ordinato e': [1, 9, 8, 3, 6, 7]
 Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
 \end{lstlisting}
 
+\section{Stati di un Processo}
+Un Processo può passare attraverso diversi Stati durante il suo ciclo di vita. Nel caso più generale è possibile individuarne essenzialmente tre:
+\begin{enumerate}
+    \item \textbf{Esecuzione} (o \textit{Running}). \par
+    Il Processo detiene il controllo della CPU dell'Elaboratore e sta eseguendo il proprio codice.
+    \item \textbf{Bloccato} (o \textit{Blocked}). \par
+    Il Processo non dietiene il controllo della CPU dell'Elaboratore e rimane in uno stato dormiente ove attende di essere pronto a richiederne il controllo. Un Processo è in stato \textit{Blocked} tipicamente durante operazioni di I/O mentre è in attesa di dati provenienti da dispositivi meno veloci o dall'Utente.
+    \item \textbf{Pronto} (o \textit{Ready}). \par
+    Anche in questo caso il Processo non detiene il controllo della CPU dell'Elaboratore, ma si trova in una coda di Processi che si dicono pronti a richiederne il controllo. Un Processo è in stato \textit{Ready} tipicamente al termine delle suddette operazioni di I/O mentre attende che il controllo della CPU passi dal Processo attualmente in stato \textit{Running} ad esso.
+\end{enumerate}
+Le transizioni di Stato che possono avvenire dipendono dall'Algoritmo di \textit{Scheduling} del Sistema Operativo, e sono ben descritte nello schema a seguire.
+\input{images/StatesTransitions.tex}
+Tutte le transizioni di Stato, a meno di quella che porta dallo Stato ``\textit{Running}'' allo Stato ``\textit{Ready}'' sono possibili in ogni Algoritmo di Scheduling, mentre quest'ultima è implementabile se e solo se il suddetto Algoritmo supporta meccanismi di Prelazione. \par
+Ovviamente la rappresentazione riportata è un caso esemplificativo utile alla comprensione di alcuni comportamenti rintracciabili nella sincronizzazione tra processi nel Linguaggio Java, ma si ricorda che il Grafo degli Stati e delle loro transizioni in un Sistema Operativo moderno risulta nettamente più complicato, si riporta a seguire quello di UNIX.
+\input{images/UnixStatesTransitions.tex}
+
 \section[Esecuzione Sequenziale e non Sequenziale]{Esecuzione Sequenziale ed Esecuzione non Sequenziale}
-La sequenza di operazioni eseguite da un processo può essere rappresentata attraverso un Grafo Orientato che indichi la precedenza delle une sulle altre. In questa visualizzazione i nodi indentificano il singolo evento da verificarsi, mentre gli archi l'ordinamento temporale tra i nodi. \par
+La sequenza di operazioni eseguite da un processo può essere rappresentata attraverso un Grafo Orientato che indichi la precedenza delle une sulle altre. In questa visualizzazione i nodi identificano il singolo evento da verificarsi, mentre gli archi l'ordinamento temporale tra i nodi. \par
 \subsection{Processi Sequenziali}
-Facendo riferimento alla rappresentazione descritta in precedenza, un Processo Sequenziale è tale da poter essere schematizzato tramite l'ausilio di un Grafo ad Ordinamento Totale: una particolare tipologia di Grafo ove ogni nodo - e quindi ogni evento - fatta eccezione per il nodo di inizio ed il nodo di fine, possiede un solo predecessore ed un solo successore. \par
+Facendo riferimento alla rappresentazione descritta in precedenza, un Processo Sequenziale è tale da poter essere schematizzato tramite l'ausilio di un Grafo ad Ordinamento Totale: una particolare tipologia di Grafo ove ogni nodo - e quindi ogni evento - fatta eccezione per il nodo di inizio ed il nodo di fine, possiede uno e un solo predecessore ed uno e un solo successore. \par
 A seguire viene effettuato un esempio di Processo Sequenziale. \par
 \subsubsection*{Esempio di Rappresentazione di un Processo Sequenziale}
 Si riporta a titolo di esempio un Processo che richiede all'utente due numeri interi e ne restituisce la somma. Esso è rappresentabile come una sequenza ordinata di operazioni atomiche come esplicitato a seguire.
 \input{images/SequentialProcess.tex}
 \subsection{Processi non Sequenziali}
-Al contrario della controparte, un Processo non Sequenziale può essere rappresentato tramite l'ausilio di un Grafo ad Ordinamento Parziale: ogni nodo interno potrà avere più predecessori e più successori. Questo è possibile in quanto alcune operazioni eseguite dal Processo sono indipendenti tra loro o non è interessante il loro ordine di terminazione per l'utente finale. \par
+Al contrario della controparte, un Processo non Sequenziale può essere rappresentato tramite l'ausilio di un Grafo ad Ordinamento Parziale: ogni nodo interno potrà quindi avere più predecessori e più successori. Questo è possibile in quanto alcune operazioni eseguite dal Processo sono indipendenti tra loro o non è interessante il loro ordine di terminazione per l'utente finale. \par
 A seguire viene effettuato un esempio di Processo non Sequenziale.
 \subsubsection*{Esempio di Rappresentazione di un Processo non Sequenziale}
 Si supponga di dover valutare l'espressione matematica:
 $$(5 + 8) + (6 - 3) * (9 + 2)$$
-Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti calcolare in ordine arbitrario o addirittura delegare la valutazione a differenti agenti di calcolo le espressioni elementari all'interno delle parentesi.
+Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti delegare la valutazione di singoli blocchi a differenti agenti di calcolo.
 \input{images/NonSequentialProcess.tex}
 
 \section{Processi Interagenti}
-Dall'esecuzione non sequenziale è possibile ottenere situazioni ove due o più Processi devono interagire tra loro per il completamento delle rispettive operazioni. È possibile individuare tre possibili tipi di interazione.
+Dall'esecuzione non sequenziale è possibile ottenere situazioni ove due o più Processi debbano interagire tra loro per il completamento delle rispettive operazioni. È possibile individuare tre possibili tipi di interazione.
 \subsection{Interazione Indiretta (Competizione)}
 In questo caso i suddetti Processi competono per l'utilizzo di risorse comuni come variabili o dispositivi di Input/Output. Un esempio lampante potrebbe essere la condivisione di una variabile numerica per due Processi P1 e P2.
 \input{images/CompetitiveInteraction.tex}
@@ -95,11 +111,12 @@ L'Interferenza viene risolta tramite l'utilizzo dei costrutti di sincronizzazion
 Alla luce di quanto esposto risulta importante esplicitare quali siano gli strumenti e le tecniche di sincronizzazione utilizzate per garantire la correttezza dei risultati di Processi Concorrenti. Prima di passare ad una loro descrizione è comunque necessario introdurre il concetto di Sezione Critica.
 \subsection{Sezione Critica}
 La Sezione Critica viene definita come una serie di Operazioni nelle quali un Processo accede e/o modifica risorse comuni a più Processi. \par
-Diverse Sezioni Critiche che accedano a gruppi differenti di Risorse possono essere scisse in altrettante categorie.
+Diverse Sezioni Critiche che accedano a gruppi differenti di Risorse possono essere scisse in altrettante categorie. \par
+L'idea alla base dell'esistenza della Sezione Critica è quella di permettere ad uno ed un solo Processo alla volta di entrare in tale segmento di Codice, in maniera tale da garantire un accesso mutualmente esclusivo alle risorse comuni in essa manipolate.
 \subsection{Strumenti di Sincronizzazione}
 Gli Strumenti illustrati di seguito non rappresentano l'interezza delle metodologie di Sincronizzazione disponibili in letteratura, ma sono stati scelti in maniera tale da essere il più possibile utili al fine di introdurre i concetti alla base del \textit{Multi-Threading} nel Linguaggio Java ed inoltre chiarificare alcune metodologie utilizzate anche al di fuori di quest'ultimo (si veda lo Scambio di Messaggi). \par
 Lo scopo di tali Meccanismi sarà quello di permettere al più ad un processo di accedere ad ogni categoria di Sezione Critica. Per ottenere questo risultato, la Sezione Critica va incapsulata da un Prologo che la preceda ed un Epilogo che la segua. In maniera intuitiva si può pensare al Prologo e all'Epilogo come l'operazione di acquisizione di un lucchetto per bloccare una risorsa per poi rilasciarlo al prossimo Processo che ne necessita rispettivamente. \par
-A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente Strumenti quali Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi. Si riportano a seguire i tre Meccanismi citati.
+A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente strumenti quali Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi. Si riportano a seguire i tre Meccanismi citati.
 \subsubsection{Semaforo}
 Il Semaforo\cite{Semaforo}, introdotto dall'informatico olandese Edsger Wybe Dijkstra, è un tipo di dato astratto (ADT) atto alla sincronizzazione che si compone di:
 \begin{itemize}
@@ -113,7 +130,7 @@ E sul quale è possibile effetturare le operazioni di:
 \end{itemize}
 Il Semaforo va ad incapsulare la Sezione Critica al fine di rendere possibile ad un solo processo alla volta l'accesso ad essa. \par
 La variabile $S_v$ mantiene come informazione quanti processi possono accedere alla loro Sezione Critica (se vale zero il processo si sospende sul Semaforo), mentre $Q_s$ è una Coda di Descrittori dei Processi che non sono riusciti ad accedere alla loro Sezione Critica a causa del Semaforo. \par
-Le Operazioni ``\texttt{wait(S)}'' e ``\texttt{signal(S)}'' vanno invece a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
+Le Operazioni ``\texttt{wait(S)}'' e ``\texttt{signal(S)}'' vanno invece rispettivamente a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
 L'utilizzo di un Semaforo per la protezione di una Sezione Critica avviene secondo il seguente schema: \par
 \begin{algorithm}[H]
     \caption{Esempio di utilizzo di un Semaforo}
@@ -210,7 +227,7 @@ Le scelte implementative sopracitate vengono analizzate a seguire:
     \item \textbf{Tecnica di Identificazione dei Processi Comunicanti} \par
         L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire direttamente che non. \par
         Nel primo caso si va ad utilizzare l'identificativo dei processi come parametro delle primitive, come sotto riportato.
-        \begin{lstlisting}
+        \begin{lstlisting}[language=Java]
 /*
 * R ed S sono rispettivamente gli Identificatori del Processo "Sender" e del Processo "Receiver".
 * La Variabile "message" sta ad indicare il messaggio inviato dal Processo "Sender" e che il Processo "Receiver" dovra' ricevere.
@@ -219,7 +236,7 @@ send(R, message);
 receive(S, message);
         \end{lstlisting}
         È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{send}'' e ``\texttt{receive}''.
-        \begin{lstlisting}
+        \begin{lstlisting}[language=Java]
 // Molti a Uno
 send(R, message); // Invia ad uno specifico Ricevitore
 receive(ID, message); // Riceve da qualsiasi Mittente
