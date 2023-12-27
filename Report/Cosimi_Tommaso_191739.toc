@@ -10,25 +10,27 @@
 \contentsline {subsection}{\numberline {1.4.1}Interazione Indiretta (Competizione)}{17}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Interazione Diretta (Cooperazione)}{18}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Interazione Indesiderata (Interferenza)}{18}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Sincronizzazione tra Processi}{19}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Sincronizzazione tra Processi}{18}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Sezione Critica}{19}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Strumenti di Sincronizzazione}{19}{subsection.1.5.2}%
-\contentsline {subsubsection}{Semaforo}{20}{section*.15}%
+\contentsline {subsubsection}{Semaforo}{19}{section*.15}%
 \contentsline {subsubsection}{Monitor}{21}{section*.16}%
 \contentsline {subsubsection}{Scambio di Messaggi}{23}{section*.17}%
 \contentsline {subsection}{\numberline {1.5.3}Modelli Logici per la Concorrenza}{25}{subsection.1.5.3}%
 \contentsline {subsubsection}{Modello ad Ambiente Globale}{25}{section*.18}%
 \contentsline {subsubsection}{Modello ad Ambiente Locale}{25}{section*.19}%
 \contentsline {section}{\numberline {1.6}Processi Pesanti e Processi Leggeri}{25}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Processi Pesanti}{26}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.1}Processi Pesanti}{25}{subsection.1.6.1}%
 \contentsline {subsection}{\numberline {1.6.2}Processi Leggeri - ``\textit {Thread}''}{26}{subsection.1.6.2}%
 \contentsline {subsubsection}{Modalità di Realizzazione}{27}{section*.20}%
 \contentsline {chapter}{\numberline {2}\textit {Multi-Threading} in Java}{29}{chapter.2}%
 \contentsline {section}{\numberline {2.1}La Classe ``\texttt {Thread}'' e l'Interfaccia ``\texttt {Runnable}''}{29}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Stesura di un semplice Programma Multiprocesso}{30}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Dichiarazione della Classe come Sotto-Classe di \texttt {Thread}}{30}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Implementazione dell'Interfaccia \texttt {Runnable}}{32}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Implementazione come Sotto-Classe di \texttt {Thread}}{30}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Implementazione dell'Interfaccia \texttt {Runnable}}{31}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Controllo del Flusso di Esecuzione}{33}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Problemi del Controllo del Flusso di Esecuzione}{35}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Considerazioni sul Controllo del Flusso di Esecuzione}{36}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Sincronizzazione tra Processi}{36}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Sincronizzazione di Processi Leggeri in Java}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Il Costrutto \textit {Synchronized}}{37}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Il costrutto \textit {Lock}}{38}{section.3.2}%
