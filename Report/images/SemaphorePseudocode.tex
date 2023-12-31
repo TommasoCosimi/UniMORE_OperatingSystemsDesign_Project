@@ -1,0 +1,29 @@
+\begin{algorithm}[H]
+    \caption{Pseudocodice di un Semaforo}
+    \label{alg.SemaphorePseudo}
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwFunction{FConstructor}{Costruttore}
+    \SetKwFunction{FWait}{wait}
+    \SetKwFunction{FSignal}{signal}
+    \Fn{\FConstructor{int valoreIniziale}}{
+        this.$Q_s$ = Nuova Coda di Descrittori di Processo vuota\;
+        \tcp{Si richiede un valore iniziale da assegnare al Semaforo}
+        this.$S_v$ = valoreIniziale\; 
+    }
+    \Fn{\FWait{Semaphore S}}{
+        \tcp{Verifica che il valore di $S_v$ sia $> 0$ e decrementalo, altrimenti inserisci il processo nella coda $Q_s$}
+        \eIf{$S.S_v > 0$} {
+            $S.S_v \gets (S.S_v - 1)$\;
+        } {
+            Imposta lo stato del Processo su ``\textit{Blocked}'' ed inserisci il suo descrittore in $S.Q_s$\;
+        }
+    }
+    \Fn{\FSignal{Semaphore S}}{
+        \tcp{Verifica che la coda $Q_s$ non sia vuota e libera l'ultimo processo per poterne riprendere l'esecuzione, altrimenti inncrementa il valore di $S_v$}
+        \eIf{$\exists$ Processo nella Coda $S.Q_s$}{
+            Rimuovi il descrittore del Processo da $S.Q_s$ ed imposta il suo stato su ``\textit{Ready}''\;
+        }{
+           $S.S_v \gets (S.S_v + 1)$\;
+        }
+    }
+\end{algorithm}

@@ -1,0 +1,20 @@
+\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
+public class ClassExtendThread extends Thread {
+    
+    // Definisco l'Identificativo che verra' assegnato dal Main
+    private int threadNumber;
+
+    public ClassExtendThread(int tNum) {
+        // Inizializzo l'Identificativo
+        this.threadNumber = tNum;
+    }
+
+    // Implemento il metodo run() sovrascrivendo l'implementazione di Thread
+    @Override
+    public void run() {
+        // Stampo l'Identificativo
+        System.out.println("Sono il Thread numero " + this.threadNumber + ".");
+    }
+}   
+\end{lstlisting}
+\captionof{lstlisting}{Esempio di Classe che estende la Classe Thread per essere eseguita in un Processo Leggero separato.}

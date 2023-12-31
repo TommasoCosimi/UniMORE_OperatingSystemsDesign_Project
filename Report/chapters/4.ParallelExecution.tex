@@ -1,0 +1,34 @@
+Il Linguaggio di Programmazione Java permette di semplificare ed ottimizzare l'esecuzione parallela di differenti \textit{Task} mettendo a disposizione del Programmatore il Costrutto delle \textit{Thread Pool}, illustrato nel presente Capitolo.
+
+\section{\textit{Thread Pools}}
+Si tratta di gruppi di \textit{Thread} cosiddetti ``\textit{Worker}'' che attendono l'allocazione di \textit{Task} da eseguire. \par
+Questo approccio è spesso utilizzato in quanto l'allocazione di un \textit{Thread} richiede un \textit{Overhead} di risorse che potrebbe divenire non banale con il crescere del numero di questi. Altro vantaggio portato da una filosofia che privilegi il riutilizzo di \textit{Thread} è quella di poter limitare il tempo utilizzato per la loro creazione e distruzione. \par
+Non essendo però più necessariamente in grado di assegnare un singolo \textit{Thread} ad ogni \textit{Task} dell'utente, il grado di parallelismo raggiungibile implementando una soluzione come questa va ovviamente a ridursi. \par
+Ogni \textit{Thread Pool} dispone di una lista di \textit{Task} da eseguire da cui ciascun \textit{Thread} andrà a scegliere. Una volta che un \textit{Thread} termina l'esecuzione di un \textit{Task}, esso andrà a sceglierne un altro dalla lista fin tanto che ve ne saranno presenti. A seguire è illustrato un esempio.
+\input{images/ThreadPoolExample.tex}
+
+\section{Implementazione di \textit{Thread Pools}}
+L'implementazione di una \textit{Thread Pool} avviene generalmente tramite l'utilizzo dell'Interfaccia \texttt{ExecutorService}: una sotto-Interfaccia di \texttt{Executor} che produce oggetti di tipo \texttt{Future} per tenere traccia dell'avanzamento dei \textit{Task}. L'interfaccia dispone di un Metodo per la creazione di una \textit{Thread Pool} contenente un numero fissato di \textit{Thread} e viene implementata in particolare da due Classi che realizzano \textit{Thread Pool} più complesse.
+\subsection{Il Metodo \texttt{newFixedThreadPool}}
+Il Metodo \texttt{newFixedThreadPool(int numOfThreads)} permette di creare una \textit{Thread Pool} con un numero fissato di \textit{Worker Thread} atti all'esecuzione dei \textit{Task} loro assegnati. In ogni momento al massimo \texttt{numOfThreads} \textit{Thread} saranno attivi e in esecuzione sulla \textit{Pool}. In caso di errori durante l'esecuzione di un \textit{Task}, il \textit{Thread} assegnatogli ne sceglierà un altro.
+\subsection{La Classe \texttt{ThreadPoolExecutor}}
+La Classe \texttt{ThreadPoolExecutor} dispone di maggiori parametri per adattarsi all'utilizzo in condizioni differenti: è possibile infatti scegliere il numero minimo e massimo di \textit{Thread} che possono essere allocati in ogni momento a seconda del carico. \par
+La scelta di un corretto numero di \textit{Thread} diviene ora di fondamentale importanza al fine di non sprecare risorse o di allocarne troppe poche.
+\subsection{La Classe \texttt{ScheduledThreadPoolExecutor}}
+Quest'ultima è una reimplementazione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedulare l'inizio dell'esecuzione dei singoli \textit{Task}.
+\subsection{Metodi di \texttt{ExecutorService}}
+\texttt{ExecutorService} dispone di Metodi per la gestione dell'esecuzione dei vari \textit{Task} ad esso assegnati. Se ne riportano i più importanti.
+\subsubsection{\texttt{execute()}}
+Metodo ereditato dall'Interfaccia \texttt{Executor}, permette di avviare l’esecuzione di un Oggetto di tipo \texttt{Runnable} non appena possibile.
+\subsubsection{\texttt{submit()}}
+Permette di inserire nella Coda un nuovo \textit{Task}: esso può essere sia di tipo \texttt{Runnable} - quindi senza Valore di Ritorno - che \texttt{Callable}, e quindi con un Valore di Ritorno.
+\subsubsection{\texttt{shutdown()}}
+Attende la terminazione di tutti i \textit{Task} e termina i \textit{Thread} della \textit{Pool} per poi distruggerla, non accettando nuovi inserimenti.
+\subsubsection{\texttt{shutdownNow()}}
+Tenta di terminare i \textit{Task} in esecuzione, cancella l'esecuzione dei prossimi in coda e non accetta nuovi inserimenti su di essa, ritornando una lista di \textit{Task} che attendevano di eseguire al momento dell'invocazione.
+\subsubsection{\texttt{invokeAny()}}
+Esegue i \textit{Task} indicati dalla lista passata come parametro al Metodo stesso, ritornando il risultato del primo \textit{Thread} che esegue correttamente il \textit{Task}.
+\subsubsection{\texttt{invokeAll()}}
+Esegue i \textit{Task} indicati dalla lista passata come parametro al Metodo stesso, ritornando una lista di Oggetti di tipo \texttt{Future} che contengano lo stato e il risultato dell'esecuzione una volta che tutti hanno terminato.
+\subsubsection{\texttt{awaitTermination()}}
+Blocca l'esecuzione del \textit{Thread} principale fin tanto che l'esecuzione dei \textit{Task} non termina.

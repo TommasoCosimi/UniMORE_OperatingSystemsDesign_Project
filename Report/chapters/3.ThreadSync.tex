@@ -1,0 +1,78 @@
+Nel Capitolo che segue verranno discusse alcune delle tecniche di Sincronizzazione tra \textit{Thread} messe a disposizione dal Linguaggio di Programmazione Java.
+
+\section{Il Costrutto \textit{Synchronized}}
+Il Costrutto \textit{Synchronized} permette di implementare, come il nome suggerisce, una sincronizzazione nell'esecuzione di Metodi o comunque di blocchi di codice da parte di due o più Processi Leggeri. Essi si basano sull'utilizzo di Oggetti che svolgeranno la funzione di Monitor, garantendo ad un solo Processo alla volta di eseguire le parti di codice protette di un determinato oggetto. \par
+È possibile utilizzare la parola chiave \texttt{synchronized} sia nella dichiarazione di un Metodo che nella protezione di uno specifico blocco di codice, sono riportati a seguire esempi implementativi.
+\input{images/SynchronizedBasicExample.tex}
+\subsection{Metodi \textit{Synchronized}}
+Il Monitor dei Metodi di tipo \textit{Synchronized} è implicito, e può essere una tra le seguenti due alternative:
+\begin{itemize}
+    \item L'Oggetto \texttt{this} (l'Istanza della Classe) nel caso di Metodi d'Istanza;
+    \item La Classe stessa nel caso di Metodi Statici.
+\end{itemize}
+Questo vuol dire che più Metodi all'interno di una classe potrebbero essere gestiti tramite lo stesso Monitor, garantendovi un accesso mutualmente esclusivo. \par
+\subsection{Blocchi \textit{Synchronized}}
+Nei Blocchi \textit{Synchronized}, per natura di dichiarazione, la Variabile utilizzata come Monitor non è implicita. In questo caso è possibile quindi definire diverse ``Classi di Mutua Esclusione''. Grazie a questa flessibilità è anche possibile condividere l'oggetto Monitor tra più Istanze della stessa Classe o anche tra più Classi.
+\subsection{Le Primitive \texttt{wait()}, \texttt{notify()} e \texttt{notifyAll()}}
+È possibile permettere ai vari \textit{Thread} di ``addormentarsi'' e ``risvegliarsi'' all'interno di un Blocco \textit{Synchronized} per garantire la corretta esecuzione del Programma. Java mette a disposizione tre primitive.
+\subsubsection{\texttt{wait()}}
+Permette al \textit{Thread} chiamante di interrompere la propria esecuzione e rimanere in stato \textit{Blocked} all'interno del Monitor, consentendo ad un altro Processo Leggero di accedere al Codice Protetto.
+\subsubsection{\texttt{notify()}}
+Permette al \textit{Thread} chiamante di risvegliare uno dei \textit{Thread} in attesa di eseguire il Codice Protetto dal Monitor. Viene utilizzato generalmente all'uscita dalla sezione di Codice Protetto.
+\subsubsection{\texttt{notifyAll()}}
+Permette al \textit{Thread} chiamante di risvegliare tutti i \textit{Thread} in attesa di eseguire il Codice Protetto dal Monitor. Anch'esso viene utilizzato generalmente all'uscita dalla sezione di Codice Protetto.
+\subsection{Rientranza del Costrutto \textit{Synchronized}}
+Il Costrutto \textit{Synchronized} si dice Rientrante in quanto qualora un Thread eseguente un blocco di codice sincronizzato volesse eseguirne un altro controllato tramite lo stesso Monitor, gli verrà concessa tale opportunità. Si riporta a seguire un esempio di Programma e della sua relativa esecuzione al fine di illustrare tale proprietà.
+\input{images/SynchronizedReentranceExample.tex}
+\subsection{Considerazioni}
+A fronte di una semplice implementazione, l'utilizzo del Costrutto \texttt{synchronized} porta prestazioni non desiderabili in quanto un solo \textit{Thread} alla volta può accedere ad un Blocco di Codice controllato dallo stesso Oggetto. Altro svantaggio è quello di non avere una garanzia sulla sequenza di esecuzione dei vari Thread, quindi è possibile incorrere in fenomeni di \textit{Starvation}, il Costrutto infatti non è Equo.
+
+\section{L'Interfaccia \texttt{Lock}}
+Le diverse implementazioni di \texttt{Lock} forniscono un'alternativa per la gestione delle Sezioni Critiche. \par
+Il concetto alla base è analogo a quello dell'alternativa precedente: quando un \textit{Thread} ha acquisito un \textit{Lock}, nessun altro può eseguire operazioni protette da questo fin tanto che esso non viene rilasciato. Un tipico schema di utilizzo viene riportato a seguire. \par
+\input{images/LockBasicExample.tex}
+Vista la criticità del \textit{Lock} è buona norma operare su di esso all'interno di un Blocco \textit{Try-Finally} o \textit{Try-Catch} in maniera tale da rilasciarlo anche nel caso di Eccezioni e permettere la normale esecuzione di altri \textit{Thread}. \par
+\subsection{Categorie di \textit{Lock}}
+Essendo \texttt{Lock} solamente un'interfaccia, ne sono disponibili diverse tipologie che implementino la stessa funzionalità estendendola poi in maniera differente. A seguire le due categorie più utilizzate.
+\subsubsection{\texttt{ReentrantLock}}
+Il \textit{Lock} Rientrante è posseduto dall'ultimo Processo Leggero che è riuscito a bloccarlo e non lo ha ancora rilasciato. È possibile per un \textit{Thread} acquisire lo stesso \textit{Lock} più volte, rilasciandolo poi un numero di volte pari a quello per cui è stato acquisito al fine di renderlo disponibile ad altri Processi Leggeri.
+\subsubsection{\texttt{ReentrantReadWriteLock}}
+Alternativa particolarmente utile nel caso di consumazione di risorse in modalità distinte di Lettura o Scrittura che implementa una semantica simile al \texttt{ReentrantLock} illustrato poc'anzi. Permette di definire un ``Sotto-\textit{Lock}'' di Lettura ed un altro di Scrittura.
+\subsection{Equità del \textit{Lock}}
+A differenza della controparte è possibile imporre al \textit{Lock} di essere equo e permettere di essere acquisito dai \textit{Thread} nell'ordine di arrivo, prioritizzando quindi quelli che stanno attendendo la sua acquisizione da più tempo ed evirando l'insorgere di problematiche relative alla \textit{Starvation} di un \textit{Thread}. \par
+Per imporre questa specifica è unicamente necessario utilizzare il corretto costruttore del \textit{Lock} desiderato, passando come parametro un Booleano impostato su \texttt{true} come segue.
+\input{images/FairLock.tex}
+\subsection{Primitive di \texttt{Lock}}
+L'interfaccia mette a disposizione due Metodi al di fuori dei già discussi \texttt{lock()} ed \texttt{unlock()}:
+\subsubsection{\texttt{lockInterruptibly()}}
+Questo Metodo non permetterà di acquisire il \textit{Lock} qualora il \textit{Thread} sia stato interrotto sollevando un'Eccezione di tipo \texttt{InterruptedException}.
+\subsubsection{\texttt{tryLock()}}
+Questo Metodo acquisisce il \texttt{Lock} solamente se disponibile al momento dell'invocazione, altrimenti ritorna valore un Booleano \texttt{false} e permette al \textit{Thread} di continuare normalmente con la sua esecuzione, non è quindi bloccante a differenza del normale \texttt{lock()}. \par
+Ne esiste una variante in cui viene passato come parametro un valore numerico rappresentante il tempo di tolleranza ed un altro parametro che indica l'unità di misura del tempo indicato precedentemente: il \textit{Thread} proverà ad acquisire il \textit{Lock} per il tempo specificato verificando che il Processao Leggero che lo possiede non sia stato interrotto prima di ritornare e continuare con il suo flusso di Esecuzione.
+\subsection{Variabili Condizione}
+Le Variabili di Condizione vanno a sostituire l'Oggetto Monitor e le sue primitive (\texttt{wait()}, \texttt{notify()} e \texttt{notifyAll()}) dando l'impressione di avere a disposizione più insiemi di condizioni per la sincronizzazione e vengono utilizzate in congiunzione con le varie implementazioni di \texttt{Lock}. Esse permettono quindi di sospendere e riprendere l'esecuzione di un Processo Leggero sotto determinate ipotesi all'interno di una Sezione Critica descritta dal \textit{Lock} collegato.
+\subsubsection{Inizializzazione di una Variabile di Condizione}
+Il legame intriseco con il \textit{Lock} associato di una Variabile Condizione implica che la sua dichiarazione avverrà per mezzo di quest'ultimo. Se ne riporta a seguire un esempio.
+\input{images/ConditionVarDeclaration.tex}
+\subsubsection{Primitive delle Variabili Condizione}
+Analogamente a quanto trovato nella descrizione del Costrutto \texttt{synchronized}, le Variabili Condizione dispongono di primitive per la sospensione e la ripresa dell'esecuzione di un \textit{Thread}. Esse sono rispettivamente \texttt{await()} e \texttt{signal()} (quest'ultimo disponibile anche nella sua variante \texttt{signalAll()}). Ancora una volta per la Primitiva \texttt{await()} è disponibile una variante che accetta come parametro un tempo massimo di attesa prima della ripresa del Flusso di Esecuzione del \textit{Thread}, nonché una diversa Primitiva - \texttt{awaitUninterruptibly()} - che sospende l'esecuzione del Processo fino alla segnalazione senza però interromperlo.
+
+\section{La Classe \texttt{Semaphore}}
+Java dispone di una Classe rappresentante un Semaforo Generalizzato: essa permette di limitare il numero di Processi Leggeri che possono accedere contemporaneamente ad una determinata risorsa.
+\subsection{Equità di un Semaforo}
+La dichiarazione di un Semaforo può passare attraverso due diversi costruttori: uno che indichi unicamente il numero di \textit{Thread} che possono richiedere di entrare contemporaneamente nella Sezione Critica da esso protetta, ed un altro che oltre a questo valore accetta anche una Variabile Booleana che ne indichi l'Equità, permettendo quindi anche in questo caso di garantire al Processo da più tempo in attesa sul Semaforo di ottenere il permesso di eseguire prima degli altri. Si riporta a seguire un esempio di dichiarazione di varie tipologie di Semafori.
+\input{images/SemaphoreDeclaration.tex}
+\subsection{Primitive di \texttt{Semaphore}}
+Nuovamente la Classe dispone di diverse primitive per la gestione dell'esecuzione della Sezione Critica da parte dei vari \textit{Thread}. Si riportano a seguire le più utilizzate.
+\subsubsection{\texttt{acquire()}}
+Permette di acquisire uno (o \texttt{numberOfPermits} nella sua variante \texttt{acquire(int numberOfPermits)}) permessi per l'accesso alla Sezione Critica.
+\subsubsection{\texttt{acquireUninterruptibly()}}
+Anch'esso permette al \textit{Thread} di acquisire uno o \texttt{numberOfPermits} nella variante \texttt{acquireUninterruptibly(int numberOfPermits)} permessi per l'accesso alla Sezione Critica, ma senza essere effettivamente interrotto dallo \textit{Scheduler}.
+\subsubsection{\texttt{tryAcquire()}}
+Utile nel tentare l'acquisizione di uno o più permessi nella sua variante \texttt{tryAcquire(int numberOfPermits)} in maniera non bloccante: il \textit{Thread} tenterà di acquisire il permesso, e se questo non è disponibile esso proseguirà con la propria esecuzione. Ne esiste una variante temporizzata (\texttt{tryAcquire(int numberOfPermits, long time, TimeUnit unit)}) che permette di provare ad acquisire il permesso per un lasso di tempo pari a quello specificato.
+\subsubsection{\texttt{release()}}
+Il metodo consente di rilasciare uno o \texttt{numberOfPermits} nella sua variante \texttt{release(int numberOfPermits)} permessi, consentendo al prossimo Processo Leggero di acquisirli.
+\subsubsection{\texttt{reducePermits(int numberOfPermitsToRemove)}}
+È anche possibile ridurre il numero di permessi allocabili dal Semaforo utilizzando questa primitiva, in maniera tale da ridurre gli accessi concorrenti possibili alla Sezione Critica da esso protetta.
+\subsubsection{\texttt{availablePermits()}}
+Ritorna il numero di Permessi ancora disponibili e non utilizzati da alcun \textit{Thread} all'interno della Sezione Critica protetta dal Semaforo.

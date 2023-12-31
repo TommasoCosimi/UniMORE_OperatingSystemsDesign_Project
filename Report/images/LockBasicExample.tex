@@ -1,0 +1,17 @@
+\begin{lstlisting}[language=Java]
+Lock lck = new ...;
+try {
+    // Acquisizione del Lock
+    lck.lock();
+    // Sezione Critica
+    ...
+    // Fine Sezione Critica
+} catch(Exception e) {
+    // Gestione delle (eventuali) Eccezioni sollevate
+    e.printStackTrace();
+} finally {
+    // Rilascio del Lock
+    lck.unlock();
+}
+\end{lstlisting}
+\captionof{lstlisting}{Esempio di utilizzo di un \textit{Lock}.}

@@ -1,0 +1,8 @@
+\begin{lstlisting}
+// Lock non equi
+Lock unfairLock1 = new ReentrantLock();
+Lock unfairLock2 = new ReentrantLock(false);
+// Lock equo
+Lock fairLock = new ReentrantLock(true);
+\end{lstlisting}
+\captionof{lstlisting}{Esempi di inizializzazione di \textit{Lock} sia equi che non.}

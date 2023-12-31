@@ -4,61 +4,13 @@ Il seguente Capitolo fornirà un'introduzione teorica al concetto di esecuzione 
 Nella definizione della singola unità di esecuzione si ritiene opportuno effettuare una leggera digressione. \par
 \subsection*{Algoritmo}
 Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. In letteratura sono rintracciabili moltissimi Algoritmi, per brevità vengono nominati a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} - di cui viene fornito lo pseudocodice a seguire - od il \textit{Radix Sort}\cite{RadixSort}, e Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
-\begin{algorithm}[H]
-    \caption[\textit{Bubble Sort}]{Ordinamento per confronti ``\textit{Bubble Sort}''}
-    \label{alg.BubbleSortPsuedo}
-    \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
-    \KwResult{A\tcp*{Vettore di numeri interi ordinati}}
-    $partizioneNonOrdinata \gets A.length$\;
-    \While{$partizioneNonOrdinata > 1$}{
-        \For{$i = 2$ fino a $k$} {
-            \If{$A[i] < A[i-1]$} {
-                Scambia $A[i]$ ed $A[i-1]$\;
-            }
-        }
-        $partizioneNonOrdinata \gets (ultimoScambio-1)$\;
-    } 
-    \Return{A}
-\end{algorithm}
+\input{images/AlgorithmExample.tex}
 \subsection*{Programma}
 Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
-\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
-public class BubbleSort {
-
-    public static void BubbleSort(int[] A) {
-        
-        // Definizione della dimensione della partizione del vettore non ordinata
-        int unorderedPartition = A.length;
-        
-        // Ordinamento
-        while(unorderedPartition > 1) {
-            // Scorro la parte non ordinata
-            for(int i=2; i<unorderedPartition; i++) {
-                // Se non e' ordinato, scambia
-                if(A[i] < A[i-1]) {
-                    int buf = A[i];
-                    A[i] = A[i-1];
-                    A[i-1] = buf;
-                }
-            }
-            // Dopo lo scambio, riduco la dimensione della partizione del vettore non ordinata
-            unorderedPartition = unorderedPartition - 1;
-        }
-
-    }
-
-}
-\end{lstlisting}
+\input{images/ProgramExample.tex}
 \subsection*{Processo}
 Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
-\begin{lstlisting}[language=Bash]
-$ java BubbleSort 1 2 3 6 5 2
-Il vettore non ordinato e': [1, 2, 3, 6, 5, 2]
-Il vettore ordinato e': [1, 2, 2, 3, 5, 6]
-$ java BubbleSort 1 9 8 3 6 7
-Il vettore non ordinato e': [1, 9, 8, 3, 6, 7]
-Il vettore ordinato e': [1, 3, 6, 7, 8, 9]
-\end{lstlisting}
+\input{images/ProcessExample.tex}
 
 \section{Stati di un Processo}
 Un Processo può passare attraverso diversi Stati durante il suo ciclo di vita. Nel caso più generale è possibile individuarne essenzialmente tre:
@@ -132,46 +84,9 @@ Il Semaforo va ad incapsulare la Sezione Critica al fine di rendere possibile ad
 La variabile $S_v$ mantiene come informazione quanti processi possono accedere alla loro Sezione Critica (se vale zero il processo si sospende sul Semaforo), mentre $Q_s$ è una Coda di Descrittori dei Processi che non sono riusciti ad accedere alla loro Sezione Critica a causa del Semaforo. \par
 Le Operazioni ``\texttt{wait(S)}'' e ``\texttt{signal(S)}'' vanno invece rispettivamente a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
 L'utilizzo di un Semaforo per la protezione di una Sezione Critica avviene secondo il seguente schema: \par
-\begin{algorithm}[H]
-    \caption{Esempio di utilizzo di un Semaforo}
-    \label{alg.SemaphoreUsageExample}
-    \SetKwFunction{FWait}{wait}
-    \SetKwFunction{FSignal}{signal}
-    \KwData{S\tcp*{Semaforo}}
-    \FWait{$S$}\;
-    Esecuzione della Sezione Critica\;
-    \FSignal{$S$}\;
-\end{algorithm}
+\input{images/AlgorithmSemaphoreUsage.tex}
 Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazione di un Semaforo. \par
-\begin{algorithm}[H]
-    \caption{Pseudocodice di un Semaforo}
-    \label{alg.SemaphorePseudo}
-    \SetKwProg{Fn}{Function}{:}{}
-    \SetKwFunction{FConstructor}{Costruttore}
-    \SetKwFunction{FWait}{wait}
-    \SetKwFunction{FSignal}{signal}
-    \Fn{\FConstructor{int valoreIniziale}}{
-        this.$Q_s$ = Nuova Coda di Descrittori di Processo vuota\;
-        \tcp{Si richiede un valore iniziale da assegnare al Semaforo}
-        this.$S_v$ = valoreIniziale\; 
-    }
-    \Fn{\FWait{Semaphore S}}{
-        \tcp{Verifica che il valore di $S_v$ sia $> 0$ e decrementalo, altrimenti inserisci il processo nella coda $Q_s$}
-        \eIf{$S.S_v > 0$} {
-            $S.S_v \gets (S.S_v - 1)$\;
-        } {
-            Imposta lo stato del Processo su ``\textit{Blocked}'' ed inserisci il suo descrittore in $S.Q_s$\;
-        }
-    }
-    \Fn{\FSignal{Semaphore S}}{
-        \tcp{Verifica che la coda $Q_s$ non sia vuota e libera l'ultimo processo per poterne riprendere l'esecuzione, altrimenti inncrementa il valore di $S_v$}
-        \eIf{$\exists$ Processo nella Coda $S.Q_s$}{
-            Rimuovi il descrittore del Processo da $S.Q_s$ ed imposta il suo stato su ``\textit{Ready}''\;
-        }{
-           $S.S_v \gets (S.S_v + 1)$\;
-        }
-    }
-\end{algorithm}
+\input{images/SemaphorePseudocode.tex}
 \subsubsection{Monitor}
 Il Monitor\cite{Monitor} è anch'esso un ADT che tiene conto dei Vincoli di Sincronizzazione: implementa infatti da sé meccanismi di Mutua Esclusione per cui al suo interno potrà esserci al più uno e un solo Processo attivo. Una peculiarità nell'utilizzo del Monitor rispetto a quello di un più semplice Semaforo è quella di poter nascondere lo stato interno delle risorse condivise tra i vari processi, lasciando loro visibili unicamente le operazioni effettuabili su di esse. \par
 In maniera più precisa un Monitor ``è un costrutto che associa un insieme di procedure ad una struttura dati comune a più Processi''\cite{MonitorDispense}. Esso è composto dai seguenti elementi:
@@ -181,36 +96,7 @@ In maniera più precisa un Monitor ``è un costrutto che associa un insieme di p
     \item Procedure, per l'interfacciamento con le risorse condivise dai Processi.
 \end{itemize}
 Un possibile pseudocodice per un Monitor potrebbe essere simile a quanto segue: \par
-\begin{algorithm}[H]
-    \caption{Pseudocodice di un Monitor}
-    \label{alg.MonitorPseudo}
-    \SetKwProg{Fn}{Function}{:}{}
-    \SetKwProg{Prc}{Procedure}{:}{}
-    \SetKwFunction{FConstructor}{Costruttore}
-    \SetKwFunction{FProcA}{Procedura1}
-    \SetKwFunction{FProcB}{Procedura2}
-    \SetKwFunction{FProcN}{ProceduraN}
-    \tcp{Variabili di Condizione}
-    \textbf{Condition} variabileCondizione1\;
-    \textbf{Condition} variabileCondizione2\;
-    \dots\;
-    \textbf{Condition} variabileCondizioneN\;
-    \tcp{Costruttore}
-    \Fn{\FConstructor{}}{
-        \tcp{Codice del Costruttore}
-    }
-    \tcp{Procedure}
-    \Prc{\FProcA{Parametro1, Parametro2, \dots, ParametroJ}}{
-        \tcp{Codice della Procedura 1}
-    }
-    \Prc{\FProcB{Parametro1, Parametro2, \dots, ParametroK}}{
-        \tcp{Codice della Procedura 2}
-    }
-    \dots\;
-    \Prc{\FProcN{Parametro1, Parametro2, \dots, ParametroL}}{
-        \tcp{Codice della Procedura N}
-    }
-\end{algorithm}
+\input{images/MonitorPseudocode.tex}
 Un Monitor dispone di due livelli di Controllo per l'esecuzione esclusiva di operazioni sulle Risorse condivise:
 \begin{enumerate}
     \item \textbf{Primo Livello di Controllo}: \par
@@ -227,26 +113,9 @@ Le scelte implementative sopracitate vengono analizzate a seguire:
     \item \textbf{Tecnica di Identificazione dei Processi Comunicanti} \par
         L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire sia direttamente che indirettamente. \par
         Nel primo caso si va ad utilizzare l'identificativo dei processi come parametro delle primitive, come sotto riportato.
-        \begin{lstlisting}[language=Java]
-/*
-* R ed S sono rispettivamente gli Identificatori del Processo "Sender" e del Processo "Receiver".
-* La Variabile "message" sta ad indicare il messaggio inviato dal Processo "Sender" e che il Processo "Receiver" dovra' ricevere.
-*/
-send(R, message);
-receive(S, message);
-        \end{lstlisting}
+        \input{images/MessagesDirectIdentification.tex}
         È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{Send}'' e ``\texttt{Receive}''.
-        \begin{lstlisting}[language=Java]
-// Molti a Uno
-send(R, message); // Invia ad uno specifico Ricevitore
-receive(ID, message); // Riceve da qualsiasi Mittente
-// Uno a Molti
-send(setOfReceivers, message); // Invia a piu' Ricevitori
-receive(S, message); // Riceve dallo specifico Mittente "S"
-// Molti a Molti
-send(setOfReceivers, message); // Invia a piu' Ricevitori
-receive(ID, message); // Riceve da qualsiasi Mittente
-        \end{lstlisting}
+        \input{images/MessagesIndirectCommunication.tex}
         Per implementare un tipo di Identificazione Indiretta si va ad interporre un interlocutore terzo - la ``\textit{Mailbox}'' - che si occupa di permettere ai Mittenti di inviare lei un messaggio, il quale verrà letto dai Destinatari a lei collegati.
     \item \textbf{Utilizzo della tecnica di ``\textit{Bufferizzazione}''} \par
         L'utilizzo di tale funzionalità permette una comunicazione asincrona che consente un maggiore parallelismo all'applicativo. Il ``\textit{Buffer}'' può essere di dimensione limitata o infinita. È possibile l'utilizzo di Messaggi di ``\textit{Acknowledgement}'' - o ACK - da parte del Processo ``\textit{Receiver}'' per confermare la ricezione del Messaggio. La corretta sequenza di ricezione potrebbe non essere garantita in caso di \textit{Routing} Dinamico dei Messaggi, per cui si rende necessario l'utilizzo di una numerazione per l'ordinamento.

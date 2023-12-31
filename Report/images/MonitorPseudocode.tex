@@ -1,0 +1,30 @@
+\begin{algorithm}[H]
+    \caption{Pseudocodice di un Monitor}
+    \label{alg.MonitorPseudo}
+    \SetKwProg{Fn}{Function}{:}{}
+    \SetKwProg{Prc}{Procedure}{:}{}
+    \SetKwFunction{FConstructor}{Costruttore}
+    \SetKwFunction{FProcA}{Procedura1}
+    \SetKwFunction{FProcB}{Procedura2}
+    \SetKwFunction{FProcN}{ProceduraN}
+    \tcp{Variabili di Condizione}
+    \textbf{Condition} variabileCondizione1\;
+    \textbf{Condition} variabileCondizione2\;
+    \dots\;
+    \textbf{Condition} variabileCondizioneN\;
+    \tcp{Costruttore}
+    \Fn{\FConstructor{}}{
+        \tcp{Codice del Costruttore}
+    }
+    \tcp{Procedure}
+    \Prc{\FProcA{Parametro1, Parametro2, \dots, ParametroJ}}{
+        \tcp{Codice della Procedura 1}
+    }
+    \Prc{\FProcB{Parametro1, Parametro2, \dots, ParametroK}}{
+        \tcp{Codice della Procedura 2}
+    }
+    \dots\;
+    \Prc{\FProcN{Parametro1, Parametro2, \dots, ParametroL}}{
+        \tcp{Codice della Procedura N}
+    }
+\end{algorithm}

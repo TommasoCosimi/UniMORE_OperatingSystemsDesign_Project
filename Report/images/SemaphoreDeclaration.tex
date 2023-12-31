@@ -1,0 +1,15 @@
+\begin{lstlisting}[language=Java]
+// Variabile di Supporto per il numero di massimi permessi disponibili
+int maxPermits = ...;
+// Semafori Mutualmente Esclusivi (non Equi)
+Semaphore nonFairMutex1 = new Semaphore(1);
+Semaphore nonFairMutex2 = new Semaphore(1, false);
+// Semafori Generalizzati (non Equi)
+Semaphore nonFairGeneralized1 = new Semaphore(maxPermits);
+Semaphore nonFairGeneralized2 = new Semaphore(maxPermits, false);
+// Semaforo Mutualmente Esclusivo (Equo)
+Semaphore fairMutex = new Semaphore(1, true);
+// Semaforo Generalizzato (Equo)
+Semaphore fairGeneralized = new Semaphore(maxPermits, true);
+\end{lstlisting}
+\captionof{lstlisting}{Esempi di dichiarazione dei diversi tipi di Semaforo in Java.}

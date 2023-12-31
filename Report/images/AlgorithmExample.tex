@@ -1,0 +1,16 @@
+\begin{algorithm}[H]
+    \caption[\textit{Bubble Sort}]{Ordinamento per confronti ``\textit{Bubble Sort}''}
+    \label{alg.BubbleSortPsuedo}
+    \KwData{A\tcp*{Vettore di numeri interi non ordinati}}
+    \KwResult{A\tcp*{Vettore di numeri interi ordinati}}
+    $partizioneNonOrdinata \gets A.length$\;
+    \While{$partizioneNonOrdinata > 1$}{
+        \For{$i = 2$ fino a $k$} {
+            \If{$A[i] < A[i-1]$} {
+                Scambia $A[i]$ ed $A[i-1]$\;
+            }
+        }
+        $partizioneNonOrdinata \gets (ultimoScambio-1)$\;
+    } 
+    \Return{A}
+\end{algorithm}

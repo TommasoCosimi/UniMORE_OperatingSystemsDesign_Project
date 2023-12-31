@@ -1,0 +1,58 @@
+\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
+public class SynchronizedReentrance {
+
+    public static void main(String[] args) {
+
+        // Creo un'istanza della Classe di Supporto con i metodi Synchronized
+        SynchronizedReentranceSupportClass sc = new SynchronizedReentranceSupportClass();
+
+        // Creo due Thread utilizzando una Espressione Lambda
+        Thread t1 = new Thread(() -> {
+            for(int i=0; i<5; i++) {
+                sc.increaseAndPrintCounter(1);
+            }
+        });
+        Thread t2 = new Thread(() -> {
+            for(int i=0; i<5; i++) {
+                sc.increaseAndPrintCounter(2);
+            }
+        });
+
+        // Avvio i due Thread
+        t1.start();
+        t2.start();
+    }
+}
+
+class SynchronizedReentranceSupportClass {
+
+    // Inizializzo una variabile contatore
+    private int counter = 0;
+
+    // Il metodo verra' raggiunto tramite l'altro esposto
+    private synchronized void increaseCounter() {
+        counter++;
+    }
+
+    // Metodo esposto ai Thread
+    protected synchronized void increaseAndPrintCounter(int threadNum) {
+        this.increaseCounter();
+        System.out.println("Il contatore vale " + this.counter + " ed e' stato aggiornato dal Thread " + threadNum);
+    }
+}
+\end{lstlisting}
+\captionof{lstlisting}{Programma che sfrutti la proprietà di Rientranza del Costrutto \texttt{synchronized}.}
+\begin{lstlisting}[language=Bash]
+$ java SynchronizedReentrance
+Il contatore vale 1 ed e' stato aggiornato dal Thread 1
+Il contatore vale 2 ed e' stato aggiornato dal Thread 1
+Il contatore vale 3 ed e' stato aggiornato dal Thread 1
+Il contatore vale 4 ed e' stato aggiornato dal Thread 1
+Il contatore vale 5 ed e' stato aggiornato dal Thread 1
+Il contatore vale 6 ed e' stato aggiornato dal Thread 2
+Il contatore vale 7 ed e' stato aggiornato dal Thread 2
+Il contatore vale 8 ed e' stato aggiornato dal Thread 2
+Il contatore vale 9 ed e' stato aggiornato dal Thread 2
+Il contatore vale 10 ed e' stato aggiornato dal Thread 2
+\end{lstlisting}
+\captionof{lstlisting}{Esecuzione del Programma.}

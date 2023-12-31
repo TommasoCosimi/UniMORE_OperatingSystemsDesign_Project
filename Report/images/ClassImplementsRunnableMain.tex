@@ -1,0 +1,13 @@
+\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
+...
+for(int i=0; i<NUM_OF_THREADS; i++) {
+    // Creo un nuovo oggetto di tipo ClassImplementRunnable
+    ClassImplementRunnable cir = new ClassImplementRunnable(i);
+    // Creo un Thread a partire dall'oggetto della mia Classe
+    Thread thread = new Thread(cir);
+    // Eseguo il Thread
+    thread.start();
+}
+...
+\end{lstlisting}
+\captionof{lstlisting}{Classe Main per l'utilizzo della Classe precedentemente illustrata.}
