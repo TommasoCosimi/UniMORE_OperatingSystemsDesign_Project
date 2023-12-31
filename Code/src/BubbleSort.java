@@ -1,10 +1,12 @@
+/*
+ * File: BubbleSort.java
+ * Implementazione dell'algoritmo di Ordinamento per Confronti
+ */
+
 public class BubbleSort {
-
     public static void main(String[] args) {
-
         // Raccolgo il numero di Argomenti
         int numberOfArguments = args.length;
-
         // Controllo che l'utente abbia inserito almeno un argomento, altrimenti esco
         if(numberOfArguments < 1) {
             System.out.println("Il programma ha bisogno di un vettore di numeri interi per essere utilizzato. Il processo attuale terminera'.");
@@ -19,7 +21,6 @@ public class BubbleSort {
             for(int i=0; i<numberOfArguments; i++) {
                 vector[i] = Integer.parseInt(args[i]);
             }
-
             // Stampo sullo standard output il vettore non ordinato
             System.out.print("Il vettore non ordinato e': [");
             for(int i=0; i<vector.length; i++) {
@@ -30,10 +31,8 @@ public class BubbleSort {
                 }
             }
             System.out.println("]");
-
             // Eseguo l'ordinamento
-            BubbleSort(vector);
-
+            sort(vector);
             // Stampo sullo standard output il vettore ordinato
             System.out.print("Il vettore ordinato e': [");
             for(int i=0; i<vector.length; i++) {
@@ -45,14 +44,11 @@ public class BubbleSort {
             }
             System.out.println("]");
         }
-
     }
 
-    private static void BubbleSort(int[] A) {
-        
+    private static void sort(int[] A) {
         // Definizione della dimensione della partizione del vettore non ordinata
         int unorderedPartition = A.length;
-        
         // Ordinamento
         while(unorderedPartition > 1) {
             // Scorro la parte non ordinata
@@ -67,7 +63,5 @@ public class BubbleSort {
             // Dopo lo scambio, riduco la dimensione della partizione del vettore non ordinata
             unorderedPartition = unorderedPartition - 1;
         }
-
     }
-
 }

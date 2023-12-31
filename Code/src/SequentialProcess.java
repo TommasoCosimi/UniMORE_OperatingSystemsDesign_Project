@@ -1,20 +1,18 @@
 /*
- * Semplice classe implementante la somma tra due interi per l'esemplificazione di un processo sequenziale.
-*/
+ * File: SequentialProcess.java
+ * Implementazione della somma tra due interi per l'esemplificazione di un processo sequenziale.
+ */
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SequentialProcess {
-    
     public static void main(String[] args) {
-
         String a = "";
         String b = "";
         int c;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
         try {
             System.out.print("Inserisci un numero: ");
             a = reader.readLine();
@@ -31,7 +29,5 @@ public class SequentialProcess {
             c = Integer.parseInt(a) + Integer.parseInt(b);
             System.out.println("La somma tra i due numeri inseriti e': " + c);
         }
-
     }
-
 }

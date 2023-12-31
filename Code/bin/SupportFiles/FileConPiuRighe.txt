@@ -1,3 +1,0 @@
-File di esempio contenente più righe.
-Riga aggiuntiva.
-Ulteriore riga aggiuntiva.
