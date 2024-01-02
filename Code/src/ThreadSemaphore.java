@@ -19,7 +19,7 @@ public class ThreadSemaphore {
         try {
             t1.join();
             t2.join();
-            System.out.println(tsc.getCounter());
+            System.out.println("Sono il Main, il valore finale del contatore e' " + tsc.getCounter());
         } catch(InterruptedException ie) {
             System.out.println("I Thread sono stati interrotti inaspettatamente");
             ie.printStackTrace();
@@ -37,8 +37,9 @@ class ThreadSemaphoreCounter {
         try {
             fairMutex.acquire();
             counter++;
+            Thread.sleep(1000);
         } catch(InterruptedException ie) {
-            System.out.println("Il Thread è stato interrotto durante l'acquisizione del Lock");
+            System.out.println("Il Thread è stato interrotto durante l'acquisizione del Lock o nell'invocazione di Sleep");
             ie.printStackTrace();
         } finally {
             fairMutex.release();

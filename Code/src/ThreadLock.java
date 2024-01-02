@@ -20,7 +20,7 @@ public class ThreadLock {
         try {
             t1.join();
             t2.join();
-            System.out.println(tlc.getCounter());
+            System.out.println("Sono il Main, il valore finale del contatore e' " + tlc.getCounter());
         } catch(InterruptedException ie) {
             System.out.println("I Thread sono stati interrotti inaspettatamente");
             ie.printStackTrace();
@@ -38,6 +38,10 @@ class ThreadLockCounter {
         fairLock.lock();
         try {
             counter++;
+            Thread.sleep(1000);
+        } catch(InterruptedException ie) {
+            System.out.println("Il Thread " + threadNum + " e' stato interrotto inaspettatamente");
+            ie.printStackTrace();
         } finally {
             fairLock.unlock();
         }

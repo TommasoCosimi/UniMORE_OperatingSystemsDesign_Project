@@ -1,15 +1,15 @@
 /*
- * File: ThreadSynchronized.java
- * Incremento di un Contatore condiviso da più Thread tramite il costrutto Synchronized
+ * File: ThreadExecutionControl.java
+ * Incremento di un Contatore condiviso da più Thread senza sincronizzazione
  */
 
-public class ThreadSynchronized {
+public class ThreadExecutionControl {
     public static void main(String[] args) {
-        // Creo un'istanza della Classe di Supporto con i metodi Synchronized
-        ThreadSynchronizedCounter tsc = new ThreadSynchronizedCounter();
+        // Creo un'istanza della Classe di Supporto con il Lock
+        ThreadExecutionControlCounter tecc = new ThreadExecutionControlCounter();
         // Creo due Thread
-        Thread t1 = new ThreadSynchronizedThread(1, tsc);
-        Thread t2 = new ThreadSynchronizedThread(2, tsc);
+        Thread t1 = new ThreadExecutionControlThread(1, tecc);
+        Thread t2 = new ThreadExecutionControlThread(2, tecc);
         // Avvio i due Thread
         t1.start();
         t2.start();
@@ -17,7 +17,7 @@ public class ThreadSynchronized {
         try {
             t1.join();
             t2.join();
-            System.out.println("Sono il Main, il valore finale del contatore e' " + tsc.getCounter());
+            System.out.println("Sono il Main, il valore finale del contatore e' " + tecc.getCounter());
         } catch(InterruptedException ie) {
             System.out.println("I Thread sono stati interrotti inaspettatamente");
             ie.printStackTrace();
@@ -25,16 +25,18 @@ public class ThreadSynchronized {
     }
 }
 
-class ThreadSynchronizedCounter {
+class ThreadExecutionControlCounter {
     // Inizializzo una variabile contatore
     private int counter = 0;
-    // Il metodo verrà raggiunto tramite l'altro esposto
-    private synchronized void increaseCounter() {
+    // Incremento il contatore
+    protected void increaseAndPrintCounter(int threadNum) {
         counter++;
-    }
-    // Metodo esposto ai Thread
-    protected synchronized void increaseAndPrintCounter(int threadNum) {
-        this.increaseCounter();
+        try {
+            Thread.sleep(100);
+        } catch(InterruptedException ie) {
+            System.out.println("Il Thread " + threadNum + " e' stato interrotto inaspettatamente");
+            ie.printStackTrace();
+        }
         System.out.println("Il contatore vale " + this.counter + " ed e' stato aggiornato dal Thread " + threadNum);
     }
     // Getter del contatore
@@ -43,15 +45,15 @@ class ThreadSynchronizedCounter {
     }
 }
 
-class ThreadSynchronizedThread extends Thread {
+class ThreadExecutionControlThread extends Thread {
     // Identificatore del Thread
     int threadNum;
     // Oggetto della Classe di supporto
-    ThreadSynchronizedCounter tsc;
+    ThreadExecutionControlCounter tecc;
     // Costruttore
-    public ThreadSynchronizedThread(int threadNum, ThreadSynchronizedCounter tsc) {
+    public ThreadExecutionControlThread(int threadNum, ThreadExecutionControlCounter tecc) {
         this.threadNum = threadNum;
-        this.tsc = tsc;
+        this.tecc = tecc;
         System.out.println("Thread " + this.threadNum + " avviato");
     }
     // Implementazione del Metodo run
@@ -59,7 +61,7 @@ class ThreadSynchronizedThread extends Thread {
     public void run() {
         for(int i=0; i<5; i++) {
             // Incremento il contatore
-            this.tsc.increaseAndPrintCounter(threadNum);
+            this.tecc.increaseAndPrintCounter(threadNum);
             // Rilascio volontariamente la CPU
             Thread.yield();
         }
