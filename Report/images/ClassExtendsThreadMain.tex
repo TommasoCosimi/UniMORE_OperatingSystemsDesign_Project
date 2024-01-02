@@ -1,20 +1,15 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
 public class MainExtendThread {
-
     // Definisco a priori il numero di Thread da creare
     private static final int NUM_OF_THREADS = 5;
-
     public static void main(String[] args) {
-
         System.out.println("Sono il Main e sto per creare i Thread.");        
-
         // Creo NUM_OF_THREADS Thread
         for(int i=0; i<NUM_OF_THREADS; i++) {
             ClassExtendThread cet = new ClassExtendThread(i);
             // Utilizzo la primitiva start di Thread
             cet.start();
         }
-
         // Avviso l'utente della terminata esecuzione del Main
         System.out.println("Sono il Main ed ho terminato l'esecuzione.");
     }

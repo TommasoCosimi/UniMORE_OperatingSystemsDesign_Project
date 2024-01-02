@@ -32,3 +32,6 @@ Esegue i \textit{Task} indicati dalla lista passata come parametro al Metodo ste
 Esegue i \textit{Task} indicati dalla lista passata come parametro al Metodo stesso, ritornando una lista di Oggetti di tipo \texttt{Future} che contengano lo stato e il risultato dell'esecuzione una volta che tutti hanno terminato.
 \subsubsection{\texttt{awaitTermination()}}
 Blocca l'esecuzione del \textit{Thread} principale fin tanto che l'esecuzione dei \textit{Task} non termina.
+\subsection{Esempio di Implementazione di una \textit{Thread Pool} tramite l'Interfaccia \texttt{ExecutorService}}
+Si riporta a seguire un esempio di implementazione di una \textit{ThreadPool} con un numero fisso di \textit{Worker Thread} che incrementano un contatore condiviso in maniera mutualmente esclusiva.
+\input{images/ThreadPoolImplementationExample.tex}

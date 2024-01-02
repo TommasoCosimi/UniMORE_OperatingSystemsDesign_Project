@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.26)  31 DEC 2023 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.26)  2 JAN 2024 11:15
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -729,7 +729,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count339
-<Cosimi_Tommaso_191739-frn.pdf, id=195, 597.50829pt x 845.0471pt>
+<Cosimi_Tommaso_191739-frn.pdf, id=224, 597.50829pt x 845.0471pt>
 File: Cosimi_Tommaso_191739-frn.pdf Graphic file (type pdf)
 <use Cosimi_Tommaso_191739-frn.pdf>
 Package pdftex.def Info: Cosimi_Tommaso_191739-frn.pdf  used on input line 47.
@@ -747,7 +747,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 ...xtit {Synchronized}}{24}{subsection.3.1.4}
+l.38 ...exttt {notifyAll()}}{23}{subsection.3.1.3}
                                                   % [1
 
 ])
@@ -773,23 +773,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24     }
-           [2]
 
 Package caption Warning: \setcaptiontype
-(caption)                outside box or environment on input line 28.
+(caption)                outside box or environment on input line 23.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 28.
+(caption)                particular \caption on input line 23.
 See the caption package documentation for explanation.
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 28.
-) (./images/ProcessExample.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 23.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 ...a che implementi l'Algoritmo Bubble Sort.}
+                                                   [2]) (./images/ProcessExample.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -803,14 +803,14 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 9.
 See the caption package documentation for explanation.
 
-) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./images/StatesTransitions.tex
-<./svg-inkscape/StatesTransitions_svg-raw.pdf, id=375, 166.6255pt x 188.43256pt>
+) (./images/StatesTransitions.tex
+<./svg-inkscape/StatesTransitions_svg-raw.pdf, id=390, 166.6255pt x 188.43256pt>
 File: ./svg-inkscape/StatesTransitions_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/StatesTransitions_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/StatesTransitions_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 166.62508pt x 188.4321pt.
-) (./images/UnixStatesTransitions.tex
-<./svg-inkscape/UnixStatesTransitions_svg-raw.pdf, id=378, 254.84409pt x 333.245pt>
+) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./images/UnixStatesTransitions.tex
+<./svg-inkscape/UnixStatesTransitions_svg-raw.pdf, id=411, 254.84409pt x 333.245pt>
 File: ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf  used on input line 3.
@@ -818,30 +818,21 @@ Package pdftex.def Info: ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf  used 
 ) [4 <./svg-inkscape/StatesTransitions_svg-raw.pdf> <./svg-inkscape/UnixStatesTransitions_svg-raw.pdf
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./images/SequentialProcess.tex) [5] (./images/NonSequentialProcess.tex) (./images/CompetitiveInteraction.tex) [6] [7] [8]
-Underfull \hbox (badness 4001) in paragraph at lines 85--85
-[]\OT1/cmr/m/n/10.95 Le Ope-ra-zio-ni ``\OT1/cmtt/m/n/10.95 wait(S)\OT1/cmr/m/n/10.95 '' e ``\OT1/cmtt/m/n/10.95 signal(S)\OT1/cmr/m/n/10.95 '' van-no in-ve-ce ri-spet-ti-va-men-te a
- []
+>] (./images/SequentialProcess.tex) (./images/NonSequentialProcess.tex [5]) (./images/CompetitiveInteraction.tex) [6] [7] (./images/AlgorithmSemaphoreUsage.tex) [8] [9]
 
-(./images/AlgorithmSemaphoreUsage.tex) (./images/SemaphorePseudocode.tex) [9] (./images/MonitorPseudocode.tex [10]) [11]
-Underfull \hbox (badness 1895) in paragraph at lines 114--114
-[]\OT1/cmr/m/n/10.95 L'Identificazione dei Pro-ces-si ``\OT1/cmr/m/it/10.95 Sen-der\OT1/cmr/m/n/10.95 '' e ``\OT1/cmr/m/it/10.95 Re-cei-ver\OT1/cmr/m/n/10.95 '' pu^^Ro av-ve-ni-re sia
- []
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 136.
 
-(./images/MessagesDirectIdentification.tex) (./images/MessagesIndirectCommunication.tex) [12] [13]
+[10]
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 138.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 144.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 144.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
-
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 144.
-
-[14]) [15]
+[11]) [12]
 Capitolo 2.
 (./chapters/2.Threads.tex
 Underfull \hbox (badness 1442) in paragraph at lines 1--2
@@ -849,12 +840,12 @@ Underfull \hbox (badness 1442) in paragraph at lines 1--2
  []
 
 (./images/JavaThreadInheritance.tex
-<./svg-inkscape/JavaThreadInheritance_svg-raw.pdf, id=535, 165.66301pt x 228.00809pt>
+<./svg-inkscape/JavaThreadInheritance_svg-raw.pdf, id=509, 165.66301pt x 228.00809pt>
 File: ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 165.6626pt x 228.00752pt.
-) [16
+) [13
 
  <./svg-inkscape/JavaThreadInheritance_svg-raw.pdf>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
@@ -862,13 +853,13 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
  (./images/ClassExtendsThread.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 20.
+(caption)                particular \caption on input line 17.
 See the caption package documentation for explanation.
 
-) (./images/ClassExtendsThreadMain.tex [17]
+) (./images/ClassExtendsThreadMain.tex [14]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 23.
+(caption)                particular \caption on input line 18.
 See the caption package documentation for explanation.
 
 )
@@ -882,46 +873,62 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 6.
 See the caption package documentation for explanation.
 
-) (./images/ClassImplementsRunnableMain.tex [18]
+) (./images/ClassImplementsRunnableMain.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 13.
 See the caption package documentation for explanation.
 
-) (./images/MultiThreadedExecutionExample.tex
+) [15] (./images/MultiThreadedExecutionExample.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 11.
 See the caption package documentation for explanation.
 
-) [19] (./images/ThreadJoinFlow.tex
-<./svg-inkscape/ThreadJoinFlow_svg-raw.pdf, id=643, 493.845pt x 434.50937pt>
+) [16] (./images/ThreadJoinFlow.tex
+<./svg-inkscape/ThreadJoinFlow_svg-raw.pdf, id=610, 493.845pt x 434.50937pt>
 File: ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf  used on input line 4.
 (pdftex.def)             Requested size: 493.84378pt x 434.5083pt.
-) [20]) [21 <./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>] [22]
+) [17] [18 <./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>] (./images/ThreadExecutionControl.tex [19]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 67.
+See the caption package documentation for explanation.
+
+[20]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 84.
+See the caption package documentation for explanation.
+
+)) [21]
 Capitolo 3.
-(./chapters/3.ThreadSync.tex (./images/SynchronizedBasicExample.tex) [23
+(./chapters/3.ThreadSync.tex (./images/SynchronizedBasicExample.tex) [22
 
 ]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 18.
- (./images/SynchronizedReentranceExample.tex [24]
+
+Underfull \hbox (badness 1132) in paragraph at lines 26--26
+[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due Th-read tra-mi-te il
+ []
+
+(./images/SynchronizedReentranceExample.tex [23] [24]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 44.
+(caption)                particular \caption on input line 65.
 See the caption package documentation for explanation.
 
-[25]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 58.
+(caption)                particular \caption on input line 82.
 See the caption package documentation for explanation.
 
-)
+) [25]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 30.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 32.
  (./images/LockBasicExample.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -940,50 +947,88 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 5.
 See the caption package documentation for explanation.
 
-) [28] (./images/SemaphoreDeclaration.tex
+)
+Underfull \hbox (badness 4181) in paragraph at lines 61--61
+[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due \OT1/cmr/bx/it/12 Th-read \OT1/cmr/bx/n/12 tra-mi-te
+ []
+
+(./images/LockSynchronization.tex [28] [29]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 74.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 91.
+See the caption package documentation for explanation.
+
+) [30] (./images/SemaphoreDeclaration.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 15.
 See the caption package documentation for explanation.
 
-) [29]
-Underfull \hbox (badness 2478) in paragraph at lines 72--73
+) [31]
+Underfull \hbox (badness 2478) in paragraph at lines 79--80
 \OT1/cmr/m/n/10.95 Utile nel ten-ta-re l'ac-qui-si-zio-ne di uno o pi^^Ru per-mes-si nel-la sua va-rian-te
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 74--75
+Underfull \hbox (badness 1596) in paragraph at lines 81--82
 \OT1/cmr/m/n/10.95 Il me-to-do con-sen-te di ri-la-scia-re uno o \OT1/cmtt/m/n/10.95 numberOfPermits \OT1/cmr/m/n/10.95 nel-la sua va-rian-
  []
 
-) [30]
+
+Underfull \hbox (badness 4181) in paragraph at lines 86--86
+[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due \OT1/cmr/bx/it/12 Th-read \OT1/cmr/bx/n/12 tra-mi-te
+ []
+
+(./images/SemaphoreSynchronization.tex [32] [33]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 73.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 90.
+See the caption package documentation for explanation.
+
+)) [34] [35]
 Capitolo 4.
 (./chapters/4.ParallelExecution.tex (./images/ThreadPoolExample.tex
-<./svg-inkscape/ThreadPool1_svg-raw.pdf, id=843, 467.49657pt x 233.74828pt>
+<./svg-inkscape/ThreadPool1_svg-raw.pdf, id=1128, 467.49657pt x 233.74828pt>
 File: ./svg-inkscape/ThreadPool1_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadPool1_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadPool1_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 467.49542pt x 233.7477pt.
-<./svg-inkscape/ThreadPool2_svg-raw.pdf, id=846, 467.49657pt x 233.74828pt>
+<./svg-inkscape/ThreadPool2_svg-raw.pdf, id=1131, 467.49657pt x 233.74828pt>
 File: ./svg-inkscape/ThreadPool2_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadPool2_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadPool2_svg-raw.pdf  used on input line 10.
 (pdftex.def)             Requested size: 467.49542pt x 233.7477pt.
- [31
+ [36
 
-]) [32 <./svg-inkscape/ThreadPool1_svg-raw.pdf> <./svg-inkscape/ThreadPool2_svg-raw.pdf
+]) [37 <./svg-inkscape/ThreadPool1_svg-raw.pdf> <./svg-inkscape/ThreadPool2_svg-raw.pdf
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/ThreadPool2_svg-raw.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [33]) [34]
+>] [38] (./images/ThreadPoolImplementationExample.tex [39]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 44.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 58.
+See the caption package documentation for explanation.
+
+)) [40]
 Capitolo 5.
-(./chapters/5.Conclusions.tex) (./Cosimi_Tommaso_191739.bbl [35
+(./chapters/5.Conclusions.tex) (./Cosimi_Tommaso_191739.bbl [41
 
 ]
-Underfull \hbox (badness 6001) in paragraph at lines 29--32
-[]\OT1/cmr/m/n/10.95 Wikipedia.  Se-ma-fo-ro, Ago-sto 2023.  Ar-ti-co-lo di-spo-ni-bi-le al-l'url:
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 39--42
 []\OT1/cmr/m/n/10.95 Prof. Le-ti-zia Leo-nar-di.  Co-strut-ti di Sin-cro-niz-za-zio-ne, Ot-to-
  []
@@ -998,25 +1043,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--42
 \OT1/cmtt/m/n/10.95 agentgroup . unimo . it / didattica / ProgettazioneSO / Lucidi /
  []
 
-) [36
+) [42
 
 ] (./Cosimi_Tommaso_191739.aux)
 Package rerunfilecheck Info: File `Cosimi_Tommaso_191739.out' has not changed.
-(rerunfilecheck)             Checksum: 9CDABB9A7AF7CBD0D9800689002D802D;9115.
+(rerunfilecheck)             Checksum: FCBB26E94661660EDF43692D6A9384FF;11624.
  ) 
 Here is how much of TeX's memory you used:
- 28616 strings out of 476041
- 541089 string characters out of 5793173
- 2117388 words of memory out of 6000000
- 48051 multiletter control sequences out of 15000+600000
+ 28913 strings out of 476041
+ 545978 string characters out of 5793173
+ 2211388 words of memory out of 6000000
+ 48056 multiletter control sequences out of 15000+600000
  522584 words of font info for 67 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 94i,18n,92p,1746b,2077s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,18n,92p,1746b,2022s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on Cosimi_Tommaso_191739.pdf (39 pages, 413110 bytes).
+Output written on Cosimi_Tommaso_191739.pdf (45 pages, 430146 bytes).
 PDF statistics:
- 1091 PDF objects out of 1200 (max. 8388607)
- 965 compressed objects within 10 object streams
- 435 named destinations out of 1000 (max. 500000)
- 424 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1496 PDF objects out of 1728 (max. 8388607)
+ 1360 compressed objects within 14 object streams
+ 727 named destinations out of 1000 (max. 500000)
+ 480 words of extra memory for PDF output out of 10000 (max. 10000000)
 

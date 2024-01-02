@@ -1,8 +1,8 @@
 \begin{lstlisting}[language=Java]
 Lock lck = new ...;
+// Acquisizione del Lock
+lck.lock();
 try {
-    // Acquisizione del Lock
-    lck.lock();
     // Sezione Critica
     ...
     // Fine Sezione Critica

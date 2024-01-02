@@ -1,11 +1,13 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
-public class ThreadSynchronized {
+import java.util.concurrent.Semaphore;
+
+public class ThreadSemaphore {
     public static void main(String[] args) {
-        // Creo un'istanza della Classe di Supporto con i metodi Synchronized
-        ThreadSynchronizedCounter tsc = new ThreadSynchronizedCounter();
+        // Creo un'istanza della Classe di Supporto con il semaforo
+        ThreadSemaphoreCounter tsc = new ThreadSemaphoreCounter();
         // Creo due Thread
-        Thread t1 = new ThreadSynchronizedThread(1, tsc);
-        Thread t2 = new ThreadSynchronizedThread(2, tsc);
+        Thread t1 = new ThreadSemaphoreThread(1, tsc);
+        Thread t2 = new ThreadSemaphoreThread(2, tsc);
         // Avvio i due Thread
         t1.start();
         t2.start();
@@ -21,16 +23,23 @@ public class ThreadSynchronized {
     }
 }
 
-class ThreadSynchronizedCounter {
+class ThreadSemaphoreCounter {
     // Inizializzo una variabile contatore
     private int counter = 0;
-    // Il metodo verra' raggiunto tramite l'altro esposto
-    private synchronized void increaseCounter() {
-        counter++;
-    }
+    // Semaforo Mutualmente esclusivo Equo
+    Semaphore fairMutex = new Semaphore(1, true);
     // Metodo esposto ai Thread
-    protected synchronized void increaseAndPrintCounter(int threadNum) {
-        this.increaseCounter();
+    protected void increaseAndPrintCounter(int threadNum) {
+        try {
+            fairMutex.acquire();
+            counter++;
+            Thread.sleep(1000);
+        } catch(InterruptedException ie) {
+            System.out.println("Il Thread e' stato interrotto durante l'acquisizione del Lock o nell'invocazione di Sleep");
+            ie.printStackTrace();
+        } finally {
+            fairMutex.release();
+        }
         System.out.println("Il contatore vale " + this.counter + " ed e' stato aggiornato dal Thread " + threadNum);
     }
     // Getter del contatore
@@ -39,13 +48,13 @@ class ThreadSynchronizedCounter {
     }
 }
 
-class ThreadSynchronizedThread extends Thread {
+class ThreadSemaphoreThread extends Thread {
     // Identificatore del Thread
     int threadNum;
     // Oggetto della Classe di supporto
-    ThreadSynchronizedCounter tsc;
+    ThreadSemaphoreCounter tsc;
     // Costruttore
-    public ThreadSynchronizedThread(int threadNum, ThreadSynchronizedCounter tsc) {
+    public ThreadSemaphoreThread(int threadNum, ThreadSemaphoreCounter tsc) {
         this.threadNum = threadNum;
         this.tsc = tsc;
         System.out.println("Thread " + this.threadNum + " avviato");
@@ -62,21 +71,21 @@ class ThreadSynchronizedThread extends Thread {
     }
 }
 \end{lstlisting}
-\captionof{lstlisting}{Programma che sfrutti le proprietà di Sincronizzazione e di Rientranza del Costrutto \texttt{synchronized}.}
+\captionof{lstlisting}{Codice per la sincronizzazione tramite l'utilizzo di \texttt{Lock}.}
 \begin{lstlisting}[language=Bash]
-$ java SynchronizedReentrance
+$ java LockSynchronization
 Thread 1 avviato
 Thread 2 avviato
 Il contatore vale 1 ed e' stato aggiornato dal Thread 1
 Il contatore vale 2 ed e' stato aggiornato dal Thread 2
-Il contatore vale 3 ed e' stato aggiornato dal Thread 2
+Il contatore vale 3 ed e' stato aggiornato dal Thread 1
 Il contatore vale 4 ed e' stato aggiornato dal Thread 2
-Il contatore vale 5 ed e' stato aggiornato dal Thread 2
+Il contatore vale 5 ed e' stato aggiornato dal Thread 1
 Il contatore vale 6 ed e' stato aggiornato dal Thread 2
 Il contatore vale 7 ed e' stato aggiornato dal Thread 1
-Il contatore vale 8 ed e' stato aggiornato dal Thread 1
+Il contatore vale 8 ed e' stato aggiornato dal Thread 2
 Il contatore vale 9 ed e' stato aggiornato dal Thread 1
-Il contatore vale 10 ed e' stato aggiornato dal Thread 1
+Il contatore vale 10 ed e' stato aggiornato dal Thread 2
 Sono il Main, il valore finale del contatore e' 10
 \end{lstlisting}
-\captionof{lstlisting}{Esecuzione del Programma.}
+\captionof{lstlisting}{Esecuzione del Programma mostrato.}

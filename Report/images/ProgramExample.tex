@@ -1,11 +1,8 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
 public class BubbleSort {
-
-    public static void BubbleSort(int[] A) {
-        
+    public static void sort(int[] A) {
         // Definizione della dimensione della partizione del vettore non ordinata
         int unorderedPartition = A.length;
-        
         // Ordinamento
         while(unorderedPartition > 1) {
             // Scorro la parte non ordinata
@@ -20,9 +17,7 @@ public class BubbleSort {
             // Dopo lo scambio, riduco la dimensione della partizione del vettore non ordinata
             unorderedPartition = unorderedPartition - 1;
         }
-
     }
-
 }
 \end{lstlisting}
 \captionof{lstlisting}{Esempio di Programma in Linguaggio Java che implementi l'Algoritmo Bubble Sort.}

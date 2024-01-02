@@ -3,13 +3,13 @@ Il seguente Capitolo fornirà un'introduzione teorica al concetto di esecuzione 
 \section[Algoritmo, Programma, Processo]{Algoritmo, Programma, Processo}
 Nella definizione della singola unità di esecuzione si ritiene opportuno effettuare una leggera digressione. \par
 \subsection*{Algoritmo}
-Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. In letteratura sono rintracciabili moltissimi Algoritmi, per brevità vengono nominati a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} - di cui viene fornito lo pseudocodice a seguire - od il \textit{Radix Sort}\cite{RadixSort}, e Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
+Un Algoritmo è un procedimento puramente logico studiato appositamente per la risoluzione di uno specifico problema. In letteratura sono rintracciabili moltissimi Algoritmi, per brevità si nominano a titolo di esempio Algoritmi di Ordinamento come il \textit{Bubble Sort}\cite{BubbleSort} - di cui viene fornito lo pseudocodice a seguire - od il \textit{Radix Sort}\cite{RadixSort}, ed Algoritmi di Ricerca del Cammino Minimo in un Grafo come l'\textit{Algoritmo di Dijkstra}\cite{DijksraAlg} o l'\textit{Algoritmo di Bellman-Ford}\cite{BellmanFordAlg}. \par
 \input{images/AlgorithmExample.tex}
 \subsection*{Programma}
-Un Programma è la descrizione in codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java.\par
+Un Programma è la descrizione in Codice di un Algoritmo in uno specifico Linguaggio di Programmazione in maniera tale da permetterne l'esecuzione all'interno di un Calcolatore. Si riporta di seguito un'esempio di Programma che descriva l'Algoritmo di Ordinamento per confronti ``\textit{Bubble Sort}'' implementato tramite il Linguaggio di Programmazione Java. \par
 \input{images/ProgramExample.tex}
 \subsection*{Processo}
-Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma, ovvero \textit{Bubble Sort}.
+Un Processo è la sequenza di operazioni eseguite da un Elaboratore che opera sotto il controllo di un Programma: in maniera intuitiva è possibile affermare che in linea generale un Processo è un Programma in esecuzione. Di seguito si riporta un esempio di esecuzione sequenziale di due Processi che eseguono lo stesso Programma: il precedentemente descritto \textit{Bubble Sort}.
 \input{images/ProcessExample.tex}
 
 \section{Stati di un Processo}
@@ -22,7 +22,7 @@ Un Processo può passare attraverso diversi Stati durante il suo ciclo di vita. 
     \item \textbf{Pronto} (o \textit{Ready}). \par
     Anche in questo caso il Processo non detiene il controllo della CPU dell'Elaboratore, ma si trova in una coda di Processi che si dicono pronti a richiederne il controllo. Un Processo è in stato \textit{Ready} tipicamente al termine delle suddette operazioni di I/O mentre attende che il controllo della CPU passi dal Processo attualmente in stato \textit{Running} ad esso.
 \end{enumerate}
-Le transizioni di Stato che possono avvenire dipendono dall'Algoritmo di \textit{Scheduling} del Sistema Operativo, e sono ben descritte nello schema a seguire.
+Le transizioni di Stato che possono avvenire dipendono dall'Algoritmo di \textit{Scheduling} del Sistema Operativo, e sono indicate nello schema a seguire.
 \input{images/StatesTransitions.tex}
 Tutte le transizioni di Stato, a meno di quella che porta dallo Stato ``\textit{Running}'' allo Stato ``\textit{Ready}'' sono possibili in ogni Algoritmo di Scheduling, mentre quest'ultima è implementabile se e solo se il suddetto Algoritmo supporta meccanismi di Prelazione. \par
 Ovviamente la rappresentazione riportata è un caso esemplificativo utile alla comprensione di alcuni comportamenti rintracciabili nella sincronizzazione tra processi nel Linguaggio Java, ma si ricorda che il Grafo degli Stati e delle loro transizioni in un Sistema Operativo moderno risulta nettamente più complicato, si riporta a seguire quello di UNIX.
@@ -32,17 +32,14 @@ Ovviamente la rappresentazione riportata è un caso esemplificativo utile alla c
 La sequenza di operazioni eseguite da un processo può essere rappresentata attraverso un Grafo Orientato che indichi la precedenza delle une sulle altre. In questa visualizzazione i nodi identificano il singolo evento da verificarsi, mentre gli archi l'ordinamento temporale tra i nodi. \par
 \subsection{Processi Sequenziali}
 Facendo riferimento alla rappresentazione descritta in precedenza, un Processo Sequenziale è tale da poter essere schematizzato tramite l'ausilio di un Grafo ad Ordinamento Totale: una particolare tipologia di Grafo ove ogni nodo - e quindi ogni evento - fatta eccezione per il nodo di inizio ed il nodo di fine, possiede uno e un solo predecessore ed uno e un solo successore. \par
-A seguire viene effettuato un esempio di Processo Sequenziale. \par
-\subsubsection*{Esempio di Rappresentazione di un Processo Sequenziale}
 Si riporta a titolo di esempio un Processo che richiede all'utente due numeri interi e ne restituisce la somma. Esso è rappresentabile come una sequenza ordinata di operazioni atomiche come esplicitato a seguire.
 \input{images/SequentialProcess.tex}
 \subsection{Processi non Sequenziali}
 Al contrario della controparte, un Processo non Sequenziale può essere rappresentato tramite l'ausilio di un Grafo ad Ordinamento Parziale: ogni nodo interno potrà quindi avere più predecessori e più successori. Questo è possibile in quanto alcune operazioni eseguite dal Processo sono indipendenti tra loro o non è interessante il loro ordine di terminazione per l'utente finale. \par
-A seguire viene effettuato un esempio di Processo non Sequenziale.
-\subsubsection*{Esempio di Rappresentazione di un Processo non Sequenziale}
+A seguire viene effettuato un esempio di Processo non Sequenziale. \par
 Si supponga di dover valutare l'espressione matematica:
 $$(5 + 8) + (6 - 3) * (9 + 2)$$
-Ovviamente è possibile eseguire sequenzialmente la valutazione verificando prima i risultati delle operazioni tra parentesi, poi la moltiplicazione tra gli ultimi due termini ed infine l'addizione tra i primi due. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti delegare la valutazione di singoli blocchi a differenti agenti di calcolo.
+Ovviamente è possibile eseguire sequenzialmente la valutazione. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti delegare la valutazione di singoli blocchi a differenti agenti di calcolo.
 \input{images/NonSequentialProcess.tex}
 
 \section{Processi Interagenti}
@@ -66,7 +63,7 @@ La Sezione Critica viene definita come una serie di Operazioni nelle quali un Pr
 Diverse Sezioni Critiche che accedano a gruppi differenti di Risorse possono essere scisse in altrettante categorie. \par
 L'idea alla base dell'esistenza della Sezione Critica è quella di permettere ad uno ed un solo Processo alla volta di entrare in tale segmento di Codice, in maniera tale da garantire un accesso mutualmente esclusivo alle risorse comuni in essa manipolate.
 \subsection{Strumenti di Sincronizzazione}
-Gli Strumenti illustrati di seguito non rappresentano l'interezza delle metodologie di Sincronizzazione disponibili in letteratura, ma sono stati scelti in maniera tale da essere il più possibile utili al fine di introdurre i concetti alla base del \textit{Multi-Threading} nel Linguaggio Java ed inoltre chiarificare alcune metodologie utilizzate anche al di fuori di quest'ultimo (si veda lo Scambio di Messaggi). \par
+Gli Strumenti illustrati di seguito non rappresentano l'interezza delle metodologie di Sincronizzazione disponibili in letteratura, ma sono stati scelti in maniera tale da essere il più possibile utili al fine di introdurre i concetti alla base del \textit{Multi-Threading} nel Linguaggio Java. \par
 Lo scopo di tali Meccanismi sarà quello di permettere al più ad un processo di accedere ad ogni categoria di Sezione Critica. Per ottenere questo risultato, la Sezione Critica va incapsulata da un Prologo che la preceda ed un Epilogo che la segua. In maniera intuitiva si può pensare al Prologo e all'Epilogo come l'operazione di acquisizione di un lucchetto per bloccare una risorsa per poi rilasciarlo al prossimo Processo che ne necessita rispettivamente. \par
 A seconda del tipo di Interazione tra i Processi presi in esame è importante definire la corretta metodologia di Sincronizzazione: per Interazioni di tipo Competitivo si utilizzano tipicamente strumenti quali Semafori e Monitor, mentre per Interazioni di tipo Cooperativo si usufruisce della possibilità di scambio di Messaggi tra Processi. Si riportano a seguire i tre Meccanismi citati.
 \subsubsection{Semaforo}
@@ -80,23 +77,24 @@ E sul quale è possibile effetturare le operazioni di:
     \item ``\texttt{wait(S)}'';
     \item ``\texttt{signal(S)}''.
 \end{itemize}
-Il Semaforo va ad incapsulare la Sezione Critica al fine di rendere possibile ad un solo processo alla volta l'accesso ad essa. \par
-La variabile $S_v$ mantiene come informazione quanti processi possono accedere alla loro Sezione Critica (se vale zero il processo si sospende sul Semaforo), mentre $Q_s$ è una Coda di Descrittori dei Processi che non sono riusciti ad accedere alla loro Sezione Critica a causa del Semaforo. \par
-Le Operazioni ``\texttt{wait(S)}'' e ``\texttt{signal(S)}'' vanno invece rispettivamente a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
+La variabile $S_v$ mantiene come informazione quanti processi possono accedere alla Sezione Critica protetta (se vale zero il processo si sospende sul Semaforo), mentre $Q_s$ è una Coda di Descrittori dei Processi che non sono riusciti ad accedere alla Sezione Critica protetta a causa del Semaforo. \par
+Le Operazioni \texttt{wait(S)} e \texttt{signal(S)} vanno invece rispettivamente a decrementare ed aumentare il valore della variabile $S_v$ del Semaforo. \par
 L'utilizzo di un Semaforo per la protezione di una Sezione Critica avviene secondo il seguente schema: \par
 \input{images/AlgorithmSemaphoreUsage.tex}
-Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazione di un Semaforo. \par
-\input{images/SemaphorePseudocode.tex}
+% Viene riportato a titolo di esempio un possibile pseudocodice per l'implementazione di un Semaforo. \par
+% \input{images/SemaphorePseudocode.tex}
 \subsubsection{Monitor}
 Il Monitor\cite{Monitor} è anch'esso un ADT che tiene conto dei Vincoli di Sincronizzazione: implementa infatti da sé meccanismi di Mutua Esclusione per cui al suo interno potrà esserci al più uno e un solo Processo attivo. Una peculiarità nell'utilizzo del Monitor rispetto a quello di un più semplice Semaforo è quella di poter nascondere lo stato interno delle risorse condivise tra i vari processi, lasciando loro visibili unicamente le operazioni effettuabili su di esse. \par
-In maniera più precisa un Monitor ``è un costrutto che associa un insieme di procedure ad una struttura dati comune a più Processi''\cite{MonitorDispense}. Esso è composto dai seguenti elementi:
+In maniera più precisa un Monitor ``è un costrutto che associa un insieme di procedure ad una struttura dati comune a più Processi''\cite{MonitorDispense}. \par
+Esso è composto dai seguenti elementi:
 \begin{itemize}
     \item Costruttore, che genera un'entità di tipo Monitor;
     \item Variabili Locali, le quali vanno a definire lo stato di un'istanza del tipo Monitor;
-    \item Procedure, per l'interfacciamento con le risorse condivise dai Processi.
+    \item Procedure per l'interfacciamento con le risorse condivise dai Processi.
+    \item Varibili Condizione, per controllare che le condizioni di esecuzione del Processo all'interno del Monitor stesso siano rispettate.
 \end{itemize}
-Un possibile pseudocodice per un Monitor potrebbe essere simile a quanto segue: \par
-\input{images/MonitorPseudocode.tex}
+% Un possibile pseudocodice per un Monitor potrebbe essere simile a quanto segue: \par
+% \input{images/MonitorPseudocode.tex}
 Un Monitor dispone di due livelli di Controllo per l'esecuzione esclusiva di operazioni sulle Risorse condivise:
 \begin{enumerate}
     \item \textbf{Primo Livello di Controllo}: \par
@@ -107,21 +105,21 @@ Un Monitor dispone di due livelli di Controllo per l'esecuzione esclusiva di ope
 Le variabili di Condizione di un Monitor dispongono di due primitive ``\texttt{Wait}'' e ``\texttt{Signal}'' che, seppur molto simili a quelle di un Semaforo, godono di leggere differenze: in questo caso infatti la ``\texttt{Wait}'' ha sempre un significato bloccante, mentre la ``\texttt{Signal}'' non produce effetti qualora non ci siano processi in coda.
 \subsubsection{Scambio di Messaggi}
 Altro meccanismo di Sincronizzazione tra Processi Interagenti è lo scmabio di Messaggi, utile in caso di interazioni di tipo Cooperativo. Per descriverne il funzionamento è importante definire alcune componenti quali le Primitive di Comunicazione ``\texttt{Send}'' e ``\texttt{Receive}'' ed il Canale di Comunicazione. \par
-Vista la natura autoesplicativa delle Primitive, si pone ora enfasi sulla definizione del Canale di Comunicazione. Esso deve andare a determinare quali siano le coppie di Processi comunicanti e come identificarle (e quindi scegliere se utilizzare la Struttura Mailbox), se fruire o meno della ``\textit{Bufferizzazione}'' e la lunghezza dei messaggi. Si noti che ciascuna di queste decisioni debba - almeno in linea teorica - essere ortogonale alle altre due. \par
-Le scelte implementative sopracitate vengono analizzate a seguire:
-\begin{itemize}
-    \item \textbf{Tecnica di Identificazione dei Processi Comunicanti} \par
-        L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire sia direttamente che indirettamente. \par
-        Nel primo caso si va ad utilizzare l'identificativo dei processi come parametro delle primitive, come sotto riportato.
-        \input{images/MessagesDirectIdentification.tex}
-        È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{Send}'' e ``\texttt{Receive}''.
-        \input{images/MessagesIndirectCommunication.tex}
-        Per implementare un tipo di Identificazione Indiretta si va ad interporre un interlocutore terzo - la ``\textit{Mailbox}'' - che si occupa di permettere ai Mittenti di inviare lei un messaggio, il quale verrà letto dai Destinatari a lei collegati.
-    \item \textbf{Utilizzo della tecnica di ``\textit{Bufferizzazione}''} \par
-        L'utilizzo di tale funzionalità permette una comunicazione asincrona che consente un maggiore parallelismo all'applicativo. Il ``\textit{Buffer}'' può essere di dimensione limitata o infinita. È possibile l'utilizzo di Messaggi di ``\textit{Acknowledgement}'' - o ACK - da parte del Processo ``\textit{Receiver}'' per confermare la ricezione del Messaggio. La corretta sequenza di ricezione potrebbe non essere garantita in caso di \textit{Routing} Dinamico dei Messaggi, per cui si rende necessario l'utilizzo di una numerazione per l'ordinamento.
-    \item \textbf{Scelta della lunghezza dei Messaggi} \par
-        È infine possibile scegliere se implementare dei Messaggi a lunghezza fissa, rendendo l'implementazione semplice ma sprecando memoria; o utilizzare Messaggi di lunghezza variabile, che risolvono il problema dei primi al costo di una più complessa realizzazione. Nei Sistemi Operativi moderni viene in linea generale adottato questo secondo approccio: ad esempio in UNIX vengono utilizzati messaggi di lunghezza variabile con dimensione minima di 1 Byte.
-\end{itemize}
+Vista la natura autoesplicativa delle Primitive, si pone enfasi sulla definizione del Canale di Comunicazione: esso deve andare a determinare quali siano le coppie di Processi comunicanti e come identificarle (e quindi utilizzare un'identificazione di tipo diretto o di tipo indiretto usufruendo della Struttura \textit{Mailbox}), se fruire o meno della ``\textit{Bufferizzazione}'' e la lunghezza dei messaggi. Si noti che ciascuna di queste decisioni debba - almeno in linea teorica - essere ortogonale alle altre due. \par
+% Le scelte implementative sopracitate vengono analizzate a seguire:
+% \begin{itemize}
+    % \item \textbf{Tecnica di Identificazione dei Processi Comunicanti} \par
+        % L'Identificazione dei Processi ``\textit{Sender}'' e ``\textit{Receiver}'' può avvenire sia direttamente che indirettamente. \par
+        % Nel primo caso si va ad utilizzare l'identificativo dei processi come parametro delle primitive, come sotto riportato.
+        % \input{images/MessagesDirectIdentification.tex}
+        % È anche possibile creare uno schema di tipo ``Molti a Uno'', ``Uno a Molti'' o ``Molti a Molti'' tramite l'utilizzo di speciali Identificatori all'interno delle primitive ``\texttt{Send}'' e ``\texttt{Receive}''.
+        % \input{images/MessagesIndirectCommunication.tex}
+        % Per implementare un tipo di Identificazione Indiretta si va ad interporre un interlocutore terzo - la ``\textit{Mailbox}'' - che si occupa di permettere ai Mittenti di inviare lei un messaggio, il quale verrà letto dai Destinatari a lei collegati.
+    % \item \textbf{Utilizzo della tecnica di ``\textit{Bufferizzazione}''} \par
+        % L'utilizzo di tale funzionalità permette una comunicazione asincrona che consente un maggiore parallelismo all'applicativo. Il ``\textit{Buffer}'' può essere di dimensione limitata o infinita. È possibile l'utilizzo di Messaggi di ``\textit{Acknowledgement}'' - o ACK - da parte del Processo ``\textit{Receiver}'' per confermare la ricezione del Messaggio. La corretta sequenza di ricezione potrebbe non essere garantita in caso di \textit{Routing} Dinamico dei Messaggi, per cui in questo caso si renderebbe necessario l'utilizzo di una numerazione per l'ordinamento.
+    % \item \textbf{Scelta della lunghezza dei Messaggi} \par
+        % È infine possibile scegliere se implementare dei Messaggi a lunghezza fissa, rendendo l'implementazione semplice ma sprecando memoria; o utilizzare Messaggi di lunghezza variabile, che risolvono il problema dei primi al costo di una più complessa realizzazione. Nei Sistemi Operativi moderni viene in linea generale adottato questo secondo approccio: ad esempio in UNIX vengono utilizzati messaggi di lunghezza variabile con dimensione minima di 1 Byte.
+% \end{itemize}
 \subsection{Modelli Logici per la Concorrenza}
 Nel tempo sono stati definiti due Modelli Logici di riferimento per la gestione concorrenziale dei Processi: il Modello ad Ambiente Globale ed il Modello ad Ambiente Locale.
 \subsubsection{Modello ad Ambiente Globale}
@@ -134,7 +132,7 @@ La diversa concezione porta alla semplificazione delle interazioni tra i process
 \section{Processi Pesanti e Processi Leggeri}
 Un Sistema Operativo può supportare due diverse tipologie di Processi, le quali vengono di seguito descritte.
 \subsection{Processi Pesanti} 
-I Processi Pesanti dispongono di un loro Program Counter, di un loro stato dei vari Registri della CPU, di un proprio \textit{Stack}, del proprio Codice e dei Propri Dati, per questo vengono identificati tramite la ennupla:
+I Processi Pesanti dispongono di un loro Program Counter, di un loro stato dei vari Registri della CPU, di un proprio \textit{Stack}, del proprio Codice e dei propri Dati, per questo vengono identificati tramite la ennupla:
 $$ Processo\textunderscore Pesante = \{\textit{Program Counter}, Registri, \textit{Stack}, Codice, Dati\} $$
 Com'è facilmente intuibile Processi Pesanti distinti eseguono Codice distinto ed accedono a Dati distinti, non condividendo memoria ed ispirandosi quindi al Modello ad Ambiente Locale. La comunicazione tra più Processi pesanti avviene tramite l'utilizzo di tecniche quali lo scambio di Messaggi data la natura cooperativa delle loro interazioni e la condivisione di risorse è complessa, richiedendo una porzione di Memoria condivisa.
 \subsection{Processi Leggeri - ``\textit{Thread}''}
@@ -153,7 +151,7 @@ I \textit{Thread} possono essere implementati su due distinti livelli:
     \item \textbf{Livello Utente} \par
     In questo caso il Sistema Operativo vede unicamente l'intero \textit{Task} come un comune Processo Pesante, quindi il Cambio di Contesto tra \textit{Thread} di uno stesso \textit{Task} avviene senza interrompere il Sistema Operativo. Questo vantaggio viene controbilanciato dalla necessità di bloccare l'intero \textit{Task} alla chiamata di una \textit{Routine} bloccante all'interno di un singolo \textit{Thread}.
 \end{enumerate}
-Ed il Sistema Operativo può supportare diversi Modelli Implementativi:
+Il Sistema Operativo può supportare diversi Modelli Implementativi:
 \begin{itemize}
     \item \textbf{One-to-One} \par
     Ogni \textit{Thread} Utente viene mappato ad un solo \textit{Thread Kernel}.

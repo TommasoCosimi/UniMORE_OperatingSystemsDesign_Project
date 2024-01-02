@@ -22,10 +22,12 @@ Permette al \textit{Thread} chiamante di risvegliare uno dei \textit{Thread} in 
 \subsubsection{\texttt{notifyAll()}}
 Permette al \textit{Thread} chiamante di risvegliare tutti i \textit{Thread} in attesa di eseguire il Codice Protetto dal Monitor. Anch'esso viene utilizzato generalmente all'uscita dalla sezione di Codice Protetto.
 \subsection{Rientranza del Costrutto \textit{Synchronized}}
-Il Costrutto \textit{Synchronized} si dice Rientrante in quanto qualora un Thread eseguente un blocco di codice sincronizzato volesse eseguirne un altro controllato tramite lo stesso Monitor, gli verrà concessa tale opportunità. Si riporta a seguire un esempio di Programma e della sua relativa esecuzione al fine di illustrare tale proprietà.
+Il Costrutto \textit{Synchronized} si dice Rientrante in quanto qualora un Thread eseguente un blocco di codice sincronizzato volesse eseguirne un altro controllato tramite lo stesso Monitor, gli verrà concessa tale opportunità.
+\subsection{Esempio di Sincronizzazione tra due Thread tramite il Costrutto \texttt{synchronized} Rientrante}
+Si riporta a seguire un esempio di Programma e della sua relativa esecuzione al fine di illustrare le proprietà di Sincronizzazione e di Rientranza del Costrutto descritto.
 \input{images/SynchronizedReentranceExample.tex}
 \subsection{Considerazioni}
-A fronte di una semplice implementazione, l'utilizzo del Costrutto \texttt{synchronized} porta prestazioni non desiderabili in quanto un solo \textit{Thread} alla volta può accedere ad un Blocco di Codice controllato dallo stesso Oggetto. Altro svantaggio è quello di non avere una garanzia sulla sequenza di esecuzione dei vari Thread, quindi è possibile incorrere in fenomeni di \textit{Starvation}, il Costrutto infatti non è Equo.
+A fronte di una semplice implementazione, l'utilizzo del Costrutto \texttt{synchronized} porta prestazioni non desiderabili in quanto un solo \textit{Thread} alla volta può accedere ad un Blocco di Codice controllato dallo stesso Oggetto. Altro svantaggio è ben visibile nell'esempio riportato poc'anzi ed è quello di non avere una garanzia sulla sequenza di esecuzione dei vari \textit{Thread}. È dunque possibile incorrere in fenomeni di \textit{Starvation}, il Costrutto infatti non è Equo.
 
 \section{L'Interfaccia \texttt{Lock}}
 Le diverse implementazioni di \texttt{Lock} forniscono un'alternativa per la gestione delle Sezioni Critiche. \par
@@ -56,6 +58,11 @@ Il legame intriseco con il \textit{Lock} associato di una Variabile Condizione i
 \input{images/ConditionVarDeclaration.tex}
 \subsubsection{Primitive delle Variabili Condizione}
 Analogamente a quanto trovato nella descrizione del Costrutto \texttt{synchronized}, le Variabili Condizione dispongono di primitive per la sospensione e la ripresa dell'esecuzione di un \textit{Thread}. Esse sono rispettivamente \texttt{await()} e \texttt{signal()} (quest'ultimo disponibile anche nella sua variante \texttt{signalAll()}). Ancora una volta per la Primitiva \texttt{await()} è disponibile una variante che accetta come parametro un tempo massimo di attesa prima della ripresa del Flusso di Esecuzione del \textit{Thread}, nonché una diversa Primitiva - \texttt{awaitUninterruptibly()} - che sospende l'esecuzione del Processo fino alla segnalazione senza però interromperlo.
+\subsection{Esempio di Sincronizzazione tra due \textit{Thread} tramite l'Interfaccia \texttt{Lock}}
+Viene reimplementato l'esempio visto per il Costrutto \texttt{synchronized} tramite l'utilizzo dei \texttt{Lock}.
+\input{images/LockSynchronization.tex}
+\subsection{Considerazioni}
+L'Interfaccia \texttt{Lock} permette un controllo decisamente più granulare rispetto al Costrutto \texttt{synchronized} per la gestione della sincronizzazione tra due o più processi leggeri potenzialmente anche migliorando le prestazioni in fase di esecuzione se le Categorie di Sezioni Critiche vengono ben gestite, ma aumenta la possibilità di cadere in errori logici nella stesura del Codice.
 
 \section{La Classe \texttt{Semaphore}}
 Java dispone di una Classe rappresentante un Semaforo Generalizzato: essa permette di limitare il numero di Processi Leggeri che possono accedere contemporaneamente ad una determinata risorsa.
@@ -76,3 +83,7 @@ Il metodo consente di rilasciare uno o \texttt{numberOfPermits} nella sua varian
 È anche possibile ridurre il numero di permessi allocabili dal Semaforo utilizzando questa primitiva, in maniera tale da ridurre gli accessi concorrenti possibili alla Sezione Critica da esso protetta.
 \subsubsection{\texttt{availablePermits()}}
 Ritorna il numero di Permessi ancora disponibili e non utilizzati da alcun \textit{Thread} all'interno della Sezione Critica protetta dal Semaforo.
+\subsection{Esempio di Sincronizzazione tra due \textit{Thread} tramite \texttt{Semaphore}}
+\input{images/SemaphoreSynchronization.tex}
+\subsection{Considerazioni}
+L'utilizzo dei Semafori, in particolare nel caso di Semafori Generalizzati, in un Programma permette di aumentare il parallelismo di un'applicazione in cui le risorse condivise possono essere molteplici di simile natura come ad esempio nel problema dei Produttori e dei Consumatori. A tale vantaggio bisogna tuttavia affiancare come fatto in precedenza per l'utilizzo dell'Interfaccia \texttt{Lock} una maggiore complessità nell'utilizzo rispetto al Costrutto \texttt{synchronized} che rende il Semaforo più prono ad errori logici.
