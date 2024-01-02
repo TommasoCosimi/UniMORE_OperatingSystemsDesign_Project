@@ -20,6 +20,7 @@ public class ExtendThread {
 class ExtendThreadThread extends Thread {
     // Identificatore del Thread
     private int threadNumber;
+    // Costruttore
     public ExtendThreadThread(int tNum) {
         this.threadNumber = tNum;
     }

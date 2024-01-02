@@ -21,6 +21,7 @@ public class ImplementRunnable {
 class ImplementRunnableRunnable implements Runnable {
     // Identificatore del Thread
     private int threadNumber;
+    // Costruttore
     public ImplementRunnableRunnable(int tNum) {
         this.threadNumber = tNum;
     }
