@@ -1,26 +1,4 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
-public class ThreadSynchronized {
-    public static void main(String[] args) {
-        // Creo un'istanza della Classe di Supporto con i metodi Synchronized
-        ThreadSynchronizedCounter tsc = new ThreadSynchronizedCounter();
-        // Creo due Thread
-        Thread t1 = new ThreadSynchronizedThread(1, tsc);
-        Thread t2 = new ThreadSynchronizedThread(2, tsc);
-        // Avvio i due Thread
-        t1.start();
-        t2.start();
-        // Attendo i due Thread e stampo il risultato
-        try {
-            t1.join();
-            t2.join();
-            System.out.println("Sono il Main, il valore finale del contatore e' " + tsc.getCounter());
-        } catch(InterruptedException ie) {
-            System.out.println("I Thread sono stati interrotti inaspettatamente");
-            ie.printStackTrace();
-        }
-    }
-}
-
 class ThreadSynchronizedCounter {
     // Inizializzo una variabile contatore
     private int counter = 0;
@@ -38,33 +16,10 @@ class ThreadSynchronizedCounter {
         return this.counter;
     }
 }
-
-class ThreadSynchronizedThread extends Thread {
-    // Identificatore del Thread
-    int threadNum;
-    // Oggetto della Classe di supporto
-    ThreadSynchronizedCounter tsc;
-    // Costruttore
-    public ThreadSynchronizedThread(int threadNum, ThreadSynchronizedCounter tsc) {
-        this.threadNum = threadNum;
-        this.tsc = tsc;
-        System.out.println("Thread " + this.threadNum + " avviato");
-    }
-    // Implementazione del Metodo run
-    @Override
-    public void run() {
-        for(int i=0; i<5; i++) {
-            // Incremento il contatore
-            this.tsc.increaseAndPrintCounter(threadNum);
-            // Rilascio volontariamente la CPU
-            Thread.yield();
-        }
-    }
-}
 \end{lstlisting}
 \captionof{lstlisting}{Programma che sfrutti le proprietà di Sincronizzazione e di Rientranza del Costrutto \texttt{synchronized}.}
 \begin{lstlisting}[language=Bash]
-$ java SynchronizedReentrance
+$ java ThreadSynchronized
 Thread 1 avviato
 Thread 2 avviato
 Il contatore vale 1 ed e' stato aggiornato dal Thread 1

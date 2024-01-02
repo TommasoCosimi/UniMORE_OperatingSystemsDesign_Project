@@ -1,24 +1,9 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{BubbleSort}
 Wikipedia.
 \newblock {Bubble Sort}, Giugno 2023.
 \newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Bubble_sort}. Pagina visitata il \today.
-
-\bibitem{RadixSort}
-Wikipedia.
-\newblock {Radix Sort}, Maggio 2023.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Radix_sort}. Pagina visitata il \today.
-
-\bibitem{DijksraAlg}
-Wikipedia.
-\newblock {Algoritmo di Dijkstra}, Aprile 2023.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra}. Pagina visitata il \today.
-
-\bibitem{BellmanFordAlg}
-Wikipedia.
-\newblock {Algoritmo di Bellman-Ford}, Maggio 2023.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Algoritmo_di_Bellman-Ford}. Pagina visitata il \today.
 
 \bibitem{PlantText}
 {PlantUML, Graphviz, Ace Editor, Johan Sundström, Steven Nichols e Arwen Vaughan}.

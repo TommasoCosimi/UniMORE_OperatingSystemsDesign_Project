@@ -1,17 +1,30 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
-public class ClassExtendThread extends Thread {
-    // Definisco l'Identificativo che verra' assegnato dal Main
+public class ExtendThread {
+    // Numero di processi Leggeri da generare
+    private static final int NUM_OF_THREADS = 5;
+    // Costruttore
+    public static void main(String[] args) {
+        System.out.println("Sono il Main e sto per creare i Thread.");
+        // Creo NUM_OF_THREADS Thread e li eseguo
+        for(int i=0; i<NUM_OF_THREADS; i++) {
+            ExtendThreadThread ett = new ExtendThreadThread(i);
+            ett.start();
+        }
+        System.out.println("Sono il Main ed ho terminato l'esecuzione.");
+    }
+}
+
+class ExtendThreadThread extends Thread {
+    // Identificatore del Thread
     private int threadNumber;
-    public ClassExtendThread(int tNum) {
-        // Inizializzo l'Identificativo
+    public ExtendThreadThread(int tNum) {
         this.threadNumber = tNum;
     }
-    // Implemento il metodo run() sovrascrivendo l'implementazione di Thread
+    // Implementazione del Metodo run()
     @Override
     public void run() {
-        // Stampo l'Identificativo
         System.out.println("Sono il Thread numero " + this.threadNumber + ".");
     }
-}   
+}
 \end{lstlisting}
 \captionof{lstlisting}{Esempio di Classe che estende la Classe Thread per essere eseguita in un Processo Leggero separato.}

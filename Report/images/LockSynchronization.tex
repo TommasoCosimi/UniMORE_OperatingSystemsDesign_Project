@@ -1,44 +1,20 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
-import java.util.concurrent.Semaphore;
-
-public class ThreadSemaphore {
-    public static void main(String[] args) {
-        // Creo un'istanza della Classe di Supporto con il semaforo
-        ThreadSemaphoreCounter tsc = new ThreadSemaphoreCounter();
-        // Creo due Thread
-        Thread t1 = new ThreadSemaphoreThread(1, tsc);
-        Thread t2 = new ThreadSemaphoreThread(2, tsc);
-        // Avvio i due Thread
-        t1.start();
-        t2.start();
-        // Attendo i due Thread e stampo il risultato
-        try {
-            t1.join();
-            t2.join();
-            System.out.println("Sono il Main, il valore finale del contatore e' " + tsc.getCounter());
-        } catch(InterruptedException ie) {
-            System.out.println("I Thread sono stati interrotti inaspettatamente");
-            ie.printStackTrace();
-        }
-    }
-}
-
-class ThreadSemaphoreCounter {
+class ThreadLockCounter {
     // Inizializzo una variabile contatore
     private int counter = 0;
-    // Semaforo Mutualmente esclusivo Equo
-    Semaphore fairMutex = new Semaphore(1, true);
+    // Lock equo
+    Lock fairLock = new ReentrantLock(true);
     // Metodo esposto ai Thread
     protected void increaseAndPrintCounter(int threadNum) {
+        fairLock.lock();
         try {
-            fairMutex.acquire();
             counter++;
             Thread.sleep(1000);
         } catch(InterruptedException ie) {
-            System.out.println("Il Thread e' stato interrotto durante l'acquisizione del Lock o nell'invocazione di Sleep");
+            System.out.println("Il Thread " + threadNum + " e' stato interrotto inaspettatamente");
             ie.printStackTrace();
         } finally {
-            fairMutex.release();
+            fairLock.unlock();
         }
         System.out.println("Il contatore vale " + this.counter + " ed e' stato aggiornato dal Thread " + threadNum);
     }
@@ -47,33 +23,10 @@ class ThreadSemaphoreCounter {
         return this.counter;
     }
 }
-
-class ThreadSemaphoreThread extends Thread {
-    // Identificatore del Thread
-    int threadNum;
-    // Oggetto della Classe di supporto
-    ThreadSemaphoreCounter tsc;
-    // Costruttore
-    public ThreadSemaphoreThread(int threadNum, ThreadSemaphoreCounter tsc) {
-        this.threadNum = threadNum;
-        this.tsc = tsc;
-        System.out.println("Thread " + this.threadNum + " avviato");
-    }
-    // Implementazione del Metodo run
-    @Override
-    public void run() {
-        for(int i=0; i<5; i++) {
-            // Incremento il contatore
-            this.tsc.increaseAndPrintCounter(threadNum);
-            // Rilascio volontariamente la CPU
-            Thread.yield();
-        }
-    }
-}
 \end{lstlisting}
 \captionof{lstlisting}{Codice per la sincronizzazione tramite l'utilizzo di \texttt{Lock}.}
 \begin{lstlisting}[language=Bash]
-$ java LockSynchronization
+$ java ThreadLock
 Thread 1 avviato
 Thread 2 avviato
 Il contatore vale 1 ed e' stato aggiornato dal Thread 1

@@ -11,9 +11,8 @@ Si illustrano ora le due diverse possibilità di stesura di un Programma Multipr
 Un primo approccio alla Programmazione \textit{Multi-Threaded} in Java può essere quello di Estendere la Classe \texttt{Thread} con la propria. \par
 L'unico requisito è quello di completare l'implementazione del Metodo \texttt{run()} della Super-Classe esprimendo le operazioni da eseguire una volta iniziata l'esecuzione del nuovo \textit{Thread}. \par
 Si riporta a seguire un esempio didattico per l’utilizzo dove il Thread principale andrà a creare un numero prestabilito di Processi Leggeri, i quali dovranno stampare sullo Standard Output un messaggio con l'identificativo loro assegnato in fase di inizializzazione per poi terminare l’esecuzione.
-\input{images/ClassExtendsThread.tex}
 Nel Main verrà creato un oggetto di tipo \texttt{ClassExtendThread} per ogni Processo Leggero, per poi utilizzarne la primitiva \texttt{start()} ereditata da \texttt{Thread}.
-\input{images/ClassExtendsThreadMain.tex}
+\input{images/ClassExtendsThread.tex}
 \subsection{Implementazione dell'Interfaccia \texttt{Runnable}}
 Alternativa alla modalità precedente è quella di implementare l'Interfaccia \texttt{Runnable}. \par
 Tale cambiamento non modificherà in maniera radicale il codice, ma necessiterà di un differente ragionamento: ora infatti andrà creato un oggetto di tipo Thread a partire da un oggetto della Classe implementante \texttt{Runnable}, per poi operare direttamente sull'oggetto di tipo Thread. \par

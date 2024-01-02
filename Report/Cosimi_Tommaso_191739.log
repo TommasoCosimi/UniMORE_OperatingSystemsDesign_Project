@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.26)  2 JAN 2024 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.26)  2 JAN 2024 16:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -8,8 +8,8 @@ entering extended mode
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -302,20 +302,13 @@ Package caption Info: New subtype `subfigure' on input line 239.
 \c@subfigure=\count292
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count293
-) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen173
-\WF@size=\dimen174
-\c@WF@wrappedlines=\count294
-\WF@box=\box98
-\WF@everypar=\toks20
-Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count295
-\float@exts=\toks21
-\float@box=\box99
-\@float@everytoks=\toks22
-\@floatcapt=\box100
+\c@float@type=\count294
+\float@exts=\toks20
+\float@box=\box98
+\@float@everytoks=\toks21
+\@floatcapt=\box99
 ) (/usr/share/texlive/texmf-dist/tex/latex/svg/svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
  (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
@@ -345,9 +338,9 @@ runsystem(uname -s > "Cosimi_Tommaso_191739.w18")...executed.
 runsystem(rm -- "Cosimi_Tommaso_191739.w18")...executed.
 
 )
-\c@svg@param@lastpage=\count296
-\svg@box=\box101
-\c@svg@param@currpage=\count297
+\c@svg@param@lastpage=\count295
+\svg@box=\box100
+\c@svg@param@currpage=\count296
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -369,41 +362,41 @@ Package: transparent 2022-10-27 v1.5 Transparency with color stacks
  (/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
 Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks23
-\pgfutil@tempdima=\dimen175
-\pgfutil@tempdimb=\dimen176
+\pgfutil@everybye=\toks22
+\pgfutil@tempdima=\dimen173
+\pgfutil@tempdimb=\dimen174
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box102
+\pgfutil@abb=\box101
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen177
-\pgf@y=\dimen178
-\pgf@xa=\dimen179
-\pgf@ya=\dimen180
-\pgf@xb=\dimen181
-\pgf@yb=\dimen182
-\pgf@xc=\dimen183
-\pgf@yc=\dimen184
-\pgf@xd=\dimen185
-\pgf@yd=\dimen186
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count298
-\c@pgf@countb=\count299
-\c@pgf@countc=\count300
-\c@pgf@countd=\count301
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count302
+\c@pgf@counta=\count297
+\c@pgf@countb=\count298
+\c@pgf@countc=\count299
+\c@pgf@countd=\count300
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count301
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -414,8 +407,8 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count303
-\pgfsyssoftpath@bigbuffer@items=\count304
+\pgfsyssoftpath@smallbuffer@items=\count302
+\pgfsyssoftpath@bigbuffer@items=\count303
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -423,52 +416,52 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen187
-\pgfmath@count=\count305
-\pgfmath@box=\box103
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@dimen=\dimen185
+\pgfmath@count=\count304
+\pgfmath@box=\box102
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count306
+\c@pgfmathroundto@lastzeros=\count305
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen188
-\pgf@picmaxx=\dimen189
-\pgf@picminy=\dimen190
-\pgf@picmaxy=\dimen191
-\pgf@pathminx=\dimen192
-\pgf@pathmaxx=\dimen193
-\pgf@pathminy=\dimen194
-\pgf@pathmaxy=\dimen195
-\pgf@xx=\dimen196
-\pgf@xy=\dimen197
-\pgf@yx=\dimen198
-\pgf@yy=\dimen199
-\pgf@zx=\dimen256
-\pgf@zy=\dimen257
+\pgf@picminx=\dimen186
+\pgf@picmaxx=\dimen187
+\pgf@picminy=\dimen188
+\pgf@picmaxy=\dimen189
+\pgf@pathminx=\dimen190
+\pgf@pathmaxx=\dimen191
+\pgf@pathminy=\dimen192
+\pgf@pathmaxy=\dimen193
+\pgf@xx=\dimen194
+\pgf@xy=\dimen195
+\pgf@yx=\dimen196
+\pgf@yy=\dimen197
+\pgf@zx=\dimen198
+\pgf@zy=\dimen199
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen258
-\pgf@path@lasty=\dimen259
+\pgf@path@lastx=\dimen256
+\pgf@path@lasty=\dimen257
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen260
-\pgf@shorten@start@additional=\dimen261
+\pgf@shorten@end@additional=\dimen258
+\pgf@shorten@start@additional=\dimen259
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box104
-\pgf@hbox=\box105
-\pgf@layerbox@main=\box106
-\pgf@picture@serial@count=\count307
+\pgfpic=\box103
+\pgf@hbox=\box104
+\pgf@layerbox@main=\box105
+\pgf@picture@serial@count=\count306
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen262
+\pgflinewidth=\dimen260
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen263
-\pgf@pt@y=\dimen264
-\pgf@pt@temp=\dimen265
+\pgf@pt@x=\dimen261
+\pgf@pt@y=\dimen262
+\pgf@pt@temp=\dimen263
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -477,17 +470,17 @@ File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen266
+\pgfarrowsep=\dimen264
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen267
-\pgf@sys@shading@range@num=\count308
-\pgf@shadingcount=\count309
+\pgf@max=\dimen265
+\pgf@sys@shading@range@num=\count307
+\pgf@shadingcount=\count308
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box107
+\pgfexternal@startupbox=\box106
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -498,63 +491,63 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box108
+\pgfnodeparttextbox=\box107
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen268
-\pgf@nodesepend=\dimen269
+\pgf@nodesepstart=\dimen266
+\pgf@nodesepend=\dimen267
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen270
-\pgffor@skip=\dimen271
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
+\pgffor@iter=\dimen268
+\pgffor@skip=\dimen269
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count310
-\pgfplotmarksize=\dimen272
+\pgf@plot@mark@count=\count309
+\pgfplotmarksize=\dimen270
 )
-\tikz@lastx=\dimen273
-\tikz@lasty=\dimen274
-\tikz@lastxsaved=\dimen275
-\tikz@lastysaved=\dimen276
-\tikz@lastmovetox=\dimen277
-\tikz@lastmovetoy=\dimen278
-\tikzleveldistance=\dimen279
-\tikzsiblingdistance=\dimen280
-\tikz@figbox=\box109
-\tikz@figbox@bg=\box110
-\tikz@tempbox=\box111
-\tikz@tempbox@bg=\box112
-\tikztreelevel=\count311
-\tikznumberofchildren=\count312
-\tikznumberofcurrentchild=\count313
-\tikz@fig@count=\count314
+\tikz@lastx=\dimen271
+\tikz@lasty=\dimen272
+\tikz@lastxsaved=\dimen273
+\tikz@lastysaved=\dimen274
+\tikz@lastmovetox=\dimen275
+\tikz@lastmovetoy=\dimen276
+\tikzleveldistance=\dimen277
+\tikzsiblingdistance=\dimen278
+\tikz@figbox=\box108
+\tikz@figbox@bg=\box109
+\tikz@tempbox=\box110
+\tikz@tempbox@bg=\box111
+\tikztreelevel=\count310
+\tikznumberofchildren=\count311
+\tikznumberofcurrentchild=\count312
+\tikz@fig@count=\count313
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count315
-\pgfmatrixcurrentcolumn=\count316
-\pgf@matrix@numberofcolumns=\count317
+\pgfmatrixcurrentrow=\count314
+\pgfmatrixcurrentcolumn=\count315
+\pgf@matrix@numberofcolumns=\count316
 )
-\tikz@expandcount=\count318
+\tikz@expandcount=\count317
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count319
+\c@AlgoLine=\count318
  (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip53
  (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count320
+\c@checkoddpage=\count319
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
@@ -568,52 +561,52 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip59
 \algomargin=\skip60
 \skipalgocfslide=\skip61
-\algowidth=\dimen281
-\inoutsize=\dimen282
-\inoutindent=\dimen283
-\interspacetitleruled=\dimen284
-\interspacealgoruled=\dimen285
-\interspacetitleboxruled=\dimen286
+\algowidth=\dimen279
+\inoutsize=\dimen280
+\inoutindent=\dimen281
+\interspacetitleruled=\dimen282
+\interspacealgoruled=\dimen283
+\interspacetitleboxruled=\dimen284
 \algocf@ruledwidth=\skip62
-\algocf@inoutbox=\box113
-\algocf@inputbox=\box114
+\algocf@inoutbox=\box112
+\algocf@inputbox=\box113
 \AlCapSkip=\skip63
 \AlCapHSkip=\skip64
 \algoskipindent=\skip65
-\algocf@nlbox=\box115
-\algocf@hangingbox=\box116
-\algocf@untilbox=\box117
+\algocf@nlbox=\box114
+\algocf@hangingbox=\box115
+\algocf@untilbox=\box116
 \algocf@skipuntil=\skip66
-\algocf@capbox=\box118
+\algocf@capbox=\box117
 \algocf@lcaptionbox=\skip67
 \algoheightruledefault=\skip68
 \algoheightrule=\skip69
 \algotitleheightruledefault=\skip70
 \algotitleheightrule=\skip71
-\c@algocfline=\count321
-\c@algocfproc=\count322
-\c@algocf=\count323
-\algocf@algoframe=\box119
-\algocf@algobox=\box120
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count324
-\lst@gtempboxa=\box121
-\lst@token=\toks35
-\lst@length=\count325
-\lst@currlwidth=\dimen287
-\lst@column=\count326
-\lst@pos=\count327
-\lst@lostspace=\dimen288
-\lst@width=\dimen289
-\lst@newlines=\count328
-\lst@lineno=\count329
-\lst@maxwidth=\dimen290
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+\c@algocfline=\count320
+\c@algocfproc=\count321
+\c@algocf=\count322
+\algocf@algoframe=\box118
+\algocf@algobox=\box119
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count323
+\lst@gtempboxa=\box120
+\lst@token=\toks34
+\lst@length=\count324
+\lst@currlwidth=\dimen285
+\lst@column=\count325
+\lst@pos=\count326
+\lst@lostspace=\dimen286
+\lst@width=\dimen287
+\lst@newlines=\count327
+\lst@lineno=\count328
+\lst@maxwidth=\dimen288
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count330
-\lst@skipnumbers=\count331
-\lst@framebox=\box122
+\c@lstnumber=\count329
+\lst@skipnumbers=\count330
+\lst@framebox=\box121
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
@@ -626,36 +619,36 @@ File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen291
+\arrowsize=\dimen289
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
-\l__pdf_internal_box=\box123
+\l__color_backend_stack_int=\count331
+\l__pdf_internal_box=\box122
 ) (./Cosimi_Tommaso_191739.aux)
 \openout1 = `Cosimi_Tommaso_191739.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Info: Redefining \it@ocap on input line 44.
-LaTeX Info: Redefining \it@ccap on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Info: Redefining \it@ocap on input line 43.
+LaTeX Info: Redefining \it@ccap on input line 43.
 
 
 File italian.ldf warning: 
@@ -663,7 +656,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 44.
+italian.ldf    on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -673,23 +666,23 @@ italian.ldf    on input line 44.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(99.58464pt, 398.3386pt, 99.58464pt)
-* v-part:(T,H,B)=(99.58464pt, 645.87756pt, 99.58464pt)
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=398.3386pt
-* \textheight=645.87756pt
-* \oddsidemargin=27.31465pt
-* \evensidemargin=27.31465pt
-* \topmargin=-9.68535pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -701,24 +694,24 @@ italian.ldf    on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen292
-\scratchbox=\box124
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen293
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count332
+\scratchdimen=\dimen290
+\scratchbox=\box123
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen291
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 44.
+Package hyperref Info: Link coloring OFF on input line 43.
  (./Cosimi_Tommaso_191739.out) (./Cosimi_Tommaso_191739.out)
 \@outlinefile=\write5
 \openout5 = `Cosimi_Tommaso_191739.out'.
@@ -726,28 +719,30 @@ Package hyperref Info: Link coloring OFF on input line 44.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
-Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count339
-<Cosimi_Tommaso_191739-frn.pdf, id=224, 597.50829pt x 845.0471pt>
+\c@lstlisting=\count338
+<Cosimi_Tommaso_191739-frn.pdf, id=228, 597.50829pt x 845.0471pt>
 File: Cosimi_Tommaso_191739-frn.pdf Graphic file (type pdf)
 <use Cosimi_Tommaso_191739-frn.pdf>
-Package pdftex.def Info: Cosimi_Tommaso_191739-frn.pdf  used on input line 47.
+Package pdftex.def Info: Cosimi_Tommaso_191739-frn.pdf  used on input line 46.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
  [1
 
  <./Cosimi_Tommaso_191739-frn.pdf{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}>] (./Cosimi_Tommaso_191739.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 4.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
+(Font)              <5> on input line 4.
+
+Overfull \hbox (8.76428pt too wide) in paragraph at lines 43--43
+ [][] [][]\OT1/cmr/m/n/10 Esempio di Sin-cro-niz-za-zio-ne tra due Th-read tra-mi-te il Co-strut-to \OT1/cmtt/m/n/10 synchronized 
+ []
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...exttt {notifyAll()}}{23}{subsection.3.1.3}
+l.45 ...terfaccia \texttt {Lock}}{20}{section.3.2}
                                                   % [1
 
 ])
@@ -760,18 +755,18 @@ Capitolo 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8 \subsection
-               *{Programma} [1
+l.10 ...il Linguaggio di Programmazione Java. \par
+                                                   [1
 
 ] (./images/ProgramExample.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 2.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
+(Font)              <6> on input line 2.
 
 
 Package caption Warning: \setcaptiontype
@@ -784,12 +779,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 23.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.23 ...a che implementi l'Algoritmo Bubble Sort.}
-                                                   [2]) (./images/ProcessExample.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+) (./images/ProcessExample.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -803,26 +793,37 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 9.
 See the caption package documentation for explanation.
 
-) (./images/StatesTransitions.tex
-<./svg-inkscape/StatesTransitions_svg-raw.pdf, id=390, 166.6255pt x 188.43256pt>
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23     \item \textbf
+                      {Pronto} (o \textit{Ready}). \par [2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./images/StatesTransitions.tex
+<./svg-inkscape/StatesTransitions_svg-raw.pdf, id=397, 166.6255pt x 188.43256pt>
 File: ./svg-inkscape/StatesTransitions_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/StatesTransitions_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/StatesTransitions_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 166.62508pt x 188.4321pt.
-) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./images/UnixStatesTransitions.tex
-<./svg-inkscape/UnixStatesTransitions_svg-raw.pdf, id=411, 254.84409pt x 333.245pt>
+) (./images/UnixStatesTransitions.tex
+<./svg-inkscape/UnixStatesTransitions_svg-raw.pdf, id=400, 254.84409pt x 333.245pt>
 File: ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 254.84346pt x 333.24417pt.
-) [4 <./svg-inkscape/StatesTransitions_svg-raw.pdf> <./svg-inkscape/UnixStatesTransitions_svg-raw.pdf
+) [3 <./svg-inkscape/StatesTransitions_svg-raw.pdf> <./svg-inkscape/UnixStatesTransitions_svg-raw.pdf
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/UnixStatesTransitions_svg-raw.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./images/SequentialProcess.tex) (./images/NonSequentialProcess.tex [5]) (./images/CompetitiveInteraction.tex) [6] [7] (./images/AlgorithmSemaphoreUsage.tex) [8] [9]
+>] (./images/SequentialProcess.tex) (./images/NonSequentialProcess.tex) [4] (./images/CompetitiveInteraction.tex) [5] [6] (./images/AlgorithmSemaphoreUsage.tex
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 7.
+See the caption package documentation for explanation.
+
+) [7]
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 136.
 
-[10]
+[8]
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
@@ -832,42 +833,26 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 142.
 
-[11]) [12]
+[9]) [10]
 Capitolo 2.
-(./chapters/2.Threads.tex
-Underfull \hbox (badness 1442) in paragraph at lines 1--2
-\OT1/cmr/m/n/10.95 Il se-guen-te Ca-pi-to-lo trat-ter^^Ra l'im-ple-men-ta-zio-ne di un Pro-ces-so Leg-ge-ro nel
- []
-
-(./images/JavaThreadInheritance.tex
-<./svg-inkscape/JavaThreadInheritance_svg-raw.pdf, id=509, 165.66301pt x 228.00809pt>
+(./chapters/2.Threads.tex (./images/JavaThreadInheritance.tex
+<./svg-inkscape/JavaThreadInheritance_svg-raw.pdf, id=497, 165.66301pt x 228.00809pt>
 File: ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/JavaThreadInheritance_svg-raw.pdf  used on input line 3.
 (pdftex.def)             Requested size: 165.6626pt x 228.00752pt.
-) [13
-
- <./svg-inkscape/JavaThreadInheritance_svg-raw.pdf>]
+)
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 10.
- (./images/ClassExtendsThread.tex
+ [11
+
+ <./svg-inkscape/JavaThreadInheritance_svg-raw.pdf>] (./images/ClassExtendsThread.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 17.
+(caption)                particular \caption on input line 30.
 See the caption package documentation for explanation.
 
-) (./images/ClassExtendsThreadMain.tex [14]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 18.
-See the caption package documentation for explanation.
-
-)
-Underfull \hbox (badness 2277) in paragraph at lines 18--18
-\OT1/cmr/m/n/10.95 Alternativa al-la mo-da-lit^^Ra pre-ce-den-te ^^Re quel-la di im-ple-men-ta-re l'In-ter-fac-cia
- []
-
-(./images/ClassImplementsRunnable.tex
+) (./images/ClassImplementsRunnable.tex [12]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 6.
@@ -879,141 +864,132 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 13.
 See the caption package documentation for explanation.
 
-) [15] (./images/MultiThreadedExecutionExample.tex
+) (./images/MultiThreadedExecutionExample.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 11.
 See the caption package documentation for explanation.
 
-) [16] (./images/ThreadJoinFlow.tex
-<./svg-inkscape/ThreadJoinFlow_svg-raw.pdf, id=610, 493.845pt x 434.50937pt>
+) [13] (./images/ThreadJoinFlow.tex
+<./svg-inkscape/ThreadJoinFlow_svg-raw.pdf, id=587, 493.845pt x 434.50937pt>
 File: ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadJoinFlow_svg-raw.pdf  used on input line 4.
 (pdftex.def)             Requested size: 493.84378pt x 434.5083pt.
-) [17] [18 <./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>] (./images/ThreadExecutionControl.tex [19]
+) [14] [15 <./svg-inkscape/ThreadJoinFlow_svg-raw.pdf>] (./images/ThreadExecutionControl.tex [16]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 67.
 See the caption package documentation for explanation.
 
-[20]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 84.
 See the caption package documentation for explanation.
 
-)) [21]
+)) [17]
 Capitolo 3.
-(./chapters/3.ThreadSync.tex (./images/SynchronizedBasicExample.tex) [22
+(./chapters/3.ThreadSync.tex (./images/SynchronizedBasicExample.tex) [18
 
 ]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 18.
-
-Underfull \hbox (badness 1132) in paragraph at lines 26--26
-[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due Th-read tra-mi-te il
- []
-
-(./images/SynchronizedReentranceExample.tex [23] [24]
+ (./images/SynchronizedReentranceExample.tex [19]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 65.
+(caption)                particular \caption on input line 20.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 82.
+(caption)                particular \caption on input line 37.
 See the caption package documentation for explanation.
 
-) [25]
+)
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 32.
- (./images/LockBasicExample.tex
+ (./images/LockBasicExample.tex [20]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 17.
 See the caption package documentation for explanation.
 
-) [26] (./images/FairLock.tex
+) (./images/FairLock.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 8.
 See the caption package documentation for explanation.
 
-) [27] (./images/ConditionVarDeclaration.tex
+) [21] (./images/ConditionVarDeclaration.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 5.
 See the caption package documentation for explanation.
 
+) (./images/LockSynchronization.tex [22]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 27.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 44.
+See the caption package documentation for explanation.
+
 )
-Underfull \hbox (badness 4181) in paragraph at lines 61--61
-[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due \OT1/cmr/bx/it/12 Th-read \OT1/cmr/bx/n/12 tra-mi-te
+Underfull \hbox (badness 1189) in paragraph at lines 65--66
+\OT1/cmr/m/n/10 L'Interfaccia \OT1/cmtt/m/n/10 Lock \OT1/cmr/m/n/10 per-met-te un con-trol-lo de-ci-sa-men-te pi^^Ru gra-nu-la-re ri-spet-to al Co-strut-to
  []
 
-(./images/LockSynchronization.tex [28] [29]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 74.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 91.
-See the caption package documentation for explanation.
-
-) [30] (./images/SemaphoreDeclaration.tex
+(./images/SemaphoreDeclaration.tex [23]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 15.
 See the caption package documentation for explanation.
 
-) [31]
-Underfull \hbox (badness 2478) in paragraph at lines 79--80
-\OT1/cmr/m/n/10.95 Utile nel ten-ta-re l'ac-qui-si-zio-ne di uno o pi^^Ru per-mes-si nel-la sua va-rian-te
+)
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+\OT1/cmr/m/n/10 Permette di ac-qui-si-re uno (o \OT1/cmtt/m/n/10 numberOfPermits \OT1/cmr/m/n/10 nel-la sua va-rian-te \OT1/cmtt/m/n/10 acquire(int
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 81--82
-\OT1/cmr/m/n/10.95 Il me-to-do con-sen-te di ri-la-scia-re uno o \OT1/cmtt/m/n/10.95 numberOfPermits \OT1/cmr/m/n/10.95 nel-la sua va-rian-
+Underfull \hbox (badness 7504) in paragraph at lines 77--78
+\OT1/cmr/m/n/10 Anch'esso per-met-te al \OT1/cmr/m/it/10 Th-read \OT1/cmr/m/n/10 di ac-qui-si-re uno o \OT1/cmtt/m/n/10 numberOfPermits \OT1/cmr/m/n/10 nel-la va-rian-te
  []
 
-
-Underfull \hbox (badness 4181) in paragraph at lines 86--86
-[]\OT1/cmr/bx/n/12 Esempio di Sin-cro-niz-za-zio-ne tra due \OT1/cmr/bx/it/12 Th-read \OT1/cmr/bx/n/12 tra-mi-te
- []
-
-(./images/SemaphoreSynchronization.tex [32] [33]
+[24] (./images/SemaphoreSynchronization.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 73.
+(caption)                particular \caption on input line 26.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 90.
+(caption)                particular \caption on input line 43.
 See the caption package documentation for explanation.
 
-)) [34] [35]
+[25])) [26]
 Capitolo 4.
 (./chapters/4.ParallelExecution.tex (./images/ThreadPoolExample.tex
-<./svg-inkscape/ThreadPool1_svg-raw.pdf, id=1128, 467.49657pt x 233.74828pt>
+<./svg-inkscape/ThreadPool1_svg-raw.pdf, id=945, 463.7325pt x 196.10765pt>
 File: ./svg-inkscape/ThreadPool1_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadPool1_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadPool1_svg-raw.pdf  used on input line 3.
-(pdftex.def)             Requested size: 467.49542pt x 233.7477pt.
-<./svg-inkscape/ThreadPool2_svg-raw.pdf, id=1131, 467.49657pt x 233.74828pt>
+(pdftex.def)             Requested size: 463.73135pt x 196.10716pt.
+<./svg-inkscape/ThreadPool2_svg-raw.pdf, id=948, 463.7325pt x 196.10765pt>
 File: ./svg-inkscape/ThreadPool2_svg-raw.pdf Graphic file (type pdf)
 <use ./svg-inkscape/ThreadPool2_svg-raw.pdf>
 Package pdftex.def Info: ./svg-inkscape/ThreadPool2_svg-raw.pdf  used on input line 10.
-(pdftex.def)             Requested size: 467.49542pt x 233.7477pt.
- [36
+(pdftex.def)             Requested size: 463.73135pt x 196.10716pt.
+) [27
 
-]) [37 <./svg-inkscape/ThreadPool1_svg-raw.pdf> <./svg-inkscape/ThreadPool2_svg-raw.pdf
+ <./svg-inkscape/ThreadPool1_svg-raw.pdf>] [28 <./svg-inkscape/ThreadPool2_svg-raw.pdf>]
+Underfull \hbox (badness 2608) in paragraph at lines 35--35
+[]\OT1/cmr/bx/n/12 Esempio di Im-ple-men-ta-zio-ne di una \OT1/cmr/bx/it/12 Th-read Pool \OT1/cmr/bx/n/12 tra-mi-te
+ []
 
-pdfTeX warning: pdflatex (file ./svg-inkscape/ThreadPool2_svg-raw.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [38] (./images/ThreadPoolImplementationExample.tex [39]
+(./images/ThreadPoolImplementationExample.tex [29]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 44.
@@ -1024,44 +1000,29 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 58.
 See the caption package documentation for explanation.
 
-)) [40]
+)) [30]
 Capitolo 5.
-(./chapters/5.Conclusions.tex) (./Cosimi_Tommaso_191739.bbl [41
+(./chapters/5.Conclusions.tex) (./Cosimi_Tommaso_191739.bbl [31
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 39--42
-[]\OT1/cmr/m/n/10.95 Prof. Le-ti-zia Leo-nar-di.  Co-strut-ti di Sin-cro-niz-za-zio-ne, Ot-to-
- []
-
-
-Underfull \hbox (badness 8132) in paragraph at lines 39--42
-\OT1/cmr/m/n/10.95 bre 2022.  Di-spen-sa di-spo-ni-bi-le al-l'url: []$\OT1/cmtt/m/n/10.95 https : / / www . didattica .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--42
-\OT1/cmtt/m/n/10.95 agentgroup . unimo . it / didattica / ProgettazioneSO / Lucidi /
- []
-
-) [42
+]) [32
 
 ] (./Cosimi_Tommaso_191739.aux)
 Package rerunfilecheck Info: File `Cosimi_Tommaso_191739.out' has not changed.
-(rerunfilecheck)             Checksum: FCBB26E94661660EDF43692D6A9384FF;11624.
+(rerunfilecheck)             Checksum: 60DDBCFB0FA5B0A33A395C84B02FC551;11855.
  ) 
 Here is how much of TeX's memory you used:
- 28913 strings out of 476041
- 545978 string characters out of 5793173
- 2211388 words of memory out of 6000000
- 48056 multiletter control sequences out of 15000+600000
- 522584 words of font info for 67 fonts, out of 8000000 for 9000
+ 28668 strings out of 476041
+ 541956 string characters out of 5793173
+ 2235388 words of memory out of 6000000
+ 47974 multiletter control sequences out of 15000+600000
+ 521050 words of font info for 62 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 94i,18n,92p,1746b,2022s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on Cosimi_Tommaso_191739.pdf (45 pages, 430146 bytes).
+ 94i,18n,92p,1746b,2016s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on Cosimi_Tommaso_191739.pdf (35 pages, 433256 bytes).
 PDF statistics:
- 1496 PDF objects out of 1728 (max. 8388607)
- 1360 compressed objects within 14 object streams
- 727 named destinations out of 1000 (max. 500000)
- 480 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1278 PDF objects out of 1440 (max. 8388607)
+ 1150 compressed objects within 12 object streams
+ 573 named destinations out of 1000 (max. 500000)
+ 488 words of extra memory for PDF output out of 10000 (max. 10000000)
 

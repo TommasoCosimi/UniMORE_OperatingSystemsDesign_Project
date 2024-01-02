@@ -1,12 +1,12 @@
 \begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
 ...
 for(int i=0; i<NUM_OF_THREADS; i++) {
-    // Creo un nuovo oggetto di tipo ClassImplementRunnable
-    ClassImplementRunnable cir = new ClassImplementRunnable(i);
-    // Creo un Thread a partire dall'oggetto della mia Classe
-    Thread thread = new Thread(cir);
-    // Eseguo il Thread
-    thread.start();
+    // Creo un oggetto di tipo ImplementRunnableRunnable che estenda Runnable
+    ImplementRunnableRunnable irr = new ImplementRunnableRunnable(i);
+    // Creo un Thread a partire da esso
+    Thread t = new Thread(irr);
+    // Avvio il Thread
+    t.start();
 }
 ...
 \end{lstlisting}

@@ -1,10 +1,7 @@
-\begin{algorithm}[H]
-    \caption{Esempio di utilizzo di un Semaforo}
-    \label{alg.SemaphoreUsageExample}
-    \SetKwFunction{FWait}{wait}
-    \SetKwFunction{FSignal}{signal}
-    \KwData{S\tcp*{Semaforo}}
-    \FWait{$S$}\;
-    Esecuzione della Sezione Critica\;
-    \FSignal{$S$}\;
-\end{algorithm}
+\begin{lstlisting}
+Semaphore s = new Semaphore();
+s.wait();
+// Sezione Critica
+s.signal();
+\end{lstlisting}
+\captionof{lstlisting}{Esempio di utilizzo di un Semaforo}
