@@ -9,3 +9,7 @@ pwd
 
 echo "Compilo le classi in bin"
 javac -d ../bin ./*.java
+
+echo "Creo un file di supporto per gli Esempi"
+cd ../bin
+echo "Testo di esempio" > File.txt
