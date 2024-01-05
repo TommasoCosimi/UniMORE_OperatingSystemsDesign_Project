@@ -1,0 +1,142 @@
+\begin{lstlisting}[language=Java, numbers=left, stepnumber=1]
+/*
+ * File: AlternateCounterSynchronized.java
+ * Viene implementato un Contatore condiviso tra due Thread.
+ * Il Thread 1 potra' aggiornare il contatore se e solo se questo e' dispari,
+ * il Thread 2 solo se e' pari.
+ */
+
+public class AlternateCounterSynchronized {
+
+    // Metodo main per l'avvio
+    public static void main(String[] args) {
+        new AlternateCounterSynchronized();
+    }
+
+    // Costruttore dell'oggetto principale
+    private AlternateCounterSynchronized() {
+        // Creo l'oggetto del counter da condividere
+        AlternateCounterSynchronizedCounter acl = new AlternateCounterSynchronizedCounter();
+        // Creo e avvio i due Thread
+        AlternateCounterSynchronizedRunnable run1 = new AlternateCounterSynchronizedRunnable(1, acl);
+        AlternateCounterSynchronizedRunnable run2 = new AlternateCounterSynchronizedRunnable(2, acl);
+        Thread t1 = new Thread(run1);
+        Thread t2 = new Thread(run2);
+        t1.start();
+        t2.start();
+        // Attendo la loro terminazione e stampo il risultato
+        try {
+            t1.join();
+            t2.join();
+        } catch(InterruptedException ie) {
+            System.out.println("Errore nell'attesa dei Thread figli");
+            ie.printStackTrace();
+        }
+        System.out.println("Il valore finale del contatore e': "
+            + acl.getCounter());
+    }
+}
+
+class AlternateCounterSynchronizedCounter {
+
+    // Variabile contatore
+    private int counter = 0;
+
+    // Funzione per l'incremento del contatore
+    protected synchronized void increaseAndPrintCounter(int threadNum) {
+        // Finche' la condizione non viene rispettata, non incrementare
+        while(threadNum%2 != this.counter%2) {
+            try {
+                System.out.println("Sono il Thread " + threadNum + " e sono bloccato in attesa della condizione");
+                wait();
+            } catch(InterruptedException ie) {
+                System.out.println("Thread interrotto inaspettatamente");
+                ie.printStackTrace();
+            }
+        }
+        // Incrementa
+        counter++;
+        // Stampo il risultato dell'operazione
+        System.out.println("Sono il Thread " + threadNum + " ed ho aggiornato il contatore: " + this.counter);
+        // Segnala all'altro processo eventualmente bloccato
+        notify();
+    }
+
+    // Metodo di supporto
+    protected int getCounter() {
+        return this.counter;
+    }
+}
+
+class AlternateCounterSynchronizedRunnable implements Runnable {
+
+    // Identificativo del Thread
+    private int threadNum;
+    // Risorsa condivisa
+    private AlternateCounterSynchronizedCounter acl;
+
+    // Costruttore
+    protected AlternateCounterSynchronizedRunnable(int threadNum, AlternateCounterSynchronizedCounter acl) {
+        this.threadNum = threadNum;
+        this.acl = acl;
+        System.out.println("Runnable " + this.threadNum + " creato");
+    }
+    
+    // Implementazione del Metodo run()
+    @Override
+    public void run() {
+        System.out.println("Thread " + this.threadNum + " avviato");
+        for(int i=0; i<10; i++) {
+            acl.increaseAndPrintCounter(this.threadNum);
+        }
+    }
+}
+\end{lstlisting}
+\captionof{lstlisting}{Implementazione tramite l'utilizzo di \textit{Lock} e Variabili Condizione.}
+\begin{lstlisting}[language=Bash]
+$ java AlternateCounterLock
+Runnable 1 creato
+Runnable 2 creato
+Thread 2 avviato
+Thread 1 avviato
+Sono il Thread 2 ed ho aggiornato il contatore: 1
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 2
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 3
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 4
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 5
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 6
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 7
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 8
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 9
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 10
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 11
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 12
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 13
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 14
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 15
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 16
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 17
+Sono il Thread 2 e sono bloccato in attesa della condizione
+Sono il Thread 1 ed ho aggiornato il contatore: 18
+Sono il Thread 1 e sono bloccato in attesa della condizione
+Sono il Thread 2 ed ho aggiornato il contatore: 19
+Sono il Thread 1 ed ho aggiornato il contatore: 20
+Il valore finale del contatore e': 20
+\end{lstlisting}
+\captionof{lstlisting}{Output del Programma di cui sopra.}

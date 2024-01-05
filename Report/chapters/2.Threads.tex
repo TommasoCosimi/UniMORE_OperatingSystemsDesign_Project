@@ -1,24 +1,24 @@
 Il seguente Capitolo tratterà l'implementazione di un Processo Leggero nel Linguaggio di Programmazione Java.
 
 \section{Creazione di un Processo Leggero}
-Ogni Processo Leggero in Java viene rappresentato da un Oggetto di Tipo \texttt{Thread} o di un suo Sotto-Tipo: questa semantica permette di creare Classi che possano essere eseguite su \textit{Thread} separati dal principale, permettendo quindi un migliore parallelismo nell'esecuzione delle loro operazioni. \par
+Ogni Processo Leggero in Java viene rappresentato da un Oggetto di Tipo \texttt{Thread}\cite{Thread_JavaDocs} o di un suo Sotto-Tipo: questa semantica permette di creare Classi che possano essere eseguite su \textit{Thread} separati dal principale, permettendo quindi un migliore parallelismo nell'esecuzione delle loro operazioni. \par
 Java mette a disposizione del Programmatore due diverse possibilità per la stesura di un Programma che utilizzi più Processi Leggeri: l'estensione della Classe \texttt{Thread} e l'implementazione dell'Interfaccia \texttt{Runnable}. \par
-Prima di descrivere entrambe le opportunità è bene fornire informazioni sull'ereditarietà della Classe \texttt{Thread}: essa infatti estende la Classe \texttt{Object} ed implementa l'interfaccia \texttt{Runnable} così come raffigurato nel Diagramma UML di seguito.
+Prima di descrivere entrambe le opportunità è bene fornire informazioni sull'ereditarietà della Classe \texttt{Thread}: essa infatti estende la Classe \texttt{Object} e implementa l'interfaccia \texttt{Runnable} così come raffigurato nel Diagramma UML di seguito.
 \input{images/JavaThreadInheritance.tex}
 Come affermato in precedenza, l'obiettivo ultimo di un Programma che utilizzi più Processi Leggeri è quello di avere un oggetto di tipo \texttt{Thread} (o di un suo Sotto-Tipo) per ognuno di essi, così da sfruttarne le Primitive. \par
-Si illustrano ora le due diverse possibilità di stesura di un Programma Multiprocesso.
+Si illustrano ora le due diverse possibilità di stesura di un Programma Multi-Processo.
 \subsection{Estensione della Classe \texttt{Thread}}
-Un primo approccio alla Programmazione \textit{Multi-Threaded} in Java può essere quello di Estendere la Classe \texttt{Thread} con la propria. \par
-L'unico requisito è quello di completare l'implementazione del Metodo \texttt{run()} della Super-Classe esprimendo le operazioni da eseguire una volta iniziata l'esecuzione del nuovo \textit{Thread}. \par
+Un primo approccio alla Programmazione \textit{Multi-Threaded} in Java può essere quello di Estendere la Classe \texttt{Thread}\cite{Thread_JavaDocs} con la propria. \par
+L'unico requisito è quello di completare l'implementazione del Metodo \texttt{run()} della Super-Classe esplicitando le operazioni da eseguire una volta iniziata l'esecuzione del nuovo \textit{Thread}. \par
 Si riporta a seguire un esempio didattico per l’utilizzo dove il Thread principale andrà a creare un numero prestabilito di Processi Leggeri, i quali dovranno stampare sullo Standard Output un messaggio con l'identificativo loro assegnato in fase di inizializzazione per poi terminare l’esecuzione.
-Nel Main verrà creato un oggetto di tipo \texttt{ClassExtendThread} per ogni Processo Leggero, per poi utilizzarne la primitiva \texttt{start()} ereditata da \texttt{Thread}.
+Nel \textit{Main} verrà creato un oggetto di tipo \texttt{ClassExtendThread} per ogni Processo Leggero, per poi utilizzarne la primitiva \texttt{start()} ereditata da \texttt{Thread}.
 \input{images/ClassExtendsThread.tex}
 \subsection{Implementazione dell'Interfaccia \texttt{Runnable}}
-Alternativa alla modalità precedente è quella di implementare l'Interfaccia \texttt{Runnable}. \par
-Tale cambiamento non modificherà in maniera radicale il codice, ma necessiterà di un differente ragionamento: ora infatti andrà creato un oggetto di tipo Thread a partire da un oggetto della Classe implementante \texttt{Runnable}, per poi operare direttamente sull'oggetto di tipo Thread. \par
+Alternativa alla modalità precedente è quella di implementare l'Interfaccia \texttt{Runnable}\cite{Runnable_JavaDocs}. \par
+Tale cambiamento non modificherà in maniera radicale il codice, ma necessiterà di un differente ragionamento: ora infatti andrà creato un oggetto di tipo \textit{Thread} a partire da un oggetto della Classe implementante \texttt{Runnable}, per poi operare direttamente sull'oggetto di tipo \textit{Thread}. \par
 Si riporta a seguire una reimplementazione dell'esempio precedente seguendo questa nuova logica.
 \input{images/ClassImplementsRunnable.tex}
-Com'è possibile notare dal Codice sopra le modifiche all'interno della Classe saranno minime: i requisiti sono infatti esattamente gli stessi. Il vero cambiamento si avrà nella classe principale che dovrà gestire come segue la creazione dei nuovi Processi Leggeri.
+Com'è possibile notare dal Codice sopra le modifiche all'interno della Classe che implementi l'Interfaccia \texttt{Runnable} saranno minime: i requisiti sono infatti esattamente gli stessi. Il vero cambiamento si avrà nella classe principale che dovrà gestire come segue la creazione dei nuovi Processi Leggeri.
 \input{images/ClassImplementsRunnableMain.tex}
 \subsection{Considerazioni Pratiche ed Esecuzione}
 Le due implementazioni, seppur molto simili visivamente, risultano differenti da un punto di vista logico per le motivazioni indicate poc'anzi. Per ragioni pratiche legate al fatto che in Java non risulta possibile estendere più di una Classe alla volta ma è possibile implementare più Interfacce contemporaneamente, si preferisce generalmente procedere con il secondo approccio. \par
@@ -28,27 +28,29 @@ Si noti come l'esecuzione del \textit{Thread} principale termini prima di quella
 
 \section{Primitive per la Gestione dell'Esecuzione}
 La classe \texttt{Thread} mette a disposizione Metodi per la gestione dell'Esecuzione dei singoli Processi Leggeri\cite{SeminarioJavaDispense}. Ciò risulta utile nel caso in cui si voglia influenzare il loro ordine di esecuzione o ancora la loro possibilità di eseguire. \par
-\subsection*{Il metodo \texttt{start()}}
-Il metodo \texttt{start()} permette di inzializzare l'esecuzione del Processo Leggero invocando il metodo \texttt{run()} della Classe.
-\subsection*{Il metodo \texttt{stop()}}
-Il metodo \texttt{stop()} permette di interrompere invece l'esecuzione del Processo Leggero sollevando un'Eccezione di tipo \texttt{ThreadDeath}.
-\subsection*{Il metodo \texttt{suspend()}}
-Il metodo \texttt{suspend()} permette di sospendere momentaneamente l'esecuzione di un \textit{Thread} fin tanto che su di lui non venga chiamato il metodo \texttt{resume()}, portandolo dallo stato \textit{Running} allo stato \textit{Blocked}.
-\subsection*{Il metodo \texttt{resume()}}
-Il metodo \texttt{resume()} permette di riprendere l'esecuzione di un \textit{Thread} bloccato dal metodo \texttt{suspend()}, portandolo dallo stato \textit{Blocked} allo stato \textit{Ready}.
-\subsection*{Il metodo \texttt{sleep(int millis)}}
-Il metodo \texttt{sleep()} permette di portare il Processo Leggero nello stato \textit{Blocked} per un determinato numero di millisecondi senza utilizzare cicli di Clock della CPU. Tale metodo solleva un'Eccezione di tipo \texttt{InterruptedException} nel caso in cui a tale Processo Leggero venisse chiesto di interrompersi mentre è già in stato \textit{Blocked}, perciò il metodo va incapsulato in un costrutto di tipo \textit{Try-Catch}.
-\subsection*{Il metodo \texttt{destroy()}}
-Il metodo \texttt{destroy()} permette di eliminare il \textit{Thread} senza effettuare alcuna pulizia, mantenendo quindi i vari \textit{Lock} da esso utilizzati e facilitando l'insorgere di una situazione di Blocco Critico in quanto nessun altro Processo potrà più accedere a tali risorse.
-\subsection*{Il metodo \texttt{yield()}}
-Il metodo \texttt{yield()} permette al \textit{Thread} di lasciare volontariamente la CPU ad un altro processo, implicando un successivo \textit{Re-Scheduling} dei Processi da eseguire.
-\subsection*{Il metodo \texttt{join()}}
-Il metodo \texttt{join()} consente al Processo Padre di attendere la terminazione del Processo Figlio prima di continuare con la propria esecuzione, garantendo un semplice meccanismo di sincronizzazione tra i due.
+\begin{itemize}
+    \item \textbf{Il metodo \texttt{start()}} \par
+    Il metodo \texttt{start()} permette di inzializzare l'esecuzione del Processo Leggero invocando il metodo \texttt{run()} della Classe.
+    \item \textbf{Il metodo \texttt{stop()}} \par
+    Il metodo \texttt{stop()} permette di interrompere invece l'esecuzione del Processo Leggero sollevando un'Eccezione di tipo \texttt{ThreadDeath}.
+    \item \textbf{Il metodo \texttt{suspend()}} \par
+    Il metodo \texttt{suspend()} permette di sospendere momentaneamente l'esecuzione di un \textit{Thread} fin tanto che su di lui non venga chiamato il metodo \texttt{resume()}, portandolo dallo stato \textit{Running} allo stato \textit{Blocked}.
+    \item \textbf{Il metodo \texttt{resume()}} \par
+    Il metodo \texttt{resume()} permette di riprendere l'esecuzione di un \textit{Thread} bloccato dal metodo \texttt{suspend()}, portandolo dallo stato \textit{Blocked} allo stato \textit{Ready}.
+    \item \textbf{Il metodo \texttt{sleep(int millis)}} \par
+    Il metodo \texttt{sleep()} permette di portare il Processo Leggero nello stato \textit{Blocked} per un determinato numero di millisecondi senza utilizzare cicli di Clock della CPU. Tale metodo solleva un'Eccezione di tipo \texttt{InterruptedException} nel caso in cui a tale Processo Leggero venisse chiesto di interrompersi mentre è già in stato \textit{Blocked}, perciò il metodo va incapsulato in un costrutto di tipo \textit{Try-Catch}.
+    \item \textbf{Il metodo \texttt{destroy()}} \par
+    Il metodo \texttt{destroy()} permette di eliminare il \textit{Thread} senza effettuare alcuna pulizia, mantenendo quindi i vari \textit{Lock} da esso utilizzati e facilitando l'insorgere di una situazione di Blocco Critico in quanto nessun altro Processo potrà più accedere a tali risorse.
+    \item \textbf{Il metodo \texttt{yield()}} \par
+    Il metodo \texttt{yield()} permette al \textit{Thread} di lasciare volontariamente la CPU ad un altro processo, implicando un successivo \textit{Re-Scheduling} dei Processi da eseguire.
+    \item \textbf{Il metodo \texttt{join()}} \par
+    Il metodo \texttt{join()} consente al Processo Padre di attendere la terminazione del Processo Figlio prima di continuare con la propria esecuzione, garantendo un semplice meccanismo di sincronizzazione tra i due.
+\end{itemize}
 \input{images/ThreadJoinFlow.tex}
 \subsection{Considerazioni}
-Come discusso in precedenza, l'arbitraria interruzione dell'esecuzione di un Processo potrebbe far incorrere in situazioni indesiderate: le risorse da lui utilizzate portebbero rimanere infatti in uno stato inconsistente o indefinitivamente bloccate se tale Processo aveva acquisito un \textit{Lock} per l'accesso esclusivo a tale risorsa facilitando l'insorgere di situazioni di Blocco Critico, infine la possibilità di bloccare per un tempo arbitrario l'esecuzione di un \textit{Thread} potrebbe portare alla \textit{Starvation} di questo. \par
+Come discusso in precedenza, l'arbitraria interruzione dell'esecuzione di un Processo potrebbe far incorrere in situazioni indesiderate: le risorse da lui utilizzate potrebbero rimanere infatti in uno stato inconsistente o indefinitamente bloccate se tale Processo aveva acquisito un \textit{Lock} per l'accesso esclusivo a tale risorsa facilitando l'insorgere di situazioni di Blocco Critico, infine la possibilità di bloccare per un tempo arbitrario l'esecuzione di un \textit{Thread} potrebbe portare alla \textit{Starvation} di questo. \par
 Per questi motivi i Metodi \texttt{stop()}, \texttt{suspend()}, \texttt{resume()} e \texttt{destroy()} sono stati deprecati a partire da Java 1.2 nel 1998 e se ne scoraggia fortemente l'utilizzo. \par
-Alle primitive sopracitate si preferisce usufruire della capacità di segnalazione Inter-Processo comunicando la possibilità di sospendere o terminare la loro esecuzione, in maniera tale da permettere loro di eseguire le proprie Sezioni Critiche e lasciare il Sistema in uno stato consistente. Un esempio di Metodo che permette al Processo Leggero di lasciare volontariamente la CPU è \texttt{yield()}. La natura delle moderne versioni della \textit{Java Virtual Machine} implica poi l'utilizzo dello \textit{Scheduler} del Sistema Operativo, il quale dovrà scegliere il prossimo Processo cui lasciare il controllo della CPU. Notando che tutti i moderni Algoritmi di \textit{Scheduling} supportano l'utilizzo di un valore di Priorità per la scelta del Processo dalla Coda dei Processi Promti, anche Java mette a disposizione un valore di Priorità per i propri Processi Leggeri: esso varia tra il valore minimo ``\texttt{MIN\textunderscore PRIORITY}'' (0) ed il valore massimo ``\texttt{MAX\textunderscore PRIORITY}'' (10) e viene impostato in maniera automatica - al netto di ulteriori istruzioni - su ``\texttt{NORM\textunderscore PRIORITY}'' (5), risultando visualizzabile e personalizzabile rispettivamente tramite le Primitive \texttt{getPriority()} e \texttt{setPriority()}. Tra le altre primitive utilizzate per una migliore sincronizzazione tra i processi risulta indubbiamente presente il Metodo \texttt{join()} che permete al Processo Padre di attendere la terminazione del Processo Figlio prima di continuare con la propria Esecuzione.
+Alle primitive sopracitate si preferisce usufruire della capacità di segnalazione Inter-Processo comunicando la possibilità di un \textit{Thread} di sospendere o terminare la propria esecuzione, in maniera tale da permettergli di eseguire la propria Sezione Critica e lasciare il Sistema in uno stato consistente. Un esempio di Metodo che permette al Processo Leggero di lasciare volontariamente la CPU è \texttt{yield()}. La natura delle moderne versioni della \textit{Java Virtual Machine} implica poi l'utilizzo dello \textit{Scheduler} del Sistema Operativo, il quale dovrà scegliere il prossimo Processo cui lasciare il controllo della CPU. Notando che tutti i moderni Algoritmi di \textit{Scheduling} supportano l'utilizzo di un valore di Priorità per la scelta del Processo dalla Coda dei Processi Pronti, anche Java mette a disposizione un valore di Priorità per i propri Processi Leggeri: esso varia tra il valore minimo ``\texttt{MIN\textunderscore PRIORITY}'' (0) ed il valore massimo ``\texttt{MAX\textunderscore PRIORITY}'' (10) e viene impostato in maniera automatica - al netto di ulteriori istruzioni - su ``\texttt{NORM\textunderscore PRIORITY}'' (5), risultando visualizzabile e personalizzabile rispettivamente tramite le Primitive \texttt{getPriority()} e \texttt{setPriority()}. Tra le altre primitive utilizzate per una migliore sincronizzazione tra i processi risulta indubbiamente presente il Metodo \texttt{join()} che permete al Processo Padre di attendere la terminazione del Processo Figlio prima di continuare con la propria Esecuzione.
 \subsection{Esempio di Controllo dell'Esecuzione tramite \texttt{join()} e \texttt{yield()}}
 Si riporta a seguire il Codice di un semplice Programma generante due \textit{Thread} che incrementano un contatore correlato di un esempio di esecuzione.
 \input{images/ThreadExecutionControl.tex}

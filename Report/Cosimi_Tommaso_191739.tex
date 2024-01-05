@@ -17,13 +17,14 @@
 \usepackage{listings}
 
 % Comandi
+% Pagina vuota
 \newcommand\blankpage{
     \null
     \addtocounter{page}{-2}
     \thispagestyle{empty}
     \newpage
 }
-        
+% Code Listings
 \lstset{
     basicstyle=\footnotesize\ttfamily,
     columns=flexible,
@@ -33,9 +34,13 @@
     showstringspaces=false,
     tabsize=2,
 }
-
+% Algoritmi
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+% SVG
 \svgsetup{inkscapelatex=false}
-
+%Tikz
 \usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary{positioning}
 
@@ -48,7 +53,7 @@
         \Istituzione{Università degli Studi di Modena e Reggio Emilia}
         \Divisione{Dipartimento di Ingegneria ``Enzo Ferrari"}
         \Corso{Ingegneria Informatica, Curriculum ``Cloud and Cybersecurity"}
-        \Titoletto{Tesi finale di Progettazione di Sistemi Operativi}
+        \Titoletto{Elaborato Finale di Progettazione di Sistemi Operativi}
         \Titolo{Programmazione Concorrente \\ nel Linguaggio Java}
         \Sottotitolo{Approfondimento sull'utilizzo di Processi Leggeri in Java}
         \NCandidato{Studente}
@@ -63,7 +68,7 @@
 
     \onehalfspacing
 
-    % Indici
+    % Indice
     \tableofcontents
     \thispagestyle{empty}
 
@@ -92,5 +97,11 @@
     % Bibliografia
     \bibliographystyle{unsrt}
     \bibliography{references}
+
+    % Appendice
+    \appendix
+    \chapter{Ulteriori Esempi}
+    \label{Appendix}
+    \input{chapters/6.Appendix.tex}
 
 \end{document}

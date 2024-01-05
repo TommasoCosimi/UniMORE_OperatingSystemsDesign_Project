@@ -1,0 +1,21 @@
+In Appendice vengono presentati ulteriori esempi di utilizzo delle tecniche illustrate nei Capitoli precedenti, nonché le soluzioni ad alcuni dei più famosi problemi di Sincronizzazione tra processi.
+
+\section{Problema dei Processi Lettori e Scrittori} \label{appendix:ReadersAndWriters}
+Si riporta a seguire un'implementazione della soluzione al problema dei Processi Lettori e Scrittori tramite l'utilizzo dei \texttt{ReentrantReadWriteLock}.
+\input{images/ReadersAndWriters.tex}
+
+\section{Problema della Cena tra i Cinque Filosofi} \label{appendix:FivePhilosophers}
+Si riporta a seguire un'implementazione della soluzione al problema della Cena tra i Cinque Filosofi tramite l'utilizzo dei Semafori.
+\input{images/DiningPhilosophers.tex}
+
+\section{Esempio di utilizzo delle Primitive di \texttt{synchronized}} \label{appendix:AlternateCounterSynchronized}
+Viene implementato un Contatore condiviso tra due \textit{Thread}. Il \textit{Thread} 1 potrà aggiornare il contatore se e solo se questo è dispari, il \textit{Thread} 2 solo se è pari.
+\input{images/AlternateCounterSynchronized.tex}
+
+\section{Esempio di utilizzo delle Variabili Condizione} \label{appendix:AlternateCounterConditionVars}
+Si riporta una reimplementazione dell'esempio precedente utilizzando le Variabili Condizione di un \textit{Lock}.
+\input{images/AlternateCounterLock.tex}
+
+\section{Esempio di utilizzo di una Variabile Atomica} \label{appendix:AtomicVarExample}
+Si riporta un esempio di implementazione di un contatore tramite una Variabile di tipo Atomico, si noti l'assenza dei costrutti di Sincronizzazione sopra riportati.
+\input{images/AtomicVariableExample.tex}
