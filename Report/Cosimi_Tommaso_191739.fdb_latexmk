@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex Cosimi_Tommaso_191739"] 1704532198.81235 "Cosimi_Tommaso_191739.aux" "Cosimi_Tommaso_191739.bbl" "Cosimi_Tommaso_191739" 1704541781.03938 0
+["bibtex Cosimi_Tommaso_191739"] 1704532198.81235 "Cosimi_Tommaso_191739.aux" "Cosimi_Tommaso_191739.bbl" "Cosimi_Tommaso_191739" 1704541824.213 0
   "./references.bib" 1704469921.30006 7990 8f5a711ab9f70a8dd3ce1aee4e2638f3 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1689984000 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "Cosimi_Tommaso_191739.aux" 1704541780.72022 25795 d90974b1056c3e8a8ea6441e8f839118 "pdflatex"
+  "Cosimi_Tommaso_191739.aux" 1704541823.89132 25795 d90974b1056c3e8a8ea6441e8f839118 "pdflatex"
   (generated)
   "Cosimi_Tommaso_191739.bbl"
   "Cosimi_Tommaso_191739.blg"
   (rewritten before read)
-["pdflatex"] 1704541778.73007 "/mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report/Cosimi_Tommaso_191739.tex" "Cosimi_Tommaso_191739.pdf" "Cosimi_Tommaso_191739" 1704541781.03974 0
+["pdflatex"] 1704541821.91628 "/mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report/Cosimi_Tommaso_191739.tex" "Cosimi_Tommaso_191739.pdf" "Cosimi_Tommaso_191739" 1704541824.21342 0
   "/dev/null" 1704523924.68868 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/mnt/DataSSD/Personal/Istruzione/Università/UniMORE/Repos/UniMORE_OperatingSystemsDesign_Project/Report/Cosimi_Tommaso_191739.tex" 1704365445.60935 2682 c072a8bd875a59ce80513326791e91e3 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -221,16 +221,16 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1703593034.63762 4602016 72a039a3c4aea0fa25b5d35d65138f54 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1703592642 7872021 ba9a09545ffb7fa358a0a3a4d6085950 ""
   "Cosimi_Tommaso_191739-frn.pdf" 1704210481.42481 64675 5d1129ed784a4b71e9388a96e64d6de0 ""
-  "Cosimi_Tommaso_191739-frn.tex" 1704541779.67631 1152 e84a89c40c5924a4a2b72fc7de1974e0 "pdflatex"
-  "Cosimi_Tommaso_191739.aux" 1704541780.72022 25795 d90974b1056c3e8a8ea6441e8f839118 "pdflatex"
+  "Cosimi_Tommaso_191739-frn.tex" 1704541822.86312 1152 e84a89c40c5924a4a2b72fc7de1974e0 "pdflatex"
+  "Cosimi_Tommaso_191739.aux" 1704541823.89132 25795 d90974b1056c3e8a8ea6441e8f839118 "pdflatex"
   "Cosimi_Tommaso_191739.bbl" 1704532198.87529 7352 1255e6cd04dda3fb947c47ffd27902db "bibtex Cosimi_Tommaso_191739"
-  "Cosimi_Tommaso_191739.out" 1704541780.72297 13948 7de59ad8d70bf8a2de55c44bd68c50b1 "pdflatex"
+  "Cosimi_Tommaso_191739.out" 1704541823.89401 13948 7de59ad8d70bf8a2de55c44bd68c50b1 "pdflatex"
   "Cosimi_Tommaso_191739.tex" 1704365445.60935 2682 c072a8bd875a59ce80513326791e91e3 ""
-  "Cosimi_Tommaso_191739.toc" 1704541780.72349 7409 0df70f1a127a940bfe11cdafe8a2b7f0 "pdflatex"
+  "Cosimi_Tommaso_191739.toc" 1704541823.89469 7409 0df70f1a127a940bfe11cdafe8a2b7f0 "pdflatex"
   "chapters/1.Introduzione.tex" 1704471263.45688 21986 99c5b68de90caf0e369edced27940796 ""
   "chapters/2.Threads.tex" 1704541587.66255 10006 29b17e9552d0bd541ae10c36c9088c4b ""
   "chapters/3.ThreadSync.tex" 1704467519.99589 16150 874ef2157821818323e2f5ea36568566 ""
-  "chapters/4.ParallelExecution.tex" 1704541778.49584 6549 a9c4b45fe8bea636fb60597f64569b14 ""
+  "chapters/4.ParallelExecution.tex" 1704541821.70425 6551 968e70f1db0173459d34a92aae3442d0 ""
   "chapters/5.Conclusions.tex" 1704462325.29071 1558 9ff56922b7dc44d37223097516f4af56 ""
   "chapters/6.Appendix.tex" 1704452075.73534 1652 73d71dc6b8a64aa19f2e654127da3201 ""
   "images/AlgorithmExample.tex" 1703751774.24276 577 8c6ce18b85731df02ce979068b6c188a ""
