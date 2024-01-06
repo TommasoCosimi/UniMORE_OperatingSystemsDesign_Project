@@ -8,7 +8,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ThreadPool {
+    // Definisco a priori il numero di Task da sottomettere alla Thread Pool
     private static final int NUMBER_OF_TASKS = 10;
+    
     public static void main(String[] args) {
         // Inizializzo l'oggetto contatore
         ThreadPoolCounter tpc = new ThreadPoolCounter();

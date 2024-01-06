@@ -69,9 +69,12 @@ public class ReadersAndWriters {
     // Inizializzazione dei lettori
     private void createAndStartReaders() {
         for(int i=0; i<this.numOfReaders; i++) {
+            // Creo un Runnable per il Lettore
             ReadersAndWritersReader readerRunnable =
                 new ReadersAndWritersReader((i+1), this.file, this.readLock, this.printLock);
+            // A partire dal Runnable creo un Thread
             Thread readerThread = new Thread(readerRunnable);
+            // Avvio il Thread
             readerThread.start();
         }
     }
@@ -79,9 +82,12 @@ public class ReadersAndWriters {
     // Inizializzazione degli scrittori
     private void createAndStartWriters() {
         for(int i=0; i<this.numOfWriters; i++) {
+            // Creo un Runnable per lo Scrittore
             ReadersAndWritersWriter writerRunnable =
                 new ReadersAndWritersWriter((i+1), this.file, this.writeLock);
+            // A partire dal Runnable creo un Thread
             Thread writerThread = new Thread(writerRunnable);
+            // Avvio il Thread
             writerThread.start();
         }
     }
@@ -99,9 +105,9 @@ class ReadersAndWritersReader implements Runnable {
     private Lock printLock;
 
     // Costruttore
-    protected ReadersAndWritersReader(int numOfReader, File sharedResource, Lock readLock, Lock printLock) {
+    protected ReadersAndWritersReader(int numOfReader, File file, Lock readLock, Lock printLock) {
         this.numOfReader = numOfReader;
-        this.file = sharedResource;
+        this.file = file;
         this.readLock = readLock;
         this.printLock = printLock;
         System.out.println("Processo lettore numero " + numOfReader + " creato");
@@ -114,12 +120,12 @@ class ReadersAndWritersReader implements Runnable {
         System.out.println("L" + this.numOfReader + ": Sono il Processo lettore numero " + this.numOfReader +
                 " ed ho acquisito il file");
         try {
-            // Acquisizione del Lock per la stampa sullo standard output
+            // Acquisizione del Lock per la stampa sullo standard output del contenuto del file
             this.printLock.lock();
             try {
                 printFileContent();
             } finally {
-                // Rilascio del Lock per la stampa sullo standard output
+                // Rilascio del Lock per la stampa sullo standard output del contenuto del file
                 this.printLock.unlock();
             }
         } finally {
@@ -139,7 +145,7 @@ class ReadersAndWritersReader implements Runnable {
             BufferedReader buffRead = new BufferedReader(new FileReader(this.file));
             // Stringa di supporto per salvare il contenuto di una riga del file
             String supportVar;
-            // Fin tanto che vi sono righe non nulle nel file, stampare la riga
+            // Fin tanto che vi sono righe non nulle nel file, stampo la riga
             while((supportVar = buffRead.readLine()) != null) {
                 System.out.println("L" + this.numOfReader + ": " + supportVar);
             }
@@ -174,22 +180,23 @@ class ReadersAndWritersWriter implements Runnable {
     private Lock writeLock;
 
     // Costruttore
-    protected ReadersAndWritersWriter(int numOfWriter, File sharedResource, Lock writeLock) {
+    protected ReadersAndWritersWriter(int numOfWriter, File file, Lock writeLock) {
         this.numOfWriter = numOfWriter;
-        this.file = sharedResource;
+        this.file = file;
         this.writeLock = writeLock;
         System.out.println("Processo scrittore numero " + numOfWriter + " creato");
     }
 
     // Routine di Scrittura
     private void write() {
-        // Acquisizione del Lock di scrittura
+        // Acquisizione del Lock di scrittura (mutualmente esclusivo sia tra gli altri Scrittori che con i Lettori)
         writeLock.lock();
         System.out.println("R" + this.numOfWriter + ": Sono il Processo scrittore numero " + this.numOfWriter +
                 " ed ho acquisito il file");
         try {
             System.out.println("R" + this.numOfWriter + ": Sono il Processo scrittore numero " + this.numOfWriter +
                 " e sto aggiungendo informazioni al file");
+            // Aggiungo del contenuto al File condiviso
             addFileContent();
         } finally {
             System.out.println("R" + this.numOfWriter + ": Sono il Processo scrittore numero " + this.numOfWriter +
@@ -199,7 +206,7 @@ class ReadersAndWritersWriter implements Runnable {
         }
     }
 
-    // Scrittura su file
+    // Scrittura su File
     private void addFileContent() {
         try {
             // Utilizzo di un PrintWriter per l'operazione di Append di una stringa

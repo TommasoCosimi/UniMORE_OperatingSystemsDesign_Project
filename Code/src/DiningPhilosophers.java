@@ -51,7 +51,7 @@ class DiningPhilosophersPhilosopher implements Runnable {
     // aggiungo come parametro se sta pensando perche' non ha mangiato per
     // farlo mangiare un numero fissato di volte
     private void think(boolean becauseDidntEat) {
-        // Scelgo un tempo per pensare compreso tra 10 e 1000ms
+        // Scelgo un tempo per pensare compreso tra 200 e 1000ms
         int thinkTime = new Random(System.currentTimeMillis()).nextInt(200, 1001);
         System.out.println("Il filosofo numero " + this.philosopherNum +
             " pensera' per " + thinkTime/1000.0 + " secondi");

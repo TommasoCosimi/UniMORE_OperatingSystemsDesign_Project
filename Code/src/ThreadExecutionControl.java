@@ -5,7 +5,7 @@
 
 public class ThreadExecutionControl {
     public static void main(String[] args) {
-        // Creo un'istanza della Classe di Supporto con il Lock
+        // Creo un'istanza della Classe di Supporto
         ThreadExecutionControlCounter tecc = new ThreadExecutionControlCounter();
         // Creo due Thread
         Thread t1 = new ThreadExecutionControlThread(1, tecc);
