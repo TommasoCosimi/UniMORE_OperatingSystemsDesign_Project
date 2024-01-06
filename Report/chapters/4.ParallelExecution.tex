@@ -18,7 +18,7 @@ La scelta di un corretto numero di \textit{Thread} diviene ora di fondamentale i
 \subsection{La Classe \texttt{ScheduledThreadPoolExecutor}}
 Quest'ultima è un'estensione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedularne l'inizio dell'esecuzione\cite{ScheduledThreadPoolExecutor_JavaDocs}. È utilizzabile con l'Interfaccia \texttt{ScheduledExecutorService}\cite{ScheduledExecutorService_JavaDocs}.
 \subsection{La Classe \texttt{ForkJoinPool}}
-È un'alternativa radicalmente diversa dalle altre presentate in quanto si basa sulla tecnica del \textit{Work-Stealing}\cite{ForkJoinPool_JavaDocs}, ovvero i \textit{Worker Thread} cercheranno di eseguire \textit{Task} sottomesse alla \textit{Pool} dal Programma o da altri \textit{Task} come risultato di una scissione di una scissione in unità più piccole. Anch'essa estende l'Interfaccia \texttt{ExecutorService}.
+È un'alternativa radicalmente diversa dalle altre presentate in quanto si basa sulla tecnica del \textit{Work-Stealing}\cite{ForkJoinPool_JavaDocs}, ovvero i \textit{Worker Thread} cercheranno di eseguire \textit{Task} sottomesse alla \textit{Pool} dal Programma o da altri \textit{Task} come risultato di una scissione di una scissione in unità più piccole. Anch'essa, come \texttt{ThreadPoolExecutor}, implementa l'Interfaccia \texttt{ExecutorService}.
 \subsection{Primitive di \texttt{ExecutorService}}
 L'Interfaccia \texttt{ExecutorService} ricopre un ruolo centrale nell'implementazione di \textit{Thread Pool} dispone di Metodi per la gestione dell'esecuzione dei vari \textit{Task} assegnati ad esse. Se ne riportano i più importanti:
 \begin{itemize}
