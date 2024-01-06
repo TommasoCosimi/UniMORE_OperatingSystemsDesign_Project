@@ -24,7 +24,7 @@ Com'è possibile notare dal Codice sopra le modifiche all'interno della Classe c
 Le due implementazioni, seppur molto simili visivamente, risultano differenti da un punto di vista logico per le motivazioni indicate poc'anzi. Per ragioni pratiche legate al fatto che in Java non risulta possibile estendere più di una Classe alla volta ma è possibile implementare più Interfacce contemporaneamente, si preferisce generalmente procedere con il secondo approccio. \par
 L'esecuzione dei due Programmi così come sono stati stesi risulterà nel medesimo risultato: una stampa in ordine randomico da parte di ciascuno dei Processi Leggeri invocati.
 \input{images/MultiThreadedExecutionExample.tex}
-Si noti come l'esecuzione del \textit{Thread} principale termini prima di quella degli altri Processi Leggeri da lui generati ma che questa circostanza non limiti in alcun modo questi ultimi, che continueranno la loro esecuzione fino alla rispettiva terminazione.
+Si noti come l'esecuzione del \textit{Thread} principale termini prima di quella degli altri Processi Leggeri da lui generati. Questa circostanza tuttavia non limita in alcun modo questi ultimi, che continueranno la loro esecuzione fino alla rispettiva terminazione.
 
 \section{Primitive per la Gestione dell'Esecuzione}
 La classe \texttt{Thread} mette a disposizione Metodi per la gestione dell'Esecuzione dei singoli Processi Leggeri\cite{SeminarioJavaDispense}. Ciò risulta utile nel caso in cui si voglia influenzare il loro ordine di esecuzione o ancora la loro possibilità di eseguire. \par

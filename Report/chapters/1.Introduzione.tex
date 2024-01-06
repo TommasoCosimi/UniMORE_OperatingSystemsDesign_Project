@@ -39,7 +39,7 @@ Si riporta a titolo di esempio un Processo che richiede all'utente due numeri in
 Un Processo non Sequenziale può essere invece rappresentato tramite l'ausilio di un Grafo a Ordinamento Parziale: ogni nodo interno potrà quindi avere più predecessori e più successori. Questo è possibile in quanto alcune operazioni eseguite dal Processo sono indipendenti tra loro o non è interessante il loro ordine di terminazione per l'utente finale. \par
 Per spiegare questo concetto si supponga di dover valutare l'espressione matematica:
 $$(5 + 8) + (6 - 3) * (9 + 2)$$
-Ovviamente è possibile eseguire sequenzialmente la valutazione. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati risultano indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti delegare la valutazione di singoli blocchi a differenti agenti di calcolo.
+Ovviamente è possibile eseguire sequenzialmente la valutazione. La natura del problema permette tuttavia di eseguire in ordine arbitrario dei sottoinsiemi di operazioni, i quali risultati si mostrano essere indipendenti da un punto di vista di utilizzo dei dati: è possibile in effetti delegare la valutazione di singoli blocchi a differenti agenti di calcolo.
 \input{images/NonSequentialProcess.tex}
 
 \section{Processi Interagenti}
