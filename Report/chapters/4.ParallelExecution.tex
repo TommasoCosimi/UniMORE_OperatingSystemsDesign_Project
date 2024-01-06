@@ -16,7 +16,7 @@ La Classe \texttt{ThreadPoolExecutor}\cite{ThreadPoolExecutor_JavaDocs} consente
 La scelta di un corretto numero di \textit{Thread} diviene ora di fondamentale importanza al fine di non sprecare risorse o di allocarne troppo poche. \par
 È possibile utilizzarla in congiunzione con l'Interfaccia \texttt{ExecutorService}\cite{ExecutorService_JavaDocs} (che estende) per ottenere oggetti di tipo \texttt{Future}\cite{Future_JavaDocs} e controllare il progresso dei \textit{Task} sottomessi.
 \subsection{La Classe \texttt{ScheduledThreadPoolExecutor}}
-Quest'ultima è un'estensione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedularne l'inizio dell'esecuzione\cite{ScheduledThreadPoolExecutor_JavaDocs}. Va utilizzata con l'Interfaccia \texttt{ScheduledExecutorService}\cite{ScheduledExecutorService_JavaDocs}.
+Quest'ultima è un'estensione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedularne l'inizio dell'esecuzione\cite{ScheduledThreadPoolExecutor_JavaDocs}. È utilizzabile con l'Interfaccia \texttt{ScheduledExecutorService}\cite{ScheduledExecutorService_JavaDocs}.
 \subsection{La Classe \texttt{ForkJoinPool}}
 È un'alternativa radicalmente diversa dalle altre presentate in quanto si basa sulla tecnica del \textit{Work-Stealing}\cite{ForkJoinPool_JavaDocs}, ovvero i \textit{Worker Thread} cercheranno di eseguire \textit{Task} sottomesse alla \textit{Pool} dal Programma o da altri \textit{Task} come risultato di una scissione di una scissione in unità più piccole. Anch'essa estende l'Interfaccia \texttt{ExecutorService}.
 \subsection{Primitive di \texttt{ExecutorService}}
