@@ -3,20 +3,20 @@ Il Linguaggio di Programmazione Java permette di semplificare ed ottimizzare l'e
 \section{\textit{Thread Pools}}
 Si tratta di gruppi di \textit{Thread} cosiddetti ``\textit{Worker}'' che attendono la sottomissione, tramite l'utilizzo di un'apposita coda, di \textit{Task} da eseguire\cite{ThreadPool_JavaTutorial}. \par
 Tipicamente il numero di \textit{Worker} è molto minore del numero di \textit{Task}: questo approccio è spesso utilizzato in quanto l'allocazione di un \textit{Thread} richiede un \textit{Overhead} di risorse che potrebbe divenire non banale con il crescere del numero di questi. Altro vantaggio portato da una filosofia che privilegi il riutilizzo di \textit{Thread} è quella di poter limitare il tempo sprecato per la loro creazione e distruzione. \par
-Lo svantaggio più ovvio è che non essendo più necessariamente in grado di assegnare un singolo \textit{Thread} a ogni \textit{Task} dell'utente, il grado di parallelismo raggiungibile implementando una soluzione come questa va ovviamente a ridursi. \par
+Lo svantaggio più immediato è che non essendo più necessariamente in grado di assegnare un singolo \textit{Thread} a ogni \textit{Task} dell'utente, il grado di parallelismo raggiungibile implementando una soluzione come questa va ovviamente a ridursi. \par
 Ogni \textit{Thread Pool} dispone di una lista di \textit{Task} da eseguire da cui ciascun \textit{Thread} andrà a scegliere. Una volta che un \textit{Thread} termina l'esecuzione di un \textit{Task}, esso andrà a sceglierne un altro dalla lista fin tanto che ve ne saranno presenti. A seguire è illustrato un esempio.
 \input{images/ThreadPoolExample.tex}
 
 \section{Implementazione di \textit{Thread Pools}}
-L'implementazione di una \textit{Thread Pool} può avvenire in maniere differenti a seconda delle necessità.
+L'implementazione di una \textit{Thread Pool} può avvenire in maniere differenti a seconda delle necessità. Si riportano a seguire i casi d'uso tipici.
 \subsection{La Classe \texttt{Executors}}
 Il Metodo \texttt{newFixedThreadPool(int numOfThreads)} della Classe \texttt{Executors}\cite{Executors_JavaDocs} permette di creare una \textit{Thread Pool} con un numero fissato di \textit{Worker Thread} atti all'esecuzione dei \textit{Task} loro assegnati. In ogni momento al massimo \texttt{numOfThreads} \textit{Thread} saranno attivi e in esecuzione sulla \textit{Pool}. In caso di errori durante l'esecuzione di un \textit{Task}, il \textit{Thread} assegnatogli ne sceglierà un altro.
 \subsection{La Classe \texttt{ThreadPoolExecutor}}
 La Classe \texttt{ThreadPoolExecutor}\cite{ThreadPoolExecutor_JavaDocs} consente di creare \textit{Thread Pools} più complesse, in quanto dispone di maggiori parametri per adattarsi all'utilizzo in condizioni differenti: è possibile infatti scegliere il numero minimo e massimo di \textit{Thread} che possono essere allocati in ogni momento a seconda del carico. \par
 La scelta di un corretto numero di \textit{Thread} diviene ora di fondamentale importanza al fine di non sprecare risorse o di allocarne troppo poche. \par
-È possibile utilizzarla in congiunzione con l'Interfaccia \texttt{ExecutorService}\cite{ExecutorService_JavaDocs} (che estende) per ottenere oggetti di tipo \texttt{Future}\cite{Future_JavaDocs} e controllare il progresso dei \textit{Task} sottomessi.
+È possibile utilizzarla in congiunzione con l'Interfaccia \texttt{ExecutorService}\cite{ExecutorService_JavaDocs} (che implementa) per ottenere oggetti di tipo \texttt{Future}\cite{Future_JavaDocs} e controllare il progresso dei \textit{Task} sottomessi.
 \subsection{La Classe \texttt{ScheduledThreadPoolExecutor}}
-Quest'ultima è un'estensione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedularne l'inizio dell'esecuzione\cite{ScheduledThreadPoolExecutor_JavaDocs}. È utilizzabile con l'Interfaccia \texttt{ScheduledExecutorService}\cite{ScheduledExecutorService_JavaDocs}.
+Quest'ultima è un'estensione della Classe precedente con la differenza che mentre prima i \textit{Task} venivano eseguiti non appena possibile, ora è possibile schedularne l'inizio dell'esecuzione\cite{ScheduledThreadPoolExecutor_JavaDocs}. È utilizzabile con l'Interfaccia \texttt{ScheduledExecutorService}\cite{ScheduledExecutorService_JavaDocs}, che implementa.
 \subsection{La Classe \texttt{ForkJoinPool}}
 È un'alternativa radicalmente diversa dalle altre presentate in quanto si basa sulla tecnica del \textit{Work-Stealing}\cite{ForkJoinPool_JavaDocs}, ovvero i \textit{Worker Thread} cercheranno di eseguire \textit{Task} sottomesse alla \textit{Pool} dal Programma o da altri \textit{Task} come risultato di una scissione in unità più piccole di questi. Anch'essa, come \texttt{ThreadPoolExecutor}, implementa l'Interfaccia \texttt{ExecutorService}.
 \subsection{Primitive di \texttt{ExecutorService}}
@@ -37,7 +37,7 @@ L'Interfaccia \texttt{ExecutorService} ricopre un ruolo centrale nell'implementa
     \item \textbf{Il metodo \texttt{awaitTermination()}} \par
     Blocca l'esecuzione del \textit{Thread} principale fin tanto che l'esecuzione dei \textit{Task} non termina.
 \end{itemize}
-\subsection{Esempio di Implementazione di una \textit{Thread Pool} tramite \texttt{ExecutorService}}
+\subsection[Esempio di Implementazione di una \textit{Thread Pool} tramite \texttt{ExecutorService}]{Esempio di Implementazione di una \textit{Thread Pool} tramite l'Interfaccia \texttt{ExecutorService}}
 Si riporta a seguire un esempio di implementazione di una \textit{ThreadPool} con un numero fisso di \textit{Worker Thread} che incrementano un contatore condiviso in maniera mutualmente esclusiva.
 \input{images/ThreadPoolImplementationExample.tex}
 \subsection{Considerazioni}

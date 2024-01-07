@@ -3,146 +3,146 @@
 \bibitem{BubbleSort}
 Wikipedia.
 \newblock {Bubble Sort}, Giugno 2023.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Bubble_sort}. Pagina visitata il \today.
+\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Bubble_sort}. Pagina visitata il 28/12/2023.
 
 \bibitem{PlantText}
 {PlantUML, Graphviz, Ace Editor, Johan Sundström, Steven Nichols e Arwen Vaughan}.
 \newblock {PlantText UML Editor}.
-\newblock Editor disponibile all'url: \url{https://www.planttext.com/}. Pagina visitata il \today.
+\newblock Editor disponibile all'url: \url{https://www.planttext.com/}. Pagina visitata il 28/12/2023.
 
 \bibitem{StatiProcessiDispense}
 {Prof. Letizia Leonardi}.
 \newblock {Nucleo}, Ottobre 2022.
-\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/Nucleo-4.pdf}. Documento Protetto da Password. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/Nucleo-4.pdf}. Documento Protetto da Password. Pagina visitata il 30/11/2023.
 
 \bibitem{ProcessiSeqDispense}
 {Prof. Letizia Leonardi}.
 \newblock {Processi}, Ottobre 2022.
-\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/Processi-2.pdf}. Documento Protetto da Password. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/Processi-2.pdf}. Documento Protetto da Password. Pagina visitata il 30/11/2023.
 
 \bibitem{ProcessiConcorrentiDispense}
 {Prof. Letizia Leonardi}.
 \newblock {Processi Concorrenti}, Ottobre 2022.
-\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/ProcessiConcorrenti-2bis.pdf}. Documento Protetto da Password. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/ProcessiConcorrenti-2bis.pdf}. Documento Protetto da Password. Pagina visitata il 30/11/2023.
 
 \bibitem{Semaforo}
 Wikipedia.
 \newblock {Semaforo}, Agosto 2023.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Semaforo_(informatica)}. Pagina visitata il \today.
+\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Semaforo_(informatica)}. Pagina visitata il 28/12/2023.
 
 \bibitem{Monitor}
 Wikipedia.
 \newblock {Monitor}, Marzo 2022.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Monitor_(sincronizzazione)}. Pagina visitata il \today.
+\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Monitor_(sincronizzazione)}. Pagina visitata il 29/12/2023.
 
 \bibitem{MonitorDispense}
 {Prof. Letizia Leonardi}.
 \newblock {Costrutti di Sincronizzazione}, Ottobre 2022.
-\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/CostruttiDISincronizzazione-3bis.pdf}. Documento Protetto da Password. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://www.didattica.agentgroup.unimo.it/didattica/ProgettazioneSO/Lucidi/CostruttiDISincronizzazione-3bis.pdf}. Documento Protetto da Password. Pagina visitata il 30/11/2023.
 
 \bibitem{Messaggi}
 Wikipedia.
 \newblock {Comunicazione a Scambio di Messaggi}, Novembre 2021.
-\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Comunicazione_a_scambio_di_messaggi}. Pagina visitata il \today.
+\newblock Articolo disponibile all'url: \url{https://it.wikipedia.org/wiki/Comunicazione_a_scambio_di_messaggi}. Pagina visitata il 29/12/2023.
 
 \bibitem{ThreadDispense}
 {Prof. Letizia Leonardi}.
 \newblock {Approfondimento sui Thread}, Ottobre 2023.
-\newblock Dispensa disponibile all'url: \url{https://moodle.unimore.it/pluginfile.php/682433/mod_amanote/content/1/Thread.pdf}. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://moodle.unimore.it/pluginfile.php/682433/mod_amanote/content/1/Thread.pdf}. Pagina visitata il 30/12/2023.
 
 \bibitem{Thread_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{Thread}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{Runnable_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{Runnable}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{SeminarioJavaDispense}
 {Prof. Letizia Leonardi, PhD Mariachiara Puviani}.
 \newblock {Programmazione Concorrente in Java}, Ottobre 2014.
-\newblock Dispensa disponibile all'url: \url{https://didattica.agentgroup.unimore.it/wiki/images/5/5e/SeminarioJava2014.pdf}. Pagina visitata il \today.
+\newblock Dispensa disponibile all'url: \url{https://didattica.agentgroup.unimore.it/wiki/images/5/5e/SeminarioJava2014.pdf}. Pagina visitata il 30/11/2023.
 
 \bibitem{Synchronized_JavaTutorial}
 {Baeldung}.
 \newblock {Guide to the Synchronized Keyword in Java}.
-\newblock Materiale disponibile all'url: \url{https://www.baeldung.com/java-synchronized}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://www.baeldung.com/java-synchronized}. Pagina visitata il 03/01/2024.
 
 \bibitem{Lock_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{Lock}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Lock.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Lock.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{ReentrantLock_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{ReentrantLock}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{ReentrantRWLock_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{ReentrantReadWriteLock}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{Condition_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{Condition}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Condition.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Condition.html}. Pagina visitata il 03/01/2024.
 
 \bibitem{Semaphore_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{Semaphore}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Semaphore.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Semaphore.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ThreadPool_JavaTutorial}
 {Oracle Corp.}
 \newblock {\textit{Thread Pools}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{drawio}
 {JGraph Ltd}.
 \newblock {draw.io}.
-\newblock Editor disponibile all'url: \url{https://www.drawio.com/}. Pagina visitata il \today.
+\newblock Editor disponibile all'url: \url{https://www.drawio.com/}. Pagina visitata il 28/12/2023.
 
 \bibitem{Executors_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{Executors}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ThreadPoolExecutor_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{ThreadPoolExecutor}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ExecutorService_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{ExecutorService}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{Future_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{Future}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ScheduledThreadPoolExecutor_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{ScheduledThreadPoolExecutor}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledThreadPoolExecutor.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledThreadPoolExecutor.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ScheduledExecutorService_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{ScheduledExecutorService}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{ForkJoinPool_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Class \texttt{ForkJoinPool}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html}. Pagina visitata il 04/01/2024.
 
 \bibitem{Executor_JavaDocs}
 {Oracle Corp.}
 \newblock {\textit{Interface \texttt{Executor}}}.
-\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html}. Pagina visitata il \today.
+\newblock Materiale disponibile all'url: \url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html}. Pagina visitata il 04/01/2024.
 
 \end{thebibliography}

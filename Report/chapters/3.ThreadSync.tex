@@ -57,7 +57,8 @@ L'interfaccia mette a disposizione due Metodi al di fuori dei già discussi \tex
     Ne esiste una variante in cui viene passato come parametro un valore numerico rappresentante il tempo di tolleranza ed un altro parametro che indica l'unità di misura del tempo indicato precedentemente: il \textit{Thread} proverà ad acquisire il \textit{Lock} per il tempo specificato verificando che il Processo Leggero che lo possiede non sia stato interrotto prima di ritornare e continuare con il suo flusso di Esecuzione.
 \end{itemize}
 \subsection{Variabili Condizione}
-Le Variabili di Condizione\cite{Condition_JavaDocs} vanno a sostituire l'Oggetto Monitor e le sue primitive (\texttt{wait()}, \texttt{notify()} e \texttt{notifyAll()}) dando l'impressione di avere a disposizione più insiemi di condizioni per la sincronizzazione e vengono utilizzate in congiunzione con le varie implementazioni di \texttt{Lock}. Esse permettono quindi di sospendere e riprendere l'esecuzione di un Processo Leggero sotto determinate ipotesi all'interno di una Sezione Critica descritta dal \textit{Lock} collegato.
+Le Variabili di Condizione\cite{Condition_JavaDocs} vanno a sostituire l'Oggetto Monitor e le sue primitive (\texttt{wait()}, \texttt{notify()} e \texttt{notifyAll()}) implementandole in oggetti distinti e dando l'impressione di avere a disposizione più insiemi di condizioni per la sincronizzazione. Vengono utilizzate in congiunzione con le varie implementazioni di \texttt{Lock}. \par
+Esse permettono quindi di sospendere e riprendere l'esecuzione di un Processo Leggero sotto determinate ipotesi all'interno di una Sezione Critica protetta dal \textit{Lock} collegato.
 \subsubsection{Inizializzazione di una Variabile di Condizione}
 Il legame intrinseco con il \textit{Lock} associato di una Variabile Condizione implica che la sua dichiarazione avverrà per mezzo di quest'ultimo. Se ne riporta a seguire un esempio.
 \input{images/ConditionVarDeclaration.tex}
@@ -91,15 +92,15 @@ Nuovamente la Classe dispone di diverse primitive per la gestione dell'esecuzion
     \item \textbf{Il metodo \texttt{availablePermits()}} \par
     Ritorna il numero di Permessi ancora disponibili e non utilizzati da alcun \textit{Thread} all'interno della Sezione Critica protetta dal Semaforo.
 \end{itemize}
-\subsection{Esempio di Sincronizzazione tra due \textit{Thread} tramite \texttt{Semaphore}}
+\subsection{Esempio di Sincronizzazione tra due \textit{Thread} tramite la Classe \texttt{Semaphore}}
 Viene riproposta una reimplementazione dell'esempio precedente e nuovamente si riporta solamente il codice del Contatore in quanto non sono state apportate ulteriori modifiche.
 \input{images/SemaphoreSynchronization.tex}
 \subsection{Considerazioni}
 L'utilizzo dei Semafori, in particolare nel caso di Semafori Generalizzati, in un Programma permette di aumentare il parallelismo di un'applicazione in cui le risorse condivise possono essere molteplici di simile natura, come ad esempio nel problema dei Produttori e dei Consumatori. A tale vantaggio bisogna tuttavia affiancare, come fatto in precedenza per l'utilizzo dell'Interfaccia \texttt{Lock}, una maggiore complessità nell'utilizzo rispetto al Costrutto \texttt{synchronized} che rende il Semaforo più prono a errori logici.
 
-\section{\textit{Keyword} \texttt{volatile}}
+\section{La \textit{Keyword} \texttt{volatile}}
 La \textit{Keyword} \texttt{volatile} permette di mantenere solamente una copia della variabile alla quale viene applicata in Memoria Centrale. Questo vuol dire che qualora un Processo eseguente su una CPU voglia utilizzare tale variabile, non potrà effettuarne una copia nella Memoria Cache del Processore, ma dovrà limitarsi ad utilizzare quella in Memoria Primaria. Questo aiuta nella consistenza dei dati in un contesto Multi-Processo, al costo tuttavia di prestazioni inferiori determinate dalla relativa lentezza della Memoria RAM rispetto alla Memoria Cache di una CPU.
 
-\section{Classi Atomiche}
-Il Linguaggio di Programmazione Java mette a disposizione il \texttt{package java.util.concurrent.atomic}, al cui interno sono rintracciabili classi che reimplementano alcuni tipi di variabili come \texttt{Integer} e \texttt{Boolean} o nuove operazioni come un accumulatore o un \textit{Adder}, il tutto in maniera che queste siano \textit{Thread-Safe} anche senza l'utilizzo da parte del Programmatore di costrutti di Sincronizzazione. Rappresentano una maniera alternativa all'utilizzare costrutti quali \texttt{synchronized}, \textit{Lock} o Semafori nel lavorare su di una singola variabile, mantenendone intatta la sua consistenza in un contesto di condivisione tra più Processi. \par
+\section{Le Classi Atomiche}
+Il Linguaggio di Programmazione Java mette a disposizione il \texttt{package java.util.concurrent.atomic}, al cui interno sono rintracciabili classi che reimplementano alcuni tipi di variabili come \texttt{Integer} e \texttt{Boolean} o nuove operazioni come un accumulatore o un \textit{Adder}, il tutto in maniera che queste siano \textit{Thread-Safe} anche senza l'utilizzo da parte del Programmatore di costrutti di Sincronizzazione. Rappresentano un'alternativa all'utilizzo di costrutti quali \texttt{synchronized}, \textit{Lock} o Semafori nel lavorare su di una singola variabile, mantenendone intatta la sua consistenza in un contesto di condivisione tra più Processi. \par
 Un esempio di utilizzo di tale tipologia di Oggetti è riportato nella \autoref{appendix:AtomicVarExample}.
